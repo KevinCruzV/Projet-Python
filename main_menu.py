@@ -1,6 +1,9 @@
 #import de l'os pour lancer le jeu dans la console
 import os
 
+# teste !! dbycahunxsi
+
+
 #Menu principal qui execute la fonction choisie
 #Fonction principale du jeu
 def main_loop():
