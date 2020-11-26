@@ -18,6 +18,8 @@ def HowToPlay():
 
     TestUserInput = False
 
+    #Boucle pour tester ce qu'entre comme valeur l'utilisateur et qui ramène au menu si la condition est vérifiée
+
     while TestUserInput == False:
         UserInput = input("Appuyez sur 1 pour retourner au menu:")
         try:
@@ -37,6 +39,8 @@ def HowToPlay():
 def About():
     print("Projet en python d'un rpg textuel")
     print("Pour retourner au menu appuyez sur 1\n")
+
+    # Boucle pour tester ce qu'entre comme valeur l'utilisateur et qui ramène au menu si la condition est vérifiée
 
     TestUserInput = False
 
@@ -61,6 +65,8 @@ def main_menu():
     print("2: Comment jouer")
     print("3: A propos du jeu")
     print("4: Exit\n")
+
+    # Boucle pour tester ce qu'entre comme valeur l'utilisateur et qui ensuite déclenche une fonction si la condition est vérifiée
 
     TestUserInput = False
 
@@ -89,5 +95,7 @@ def main_menu():
         except ValueError:
                 print("Erreur, vous vous êtes trompé")
 
+
+#Activation de la fonction du menu principal
 
 main_menu()
