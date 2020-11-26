@@ -1,0 +1,18 @@
+Projet python:
+
+Description:
+
+Le personnage se réveil dans sa capsule. 
+Il regarde autour de lui et remarque que toutes les autres capsules d'hypersommeil ou étaient ses collègues sont détruites.
+Il trouve dans la salle de réveil, une combinaison spatiale, une bombonne d'oxygène et un pistolet laser.
+Vous devez trouver le chemin menant à la capsule vous échapper pour rejoindre la terre.
+
+Actions et choix:
+
+Pour se déplacer, faire des choix et des actions, utilisez le chiffre des choix proposés (1, 2, 3, 4).
+
+
+Bestiaire:
+
+Des aliens dans le vaisseau.
+
