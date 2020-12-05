@@ -1,5 +1,5 @@
 class Modele_Personnage :
-
+    
     def __init__(self, nom, vie, attaque, defense, armure, arme) :
         self.nom = nom
         self.vie = vie 
