@@ -1,9 +1,8 @@
-from Modele import Model_Personnage
-from Modele import Modele_Armure
-from Modele import Modele_Arme
+from Modele import *
+
 from Arme_et_Armure import *
 
-class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
+class Hero(Model_Personnage, Modele_Arme, Modele_Armure):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
     def __init__(self, nom, vie, attaque, defense):
         super().__init__(nom, vie, attaque, defense)

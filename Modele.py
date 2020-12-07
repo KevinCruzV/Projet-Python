@@ -8,7 +8,7 @@ class Modele_Personnage :
         print("Nom = ", nom, " / Vie = ", vie, " / Attaque = ",attaque," / Defense = ",defense)
 
 
-    def get_nomP(self):
+    def get_nom(self):
         return self.nom
 
     def get_vie(self):
