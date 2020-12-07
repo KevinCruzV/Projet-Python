@@ -23,3 +23,4 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         print( cible.get_nom(),"a prit", self.dommage, "de dégats")
         if self.a_une_arme():
             dommage = dommage + self.arme.dommage_enplus()
+
