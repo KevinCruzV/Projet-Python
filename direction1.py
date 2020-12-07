@@ -8,14 +8,14 @@ def gauche():
     Vestiaire()
 
 def direction ():
-    a = int(input("Où voulez vous aller ? gauche ou droite (1/2)" ))
-    while a != 1 or a != 2 : 
-         a = int(input("Où voulez vous aller ? gauche ou droite (1/2)" ))
+    a = 0
+    while a != 'd' or a != 'g' : 
+        a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
 
-    if a == 1:
-        droite()
-    if a == 2:
-        gauche()
+        if a == 'd':
+            droite()
+        if a == 'g':
+            gauche()
 
 direction()        
     

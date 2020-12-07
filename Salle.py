@@ -1,5 +1,8 @@
 from Modele import Modele_Salle
 
+def ChangSalle():
+    
+
 def Refectoire():
     Refectoire = Modele_Salle("Refectoire")
     Q = input("Il y a une faille dans le " + Refectoire.get_nom() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
