@@ -1,7 +1,11 @@
 from Modele import *
+<<<<<<< HEAD
+
+=======
+>>>>>>> c592dd067ca2a35d4ad00949b478bac44e9e3d62
 from Arme_et_Armure import *
 
-class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
+class Hero(Model_Personnage, Modele_Arme, Modele_Armure):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
     def __init__(self, nom, vie, attaque, defense):
         super().__init__(nom, vie, attaque, defense)
