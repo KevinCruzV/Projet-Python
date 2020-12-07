@@ -1,14 +1,12 @@
 class Modele_Personnage :
     
-    def __init__(self, nom, vie, attaque, defense, armure, arme) :
+    def __init__(self, nom, vie, attaque, defense):
         self.nom = nom
         self.vie = vie 
         self.attaque = attaque
-        self.defense = defense
-        print("Nom = ", nom, " / Vie = ", vie, " / Attaque = ",attaque," / Defense = ",defense)
+        self.defense = 0
 
-
-    def get_nomP(self):
+    def get_nom(self):
         return self.nom
 
     def get_vie(self):
