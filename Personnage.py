@@ -1,8 +1,8 @@
 from Modele import *
-from Arme_et_Armure import *
+#from Arme_et_Armure import *
 
 
-class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
+class Hero(Modele_Personnage):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
     def __init__(self, nom, vie, attaque, defense):
         super().__init__(nom, vie, attaque, defense)
@@ -39,5 +39,19 @@ class MonstresForts(Modele_Personnage):
         return self.attaque_speciale
 
 
-Hero1 = Hero("Hero", 10, 10, 10,)
-Boss = MonstresForts("Super Alien", 10, 19, 10, 10)
+class MonstresNormaux(Modele_Personnage):
+
+    def __init__(self, nom, vie, attaque, defense):
+        super().__init__(nom, vie, attaque, defense)
+        print("Un monstre apparait !")
+        print("Nom :", nom, "| Vie :", vie, "| Attaque :", attaque, "| Defense :", defense, "\n")
+
+    def damage(self, attaque):
+        self.vie -= attaque
+        print("Le monstre à subit", attaque, "dégats")
+
+Hero1 = Hero("Hero", 35, 6, 10,)
+#Boss = MonstresForts("Super Alien", 10, 19, 10, 10)
+Monstre = MonstresNormaux("Alien", 15, 4, 10)
+
+

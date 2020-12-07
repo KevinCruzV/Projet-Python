@@ -1,3 +1,4 @@
+from Personnage import *
 #importation  de l'os pour lancer le jeu dans la console
 import os
 
@@ -80,6 +81,7 @@ def main_menu(TestUserInput=False):
 
 #Activation de la fonction du menu principal
 
-main_menu()
+Hero = Hero("kevin",20,30)
+
 
 
