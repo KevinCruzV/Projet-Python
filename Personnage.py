@@ -8,7 +8,7 @@ class Hero(Modele_Personnage):
         super().__init__(nom, vie, attaque, defense)
         self.armure = None
         self.arme = None 
-        print("Bienvenue,\nNom : ", nom, " / Vie : ", vie, " / Attaque : ", attaque, " / Defense : ", defense, "\n")
+        print("Statistiques:\nNom : ", nom, " | Vie : ", vie, " | Attaque : ", attaque, " | Defense : ", defense, "\n")
 
     def a_une_arme(self,):
         return self.arme is not None  
@@ -31,8 +31,8 @@ class MonstresForts(Modele_Personnage):
     def __init__(self, nom, vie, attaque, defense, attaque_speciale):
         super().__init__(nom, vie, attaque, defense)
         self.attaque_speciale = attaque_speciale
-        print("Un monstre special apparait!")
-        print("Nom :", nom, "/ Vie :", vie, "/ Attaque :", attaque, "/ Defense :", defense, "/ Attaque speciale :",
+        print("/!\ Un monstre special apparait /!\ ")
+        print("Nom :", nom, "| Vie :", vie, "| Attaque :", attaque, "| Defense :", defense, "| Attaque speciale :",
               attaque_speciale, "\n")
 
     def attaque_speciale(self):
@@ -50,8 +50,13 @@ class MonstresNormaux(Modele_Personnage):
         self.vie -= attaque
         print("Le monstre à subit", attaque, "dégats")
 
-Hero1 = Hero("Hero", 35, 6, 10,)
-#Boss = MonstresForts("Super Alien", 10, 19, 10, 10)
-Monstre = MonstresNormaux("Alien", 15, 4, 10)
+    def dommage(self, dommage):
+        self.vie = self.vie - dommage
+
+    def attack_monster(self, cible):
+        cible.dommage(self.attaque)
+        print(cible.get_nom(), "a prit", self.attaque, "de dégats.")
+
+
 
 

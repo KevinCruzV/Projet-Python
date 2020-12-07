@@ -18,17 +18,13 @@ class Modele_Personnage :
     def get_defense(self):
         return self.defense
 
-        
     def dommage(self, dommage):
-        self.vie = self.vie - dommage 
+        self.vie = self.vie - dommage
 
-     
     def attack_player(self, cible):
         cible.dommage(self.attaque)
-        print( cible.get_nom(),"a prit", self.dommage, "de dégats")
+        print(cible.get_nom(), "a prit", self.attaque, "de dégats.")
 
-
-    
 
 class Modele_Salle :
 
