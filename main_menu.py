@@ -8,7 +8,7 @@ import os
 
 
 def main_loop():
-    print("TODO")
+    # TODO main_menu()
     main_menu()
 #Fonction pour tester ce qu'entre comme valeur l'utilisateur et qui ramène au menu si la condition est vérifiée
 
@@ -61,22 +61,22 @@ def main_menu(TestUserInput=False):
                 TestUserInput = True
             if UserInput == 1:
                 print("Partie initialisée\n")
-                main_loop()
+                # TODO main_loop()
             if UserInput == 2:
                 print("Accés confirmé\n")
                 HowToPlay()
             if UserInput == 3:
-                print("Accés confirmé\n")
+                print("Accésconfirmé\n")
                 About()
             if UserInput == 4:
                 print("Autodestruction du vaisseau, vous avez perdu.")
                 os.system("pause")
             elif UserInput < 0:
-                 print("Cette valeur est trop petite\n")
+                 print("Impossible\n")
             elif UserInput > 4:
-                 print("Cette valeur est trop grande\n")
+                 print("Impossible\n")
         except ValueError:
-                print("Erreur, vous vous êtes trompé\n")
+                print("Impossible\n")
 
 
 #Activation de la fonction du menu principal
