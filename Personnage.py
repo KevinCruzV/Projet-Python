@@ -1,8 +1,4 @@
 from Modele import *
-<<<<<<< HEAD
-
-=======
->>>>>>> c592dd067ca2a35d4ad00949b478bac44e9e3d62
 from Arme_et_Armure import *
 
 class Hero(Model_Personnage, Modele_Arme, Modele_Armure):
