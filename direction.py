@@ -18,9 +18,8 @@ def gauche():
     Salle()
 
 
-
 def Salle ():
-    #On va mettre dans la liste les salles en var 
+    #On va mettre dans la liste les salles en var
     L=[]
     i=0
     SalleOuAller=0
@@ -36,10 +35,9 @@ def Salle ():
             else :
                 SalleOuAller=L[i]
 
-    #On regarde L[i] et on declanche la fonction de la salle 
+    #On regarde L[i] et on declanche la fonction de la salle
     # ex 1 : Vestiaire
     if L[i] == 1:
         Vestiaire()
 
 
-    

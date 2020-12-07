@@ -1,6 +1,7 @@
 from Modele import *
 from Arme_et_Armure import *
 
+
 class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
     def __init__(self, nom, vie, attaque, defense):
@@ -15,6 +16,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def set_arme(self, arme):
         self.arme = arme
 
+
 '''    def attack_player(self, cible):
         super().__init__(self, nom, dommage)
         cible.dommage(self.attaque)
@@ -22,6 +24,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         if self.a_une_arme():
             dommage = dommage + self.arme.dommage_enplus()
 '''
+
 
 class MonstresForts(Modele_Personnage):
 
@@ -38,6 +41,3 @@ class MonstresForts(Modele_Personnage):
 
 Hero1 = Hero("Hero", 10, 10, 10,)
 Boss = MonstresForts("Super Alien", 10, 19, 10, 10)
-
-
-
