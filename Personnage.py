@@ -35,9 +35,22 @@ class MonstresForts(Modele_Personnage):
     def attaque_speciale(self):
         return self.attaque_speciale
 
+class MonstresNormaux(Modele_Personnage):
+
+    def __init__(self, nom, vie, attaque, defense):
+        super().__init__(nom, vie, attaque, defense)
+        print("Un monstre apparait !")
+        print("Nom :", nom, "| Vie :", vie, "| Attaque :", attaque, "| Defense :", defense, "\n")
+    
+
+
+
+
+
 
 Hero1 = Hero("Hero", 10, 10, 10,)
-Boss = MonstresForts("Super Alien", 10, 19, 10, 10)
+Boss = MonstresForts("Super Alien", 10, 10, 10, 10)
+Monstre = MonstresNormaux("Alien", 10, 10, 10)
 
 
 
