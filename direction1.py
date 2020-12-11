@@ -1,4 +1,18 @@
 from Salle import *
+
+
+def direction ():
+    a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
+    while a != 'd' or a != 'g' : 
+        a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
+        
+        if a == 'd':
+            droite()
+        if a == 'g':
+            gauche()
+
+
+
 def droite():
     print("Vous avez choisis d'aller à droite")
     print("TO DO : Fonction Random_Salle()")
@@ -7,28 +21,8 @@ def gauche():
     print("Vous avez choisis d'aller à gauche")
     print("TO DO : Fonction Random_Salle()")
 
-def direction ():
-<<<<<<< HEAD
-    a = int(input("Où voulez vous aller ? gauche ou droite (1/2)" ))
-    while a !=1 or a !=2 
-         a = int(input("Où voulez vous aller ? gauche ou droite (1/2)" ))
-
-    if a == 1:
-        droite()
-    if a == 2:
-        gauche()
-=======
-    a = 0
-    while a != 'd' or a != 'g' : 
-        a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
-
-        if a == 'd':
-            droite()
-        if a == 'g':
-            gauche()
 
 direction()        
->>>>>>> changDirection
     
 #def Salle ():
     #On va mettre dans la liste les salles en var 

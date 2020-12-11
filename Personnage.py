@@ -1,8 +1,4 @@
 from Modele import *
-<<<<<<< HEAD
-=======
-
->>>>>>> changDirection
 from Arme_et_Armure import *
 #from Arme_et_Armure import *
 
