@@ -1,4 +1,33 @@
 from Modele import Modele_Salle
+from random import *
+                                                #####  Fonction pour lancer les salles  #####
+
+def Random_Salle():
+    salles=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+    num = randint(1,20)
+    if SearchFor(salles,num):
+
+ 
+
+def SearchFor(L,X):
+    for v in L:
+        if v == X:
+            return True
+           
+        return False
+
+def SuppSalle(Liste,num):
+    c = 0
+    for v in Liste:
+        if v == num :
+        c = c + 1
+
+    for i in range(c):
+        Liste.remove(num)
+    
+  return Liste    
+
+                                               #####  Salles #####
 
 def Refectoire():
     Refectoire = Modele_Salle("Refectoire")

@@ -1,10 +1,7 @@
 from Modele import *
-<<<<<<< HEAD
 from Arme_et_Armure import *
-=======
 #from Arme_et_Armure import *
 
->>>>>>> a9a2b6b0484f9a8005f08b4ce885364efc073b21
 
 class Hero(Modele_Personnage):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
