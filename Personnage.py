@@ -32,7 +32,7 @@ class MonstresForts(Modele_Personnage):
     def __init__(self, nom, vie, attaque, defense, attaque_speciale):
         super().__init__(nom, vie, attaque, defense)
         self.attaque_speciale = attaque_speciale
-        print("/!\ Un monstre special apparait /!\ ")
+        print("/!\ Un monstre spécial apparait /!\ ")
         print("Nom :", nom, "| Vie :", vie, "| Attaque :", attaque, "| Defense :", defense, "| Attaque speciale :",
               attaque_speciale, "\n")
 
