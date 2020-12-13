@@ -1,10 +1,12 @@
 class Modele_Personnage :
     
-    def __init__(self, nom, vie, attaque, defense):
+    def __init__(self, nom, vie, attaque, defense, level):
         self.nom = nom
         self.vie = vie 
-        self.attaque = attaque
+        self.attaque = 0
         self.defense = 0
+        
+        self.level = level
 
     def get_nom(self):
         return self.nom
@@ -17,6 +19,9 @@ class Modele_Personnage :
 
     def get_defense(self):
         return self.defense
+   
+    def get_level(self):
+        return self.level    
 
     def dommage(self, dommage):
         self.vie = self.vie - dommage

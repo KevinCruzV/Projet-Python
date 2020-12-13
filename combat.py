@@ -4,7 +4,7 @@ from inventaire import inventory
 from random import randint
 
 
-def combat(Monstre = MonstresNormaux("Alien", 15, 7, 10), Hero1 = Hero("Hugo", 100, 5, 10, )):
+def combat(Monstre = MonstresNormaux("Alien", 15, 7, 10, 1), Hero1 = Hero("Hugo", 100, 5, 10, 0, 0)):
 
     while Hero1.vie > 0 or Monstre.vie > 0:
         print("Appuyez sur 1 pour attaquer")
