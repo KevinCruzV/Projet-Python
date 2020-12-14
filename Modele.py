@@ -1,67 +1,66 @@
 class Modele_Personnage :
     
-    def __init__(self, nom, vie, attaque, defense, level):
-        self.nom = nom
-        self.vie = vie 
-        self.attaque = 0
-        self.defense = 0
-        
-        self.level = level
+    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
+        self.nomPersonnage = nomPersonnage
+        self.viePersonnage = viePersonnage 
+        self.attaquePersonnage = 0
+        self.defensePersonnage = 0 
+        self.levelPersonnage = levelPersonnage
 
-    def get_nom(self):
-        return self.nom
+    def get_nomPersonnage(self):
+        return self.nomPersonnage
 
-    def get_vie(self):
-        return self.vie
+    def get_viePersonnage(self):
+        return self.viePersonnage
 
-    def get_attaque(self):
-        return self.attaque
+    def get_attaquePersonnage(self):
+        return self.attaquePersonnage
 
-    def get_defense(self):
-        return self.defense
+    def get_defensePersonnage(self):
+        return self.defensePersonnage
    
-    def get_level(self):
-        return self.level    
+    def get_levelPersonnage(self):
+        return self.levelPersonnage   
 
     def dommage(self, dommage):
-        self.vie = self.vie - dommage
+        self.viePersonnage = self.viePersonnage - dommage
 
     def attack_player(self, cible):
-        cible.dommage(self.attaque)
-        print(cible.get_nom(), "a prit", self.attaque, "de dégats.")
+        cible.dommage(self.attaquePersonnage)
+        print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.")
 
 
 class Modele_Salle :
 
-    def __init__(self, nom) :
-        self.nom = nom
-        print("Vous etes dans la salle", nom)
+    def __init__(self, nomSalle) :
+        self.nomSalle = nomSalle
+        print("Vous etes dans la salle", nomSalle)
 
-    def get_nom(self):
-        return self.nom
+    def get_nomSalle(self):
+        return self.nomSalle
 
 
 class Modele_Arme :
 
-    def __init__(self, nom, dommage) :
-        self.nom = nom
-        self.dommage = dommage
+    def __init__(self, nomArme, dommageArme) :
+        self.nomArme = nomArme
+        self.dommageArme = dommageArme
 
-    def get_nom(self) :
-        return self.nom  
+    def get_nomArme(self) :
+        return self.nomArme  
 
-    def get_dommage_enplus(self):
-        return self.dommage 
+    def get_dommageArme(self):
+        return self.dommageArme
 
 
 class Modele_Armure :
     
-    def __init__(self, nom, defense) :
-        self.nom = nom
-        self.defense = defense
+    def __init__(self, nomArmure, defenseArmure) :
+        self.nomArmure = nomArmure
+        self.defenseArmure = defenseArmure
 
-    def get_nom(self):
-        return self.nom  
+    def get_nomArmure(self):
+        return self.nomArmure  
 
-    def get_defense_enplus(self):
-        return self.defense 
+    def get_defenseArmure(self):
+        return self.defenseArmure

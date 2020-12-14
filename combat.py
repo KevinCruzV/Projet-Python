@@ -1,12 +1,12 @@
-from Personnage import Hero
-from Personnage import MonstresNormaux
+from Personnage import *
+from Personnage import *
 from inventaire import inventory
 from random import randint
 
 
-def combat(Monstre = MonstresNormaux("Alien", 15, 7, 10, 1), Hero1 = Hero("Hugo", 100, 5, 10, 0, 0)):
+def combat(Monstre, Hero):
 
-    while Hero1.vie > 0 or Monstre.vie > 0:
+    while Hero.vie > 0 or Monstre.vie > 0:
         print("Appuyez sur 1 pour attaquer")
         print("Appuyez sur 2 pour utiliser un objet")
         print("Appuyez sur 3 pour fuir le combat\n")
@@ -24,14 +24,14 @@ def combat(Monstre = MonstresNormaux("Alien", 15, 7, 10, 1), Hero1 = Hero("Hugo"
             print("Impossible")
 
         if control == 1:
-            Hero1.attack_player(Monstre)
-            Monstre.attack_monster(Hero1)
+            Hero.attack_player(Monstre)
+            Monstre.attack_monster(Hero)
             print(Monstre.nom, "a maintenant", Monstre.vie ,"/ 25 pv")
-            print("Vous avez maintenant", Hero1.vie, " /100 pv\n")
+            print("Vous avez maintenant", Hero.vie, " /100 pv\n")
         if Monstre.vie <= 0:
             print("Vous avez éliminé:", Monstre.nom)
             break
-        if Hero1.vie <= 0:
+        if Hero.vie <= 0:
             print("Vous êtes mort...")
             break
         elif control == 2:
@@ -44,4 +44,7 @@ def combat(Monstre = MonstresNormaux("Alien", 15, 7, 10, 1), Hero1 = Hero("Hugo"
                 break
 
 
-combat()
+Hugo = Hero("Kevin",100,50,20,1,0,None,None)
+Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
+#PB a regler : faire que l'on peut reinitialiser les arme + ajout pts d'attaque quand arme et def + pb avec programme de hugo
+combat(Alien, Hugo)

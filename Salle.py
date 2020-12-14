@@ -54,7 +54,7 @@ def Salle_0():
 
 def Refectoire():
     Refectoire = Modele_Salle("Refectoire")
-    Q = input("Il y a une faille dans le " + Refectoire.get_nom() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
+    Q = input("Il y a une faille dans le " + Refectoire.get_nomSalle() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
     if Q == "n":
         print("TO DO : fonction quitter")
     else :
@@ -69,7 +69,7 @@ def Refectoire():
 
 def Vestiaire():
     Vestiaire = Modele_Salle("Vestaire")
-    print("Le", Vestiaire.get_nom(),"est sombre, vous n'y voyez rien. Vous essayez de marché dans le noir lorsque vous butez sur un objet. Mais quel est-il ?\n " )
+    print("Le", Vestiaire.get_nomSalle(),"est sombre, vous n'y voyez rien. Vous essayez de marché dans le noir lorsque vous butez sur un objet. Mais quel est-il ?\n " )
     print("TO DO : fonction Lampe")
     print("TO DO : fonction Inventaire")
     print("Vous pouvez maintenant voir. Mais... Un horrible spectacle est devant vous, du sang.. Du sang partout et des traces de griffure")
