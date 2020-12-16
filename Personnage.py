@@ -15,9 +15,9 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
     
 
-    #def recap(self):
+    def recap(self):
     #Pb d'heredité
-     #   print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.get_nomArme(), "| Armure : ", self.get_nomArmure(), "\n")   
+       print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.get_nomArme(), "| Armure : ", self.armure.get_nomArmure(), "\n")   
 
 
 
@@ -27,6 +27,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def a_une_arme(self, arme):
         print("Vous etes equipé d'une", arme.get_nomArme())
         self.attaque_adition(arme.get_dommageArme())
+        self.set_arme(arme)
         return self.arme is not None  
 
     def set_arme(self, arme):
@@ -42,6 +43,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def a_une_armure(self, armure):
         print("Vous etes equipé d'une", armure.get_nomArmure())
         self.defense_adition(armure.get_defenseArmure())
+        self.set_armure(armure)
         return self.arme is not None  
 
     def set_armure(self, armure):
@@ -110,8 +112,10 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
-Epée = Modele_Arme("Epée", 20)
-Kevin.a_une_arme(Epée)
+Epee = Modele_Arme("Epee", 20)
+Armure = Modele_Armure("combi",30)
+Kevin.a_une_arme(Epee)
+Kevin.a_une_armure(Armure)
 Kevin.barre_Exp(100)
 Kevin.Augment_level()
-#Kevin.recap()
+Kevin.recap()
