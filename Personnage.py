@@ -16,7 +16,6 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     
 
     def recap(self):
-    #Pb d'heredité
        print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.get_nomArme(), "| Armure : ", self.armure.get_nomArmure(), "\n")   
 
 
