@@ -3,8 +3,8 @@ class Modele_Personnage :
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
         self.nomPersonnage = nomPersonnage
         self.viePersonnage = viePersonnage 
-        self.attaquePersonnage = 0
-        self.defensePersonnage = 0 
+        self.attaquePersonnage = attaquePersonnage
+        self.defensePersonnage = defensePersonnage 
         self.levelPersonnage = levelPersonnage
 
     def get_nomPersonnage(self):
