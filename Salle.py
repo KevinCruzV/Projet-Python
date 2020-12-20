@@ -54,7 +54,6 @@ def SearchFor(L,X):
 #Supprime une salle apres qu'elle soit utilisé une fois
 def SuppSalle(Liste,num):
     c = 0
-    i = 0
     for v in Liste:
         if v == num:
             c = c + 1

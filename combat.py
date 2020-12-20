@@ -44,6 +44,5 @@ def combat(Monstre, Hero):
 
 Hugo = Hero("Kevin",100,10,2,1,0,None,None)
 Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
-#PB a regler : faire que l'on peut reinitialiser les arme + ajout pts d'attaque quand arme et def + pb avec programme de hugo
 combat(Alien, Hugo)
 
