@@ -13,7 +13,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
         print("Statistiques:\nNom : ", nomPersonnage, " | Vie : ", viePersonnage, " | Attaque : ", attaquePersonnage, " | Defense : ", defensePersonnage, " | Niveau : ", levelPersonnage, " | Arme : Rien ", "| Armure : Rien", "\n")
 
-    
+
 
     def recap(self):
         if self.arme == None and self.armure == None :
@@ -127,11 +127,11 @@ class MonstresNormaux(Modele_Personnage):
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
 Epee = Modele_Arme("Epee", 20)
 #Armure = Modele_Armure("combi",30)
-Kevin.a_une_arme(Epee)
+#Kevin.a_une_arme(Epee)
 #Kevin.a_une_armure(Armure)
 #Kevin.barre_Exp(100)
 #Kevin.Augment_level()
 #Kevin.recap()
 #Couteau = Modele_Arme("couteau",25)
 #Kevin.a_une_arme(Couteau)
-Kevin.recap()
+#Kevin.recap()

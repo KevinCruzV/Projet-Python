@@ -1,36 +1,54 @@
+from combat import *
 from Modele import Modele_Salle
 from random import *
-                                                #####  Fonction pour lancer les salles  #####
+
+                                   #####  Fonction pour lancer les salles  #####
 
 
-
-def Random_Salle():
-    i= 0
-    salles=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
-    nb = randint(1,22)
+def choixSalles():
+    salles = [1, 2, 3]
+    nb = randint(1, 3)
     for i in salles:
-        if SearchFor(salles,nb):
-            if nb == 1 or nb == 2 or nb == 3 :
+        if nb == 1:
+            Vestiaire()
+            SuppSalle(salles, nb)
+        if nb == 2:
+            Refectoire()
+            SuppSalle(salles, nb)
+        if nb == 3:
+            combat(Alien, Kevin)
+
+        i += 1
+
+
+
+
+'''def Random_Salle():
+    #salles=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
+    salles = [1, 2, 3]
+    nb = randint(1, 3)
+    for i in salles:
+        if SearchFor(salles, nb):
+            if nb == 1:
                 Vestiaire()
                 SuppSalle(salles,nb)
-            elif nb == 4 :
+            elif nb == 2:
                 Refectoire()
                 SuppSalle(salles,nb)
-
-            #Il faut continuer a faire les salles 
+            #Il faut continuer a faire les salles
 
         else :
             nb = randint(1,22)
-            i=i+1
+            i=i+1'''
 
 
- 
- #Regarde si la salle existe
-def SearchFor(L,X): 
+
+#Regarde si la salle existe
+def SearchFor(L,X):
     for v in L:
         if v == X:
             return True
-           
+
         return False
 
 #Supprime une salle apres qu'elle soit utilisé une fois
@@ -38,19 +56,19 @@ def SuppSalle(Liste,num):
     c = 0
     i = 0
     for v in Liste:
-        if v == num :
+        if v == num:
             c = c + 1
 
     for i in range(c):
         Liste.remove(num)
-    
-    return Liste    
+
+    return Liste
 
                                                #####  Salles #####
 
 
 def Salle_0():
-    pass    
+    pass
 
 def Refectoire():
     Refectoire = Modele_Salle("Refectoire")
@@ -80,4 +98,5 @@ def Vestiaire():
 
 
 
-Random_Salle()
+#Random_Salle()
+choixSalles()
