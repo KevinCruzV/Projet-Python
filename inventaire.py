@@ -1,6 +1,9 @@
-def inventory():
-    print("TODO\n")
+def inventaire():
+    inventaire = {
 
+    }
 
+def NewInventaire(objet):
+    
 
 
