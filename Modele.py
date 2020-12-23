@@ -46,7 +46,7 @@ class Modele_Arme :
         self.nomArme = nomArme
         self.dommageArme = dommageArme
 
-    def get_nomArme(self) :
+    def get_nomArme(self):
         return self.nomArme  
 
     def get_dommageArme(self):
@@ -64,3 +64,4 @@ class Modele_Armure :
 
     def get_defenseArmure(self):
         return self.defenseArmure
+

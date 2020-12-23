@@ -25,10 +25,10 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     # Fonction Arme #
 
     def a_une_arme(self, arme):
-        print("Vous etes equipé d'une", arme.get_nomArme())
+        print("Arme equipée:", arme.get_nomArme())
         self.attaque_adition(arme.get_dommageArme())
         self.set_arme(arme)
-        return self.arme is not None  
+        return self.arme is not None
 
     def set_arme(self, arme):
         self.arme = arme
@@ -112,10 +112,12 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
-Epee = Modele_Arme("Epee", 20)
+Epee = Modele_Arme("Epée", 20)
+Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 Armure = Modele_Armure("combi",30)
-Kevin.a_une_arme(Epee)
+'''Kevin.a_une_arme(Epee)
 Kevin.a_une_armure(Armure)
 Kevin.barre_Exp(100)
 Kevin.Augment_level()
 Kevin.recap()
+'''
