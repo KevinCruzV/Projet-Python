@@ -64,3 +64,10 @@ class Modele_Armure :
 
     def get_defenseArmure(self):
         return self.defenseArmure
+
+class Objet_de_Quete:
+    def __init__(self, nomObjet):
+        self.nomObjet = nomObjet
+
+    def get_nomObjet(self):
+        return self.nomObjet    

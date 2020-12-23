@@ -30,8 +30,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
 
 
-
-    # Fonction Arme #
+   
 
     def a_une_arme(self, arme):
         print("Vous etes equipé d'une", arme.get_nomArme())
@@ -90,8 +89,8 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         else :    
             pass
 
-
-
+    
+           
 
 class MonstresForts(Modele_Personnage):
 
