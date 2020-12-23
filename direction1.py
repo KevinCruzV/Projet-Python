@@ -15,11 +15,12 @@ def direction ():
 
 def droite():
     print("Vous avez choisis d'aller à droite")
-    Random_Salle()
-
+    #Random_Salle()
+    choixSalles()
 def gauche(): 
     print("Vous avez choisis d'aller à gauche")
-    Random_Salle()
+    #Random_Salle()
+    choixSalles()
 
 
 direction()        

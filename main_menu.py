@@ -1,4 +1,5 @@
 from Personnage import *
+import os
 #importation  de l'os pour lancer le jeu dans la console
 
 
@@ -70,7 +71,7 @@ def main_menu(TestUserInput=False):
                 About()
             if UserInput == 4:
                 print("Autodestruction du vaisseau, vous avez perdu.")
-                os.system("pause")
+                os.system(exit())
             elif UserInput < 0:
                  print("Impossible\n")
             elif UserInput > 4:
@@ -81,7 +82,7 @@ def main_menu(TestUserInput=False):
 
 #Activation de la fonction du menu principal
 
-
+main_menu()
 
 
 

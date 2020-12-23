@@ -1,6 +1,6 @@
 from Modele import *
 from Arme_et_Armure import *
-#from Arme_et_Armure import *
+
 
 
 class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
@@ -11,21 +11,35 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         self.arme = None 
         self.exp = 0
 
-        print("Statistiques:\nNom : ", nomPersonnage, " | Vie : ", viePersonnage, " | Attaque : ", attaquePersonnage, " | Defense : ", defensePersonnage, " | Niveau : ", levelPersonnage, " | Arme : Nul ", "| Armure : Nul", "\n")
+        print("Statistiques:\nNom : ", nomPersonnage, " | Vie : ", viePersonnage, " | Attaque : ", attaquePersonnage, " | Defense : ", defensePersonnage, " | Niveau : ", levelPersonnage, " | Arme : Rien ", "| Armure : Rien", "\n")
 
-    
+
 
     def recap(self):
-    #Pb d'heredité
-       print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.get_nomArme(), "| Armure : ", self.armure.get_nomArmure(), "\n")   
+        if self.arme == None and self.armure == None :
+            print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : Rien ", "| Armure : Rien " "\n")
+
+        if self.arme == None and self.armure is not None :
+            print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : Rien ", "| Armure : ", self.armure.get_nomArmure(), "\n") 
+
+        if self.arme is not None and self.armure == None :
+            print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.get_nomArme(), "| Armure : Rien", "\n")
+
+        if self.arme is not None and self.armure is not None :
+            print("Statistiques:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.get_nomArme(), "| Armure : ", self.armure.get_nomArmure(), "\n")   
 
 
 
-
-    # Fonction Arme #
+   
 
     def a_une_arme(self, arme):
+<<<<<<< HEAD
         print("Arme equipée:", arme.get_nomArme())
+=======
+        print("Vous etes equipé d'une", arme.get_nomArme())
+        if self.arme is not None :
+            self.attaquePersonnage -= self.arme.get_dommageArme()
+>>>>>>> 831301c1e526ea71def666393021ccf63b456079
         self.attaque_adition(arme.get_dommageArme())
         self.set_arme(arme)
         return self.arme is not None
@@ -41,7 +55,9 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         # Fonction Armure #
 
     def a_une_armure(self, armure):
-        print("Vous etes equipé d'une", armure.get_nomArmure())
+        print("Vous etes equipé d'une", armure.get_nomArmure())       
+        if self.armure is not None :
+            self.defensePersonnage -= self.armure.get_defenseArmure()
         self.defense_adition(armure.get_defenseArmure())
         self.set_armure(armure)
         return self.arme is not None  
@@ -77,8 +93,8 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         else :    
             pass
 
-
-
+    
+           
 
 class MonstresForts(Modele_Personnage):
 
@@ -112,6 +128,7 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
+<<<<<<< HEAD
 Epee = Modele_Arme("Epée", 20)
 Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 Armure = Modele_Armure("combi",30)
@@ -121,3 +138,15 @@ Kevin.barre_Exp(100)
 Kevin.Augment_level()
 Kevin.recap()
 '''
+=======
+Epee = Modele_Arme("Epee", 20)
+#Armure = Modele_Armure("combi",30)
+#Kevin.a_une_arme(Epee)
+#Kevin.a_une_armure(Armure)
+#Kevin.barre_Exp(100)
+#Kevin.Augment_level()
+#Kevin.recap()
+#Couteau = Modele_Arme("couteau",25)
+#Kevin.a_une_arme(Couteau)
+#Kevin.recap()
+>>>>>>> 831301c1e526ea71def666393021ccf63b456079

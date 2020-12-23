@@ -3,8 +3,8 @@ class Modele_Personnage :
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
         self.nomPersonnage = nomPersonnage
         self.viePersonnage = viePersonnage 
-        self.attaquePersonnage = 0
-        self.defensePersonnage = 0 
+        self.attaquePersonnage = attaquePersonnage
+        self.defensePersonnage = defensePersonnage 
         self.levelPersonnage = levelPersonnage
 
     def get_nomPersonnage(self):
@@ -65,3 +65,12 @@ class Modele_Armure :
     def get_defenseArmure(self):
         return self.defenseArmure
 
+<<<<<<< HEAD
+=======
+class Objet_de_Quete:
+    def __init__(self, nomObjet):
+        self.nomObjet = nomObjet
+
+    def get_nomObjet(self):
+        return self.nomObjet    
+>>>>>>> 831301c1e526ea71def666393021ccf63b456079
