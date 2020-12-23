@@ -1,8 +1,8 @@
 from combat import *
 from Modele import Modele_Salle
 from random import *
-
-                                   #####  Fonction pour lancer les salles  #####
+from inventaire import *
+#####  Fonction pour lancer les salles  #####
 
 
 def choixSalles():

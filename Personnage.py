@@ -33,13 +33,10 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
    
 
     def a_une_arme(self, arme):
-<<<<<<< HEAD
         print("Arme equipée:", arme.get_nomArme())
-=======
         print("Vous etes equipé d'une", arme.get_nomArme())
         if self.arme is not None :
             self.attaquePersonnage -= self.arme.get_dommageArme()
->>>>>>> 831301c1e526ea71def666393021ccf63b456079
         self.attaque_adition(arme.get_dommageArme())
         self.set_arme(arme)
         return self.arme is not None
@@ -128,7 +125,6 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
-<<<<<<< HEAD
 Epee = Modele_Arme("Epée", 20)
 Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 Armure = Modele_Armure("combi",30)
@@ -138,7 +134,6 @@ Kevin.barre_Exp(100)
 Kevin.Augment_level()
 Kevin.recap()
 '''
-=======
 Epee = Modele_Arme("Epee", 20)
 #Armure = Modele_Armure("combi",30)
 #Kevin.a_une_arme(Epee)
@@ -149,4 +144,3 @@ Epee = Modele_Arme("Epee", 20)
 #Couteau = Modele_Arme("couteau",25)
 #Kevin.a_une_arme(Couteau)
 #Kevin.recap()
->>>>>>> 831301c1e526ea71def666393021ccf63b456079
