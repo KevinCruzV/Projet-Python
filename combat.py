@@ -1,5 +1,5 @@
 from Personnage import *
-from inventaire import inventory
+from inventaire import inventaire
 from random import randint
 
 
