@@ -66,7 +66,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
  
 
-        # Fonction EXP #
+    # Fonction EXP #
 
     def get_exp(self):
         return self.exp 
