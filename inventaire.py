@@ -6,7 +6,7 @@ from Modele import *
 
 Inventaire = {
     "Soins": [kit_de_soins],
-    "Armes": [Pistolet_Laser, Epee, Blaster_rouille, Fouet_laser],
+    "Armes": [],
     "Objets rares": [],
     "Fermer l'inventaire": True
 
@@ -64,7 +64,7 @@ print(Kevin.get_nomArme())
 #Code à placer dans les salles pour rajouter des items dans l'inventaire
 
 '''print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(petit_bandage))
-ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisse l'objet")))
+ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet")))
 if ramasser == 1:
     Inventaire["Soins"].append(petit_bandage)'''
 
