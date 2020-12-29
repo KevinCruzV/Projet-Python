@@ -67,7 +67,7 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
  
 
-        # Fonction EXP #
+    # Fonction EXP #
 
     def get_exp(self):
         return self.exp 
@@ -124,6 +124,7 @@ class MonstresNormaux(Modele_Personnage):
 
 
 
+<<<<<<< HEAD
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
 Epee = Modele_Arme("Epée", 20)
 Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
@@ -135,6 +136,10 @@ Kevin.Augment_level()
 Kevin.recap()
 '''
 Epee = Modele_Arme("Epee", 20)
+=======
+#Kevin = Hero("Kevin",20,10,20,1,0,None,None)
+#Epee = Modele_Arme("Epee", 20)
+>>>>>>> Salle
 #Armure = Modele_Armure("combi",30)
 #Kevin.a_une_arme(Epee)
 #Kevin.a_une_armure(Armure)
