@@ -3,6 +3,8 @@ from Arme_et_Armure import *
 
 
 
+
+
 class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, exp, arme, armure):
@@ -34,19 +36,31 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
     def a_une_arme(self, arme):
         print("Arme equipée:", arme.get_nomArme())
+<<<<<<< HEAD
         print("Vous etes equipé d'une", arme.get_nomArme())
         if self.arme is not None :
             self.attaquePersonnage -= self.arme.get_dommageArme()
         self.attaque_adition(arme.get_dommageArme())
         self.set_arme(arme)
         return self.arme is not None
+=======
+        if self.arme is not None :
+            self.attaquePersonnage -= self.arme.get_dommageArme()
+            self.attaque_adition(arme.get_dommageArme())
+            self.set_arme(arme)
+            return self.arme is not None
+>>>>>>> b17bed7b724db4002602a7567b54e8f933bbda3c
 
     def set_arme(self, arme):
         self.arme = arme
 
     def attaque_adition(self, attqArme):
-        self.attaquePersonnage += attqArme 
+        self.attaquePersonnage += attqArme
 
+
+
+    def vie_addition(self, VieAddition):
+        self.viePersonnage += VieAddition
 
 
         # Fonction Armure #
@@ -125,9 +139,13 @@ class MonstresNormaux(Modele_Personnage):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Kevin = Hero("Kevin",20,10,20,1,0,None,None)
 Epee = Modele_Arme("Epée", 20)
 Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
+=======
+Kevin = Hero("Kevin",20,10,20,1,0,None,None)
+>>>>>>> b17bed7b724db4002602a7567b54e8f933bbda3c
 Armure = Modele_Armure("combi",30)
 '''Kevin.a_une_arme(Epee)
 Kevin.a_une_armure(Armure)
@@ -135,11 +153,14 @@ Kevin.barre_Exp(100)
 Kevin.Augment_level()
 Kevin.recap()
 '''
+<<<<<<< HEAD
 Epee = Modele_Arme("Epee", 20)
 =======
 #Kevin = Hero("Kevin",20,10,20,1,0,None,None)
 #Epee = Modele_Arme("Epee", 20)
 >>>>>>> Salle
+=======
+>>>>>>> b17bed7b724db4002602a7567b54e8f933bbda3c
 #Armure = Modele_Armure("combi",30)
 #Kevin.a_une_arme(Epee)
 #Kevin.a_une_armure(Armure)
@@ -149,3 +170,7 @@ Epee = Modele_Arme("Epee", 20)
 #Couteau = Modele_Arme("couteau",25)
 #Kevin.a_une_arme(Couteau)
 #Kevin.recap()
+<<<<<<< HEAD
+=======
+
+>>>>>>> b17bed7b724db4002602a7567b54e8f933bbda3c

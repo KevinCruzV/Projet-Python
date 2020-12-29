@@ -65,12 +65,13 @@ class Modele_Armure :
     def get_defenseArmure(self):
         return self.defenseArmure
 
-<<<<<<< HEAD
-=======
+
 class Objet_de_Quete:
     def __init__(self, nomObjet):
         self.nomObjet = nomObjet
 
     def get_nomObjet(self):
-        return self.nomObjet    
->>>>>>> 831301c1e526ea71def666393021ccf63b456079
+        return self.nomObjet
+
+
+
