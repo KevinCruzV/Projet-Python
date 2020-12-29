@@ -113,4 +113,4 @@ def Hangar():
     print("TO DO : Combat avec un Monstre Moyen")
 
 #Random_Salle()
-choixSalles()
+#choixSalles()

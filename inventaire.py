@@ -2,9 +2,10 @@ from Modele import *
 from Personnage import *
 
 
+
 Inventaire = [["Soins"], ["Armes"], ["Objets Importants"]]
 
-def choix_inventaire(Inventaire):
+def choix_inventaire(Inventaire, Hero):
     choix = int(input("Que voulez vous dans l'inventaire? 1 = Soins | 2 = Armes | 3 = Objets importants | 4 = Fermer l'inventaire"))
     if choix == 1:
         print(Inventaire[0])
@@ -12,9 +13,9 @@ def choix_inventaire(Inventaire):
         print(Inventaire[1])
         selection = int(input("Que voulez vous selectionner? 1 | 2 :"))
         if selection == 1:
-            Kevin.a_une_arme(Inventaire[1][0])
+            Hero.a_une_arme(Inventaire[1][0])
         if selection == 2:
-            Kevin.a_une_arme(Inventaire[1][1])
+            Hero.a_une_arme(Inventaire[1][1])
     elif choix == 3:
         print(Inventaire[2])
     elif choix == 4:

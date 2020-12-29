@@ -1,14 +1,19 @@
 from Salle import *
+from Map import *
 
 
 def direction ():
+    #while (pour limiter le depacement de la map par rapport a gauche / d1roite)
     a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
     while a != 'd' or a != 'g' : 
         a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
         
         if a == 'd':
+            a = True
             droite()
+
         if a == 'g':
+            a = False
             gauche()
 
 
@@ -23,7 +28,7 @@ def gauche():
     choixSalles()
 
 
-direction()        
+#direction()        
     
 #def Salle ():
     #On va mettre dans la liste les salles en var 

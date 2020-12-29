@@ -47,8 +47,8 @@ def About():
 
 
 def main_menu(TestUserInput=False):
-    print("1: Jouer")
-    print("2: Comment jouer")
+    print("1: Nouvelle partie")
+    print("2: load Partie")
     print("3: A propos du jeu")
     print("4: Exit\n")
 
@@ -80,9 +80,6 @@ def main_menu(TestUserInput=False):
                 print("Impossible\n")
 
 
+main_menu
+
 #Activation de la fonction du menu principal
-
-main_menu()
-
-
-
