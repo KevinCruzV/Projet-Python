@@ -50,8 +50,6 @@ class Hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def attaque_adition(self, attqArme):
         self.attaquePersonnage += attqArme
 
-
-
     def vie_addition(self, VieAddition):
         self.viePersonnage += VieAddition
 

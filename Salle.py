@@ -115,5 +115,19 @@ def Hangar():
     print("Vous entrez dans l'immense", Hangar.get_nomSalle(),". Vide de vaisseaux, vous sentez une odeur de souffre et de sang. Lorsque tout a coup ! Un grognement étrange se fait entendre. PLOUC, PLOUC, vous levez la tête") 
     print("TO DO : Combat avec un Monstre Moyen")
 
+def Armurerie():
+    Armurerie = Modele_Salle("Armurerie")
+    print("Vous arrivez devant la porte de", Armurerie.get_nomSalle())
+    print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
+    ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet")))
+    if ramasser == 1:
+        Inventaire["Soins"].append(kit_de_soins)
+        Inventaire["Soins"].append(kit_de_soins)
+    print("Vous trouvez également un", Pistolet_Laser.nomArme)
+    ramasser = int(input("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet"))
+    if ramasser == 1:
+        Inventaire["Armes"].append(Pistolet_Laser)
+
+
 #Random_Salle()
 #choixSalles()

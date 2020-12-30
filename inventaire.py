@@ -6,9 +6,15 @@ from Arme_et_Armure import *
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
+<<<<<<< HEAD
     "Soins": [kit_de_soins, kit_de_soins, kit_de_soins],
     "Armes": [Pistolet_Laser, Epee],
     "Objets rares": [Cle_refectoire],
+=======
+    "Soins": [],
+    "Armes": [],
+    "Objets rares": [],
+>>>>>>> a81e0e581a05ae9ec22d3621d7d3948f964a7ee8
     "Fermer l'inventaire": True
 }
 
@@ -58,10 +64,14 @@ def choix_inventaire(Inventaire, Hero):
         choix_inventaire(Inventaire, Hero)
 
 
+<<<<<<< HEAD
 def searchInventaire(Inventaire, objet):
        for i in len(Inventaire["Objets rares"]) :
             if i == objet :
                 return True
+=======
+#choix_inventaire(Inventaire)
+>>>>>>> a81e0e581a05ae9ec22d3621d7d3948f964a7ee8
 
 #choix_inventaire(Inventaire)
 
@@ -72,6 +82,7 @@ def searchInventaire(Inventaire, objet):
 
 #Code à placer dans les salles pour rajouter des items dans l'inventaire
 
+<<<<<<< HEAD
 #print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
 #ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet")))
 #if ramasser == 1:
@@ -79,6 +90,13 @@ def searchInventaire(Inventaire, objet):
 
 
 
+=======
+def searchInventaire(Inventaire, objet):
+    for i in len(Inventaire) :
+        for j in len(Inventaire[i]) :
+            if Inventaire[i][j] == objet :
+                return True
+>>>>>>> a81e0e581a05ae9ec22d3621d7d3948f964a7ee8
 
 #def ajout_inventaire(Inventaire):
 

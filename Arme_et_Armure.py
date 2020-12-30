@@ -26,10 +26,7 @@ class Objet_de_defense(Objet_de_Quete):
         
 #Objets de soins :
 
-
 kit_de_soins = Objet_de_soin("Kit de soins", 40)
-
-
 
 #Armes :
 
