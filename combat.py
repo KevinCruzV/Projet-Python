@@ -42,7 +42,7 @@ def combat(Monstre, Hero):
                 break
 
 
-Hugo = Hero("Kevin",100,10,2,1,0,None,None)
-Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
-combat(Alien, Hugo)
+#Hugo = Hero("Kevin",100,10,2,1,0,None,None)
+#Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
+#combat(Alien, Hugo)
 

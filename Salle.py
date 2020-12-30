@@ -1,8 +1,11 @@
 from combat import *
 from Modele import Modele_Salle
 from random import *
+from inventaire import *
+from Arme_et_Armure import *
 
-                                   #####  Fonction pour lancer les salles  #####
+
+#####  Fonction pour lancer les salles  #####
 
 
 def choixSalles():
@@ -52,6 +55,7 @@ def SearchFor(L,X):
         return False
 
 #Supprime une salle apres qu'elle soit utilisé une fois
+
 def SuppSalle(Liste,num):
     c = 0
     for v in Liste:
@@ -63,24 +67,33 @@ def SuppSalle(Liste,num):
 
     return Liste
 
-                                               #####  Salles #####
+
+
+
+
+
+#####  Salles #####
 
 
 def Salle_0():
     pass
 
 def Refectoire():
-    Refectoire = Modele_Salle("Refectoire")
-    Q = input("Il y a une faille dans le " + Refectoire.get_nomSalle() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
-    if Q == "n":
-        print("TO DO : fonction quitter")
-    else :
-        print("Vous continuez d'avancer dans le refectoire, mais une énorme silouhette dévore un homme. Elle se retourne et vous regarde.")
-        print("TO DO : fonction monstre")
-        print("TO DO : fonction combat")
-        print("TO DO : fonction item --> le personnage récupère de la nourriture dans les placard ")
-
-
+    inventaire = input("Avez vous la clé du réféctoire ? y/n")
+    if inventaire == 'y':
+        if searchInventaire(Inventaire, Cle_refectoire) :
+            Refectoire = Modele_Salle("Refectoire")
+            Q = input("Il y a une faille dans le " + Refectoire.get_nomSalle() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
+            if Q == "n":
+                print("TO DO : fonction quitter")
+            else :
+                print("Vous continuez d'avancer dans le refectoire, mais une énorme silouhette dévore un homme. Elle se retourne et vous regarde.")
+                print("TO DO : fonction monstre")
+                print("TO DO : fonction combat")
+                print("TO DO : fonction item --> le personnage récupère de la nourriture dans les placard ")    
+        else :
+            print("Vous n'avez pas la clé du réfectoire !")
+            print("TO DO : return au point ou on est")
 
     #Elle peut etre la premiere salle
 
@@ -98,7 +111,7 @@ def Vestiaire():
 def Hangar():
     Hangar = Modele_Salle("Hangar")
     print("Vous entrez dans l'immense", Hangar.get_nomSalle(),". Vide de vaisseaux, vous sentez une odeur de souffre et de sang. Lorsque tout a coup ! Un grognement étrange se fait entendre. PLOUC, PLOUC, vous levez la tête") 
-
+    print("TO DO : Combat avec un Monstre Moyen")
 
 #Random_Salle()
-choixSalles()
+#choixSalles()
