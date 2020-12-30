@@ -6,8 +6,8 @@ from Arme_et_Armure import *
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
-    "Soins": [kit_de_soins, kit_de_soins, kit_de_soins],
-    "Armes": [Pistolet_Laser, Epee],
+    "Soins": [],
+    "Armes": [],
     "Objets rares": [],
     "Fermer l'inventaire": True
 }
@@ -59,7 +59,7 @@ def choix_inventaire(Inventaire):
         choix_inventaire(Inventaire)
 
 
-choix_inventaire(Inventaire)
+#choix_inventaire(Inventaire)
 
 
 '''choix_inventaire(Inventaire)
@@ -75,15 +75,11 @@ if ramasser == 1:
 
 
 
-
-'''def ajout_inventaire(Inventaire):'''
-
-
-'''def searchInventaire(Inventaire, objet):
+def searchInventaire(Inventaire, objet):
     for i in len(Inventaire) :
         for j in len(Inventaire[i]) :
             if Inventaire[i][j] == objet :
-                return True'''
+                return True
 
 
 

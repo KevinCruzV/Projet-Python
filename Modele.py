@@ -34,7 +34,6 @@ class Modele_Salle :
 
     def __init__(self, nomSalle) :
         self.nomSalle = nomSalle
-        print("Vous etes dans la salle", nomSalle)
 
     def get_nomSalle(self):
         return self.nomSalle
@@ -42,7 +41,7 @@ class Modele_Salle :
 
 class Modele_Arme :
 
-    def __init__(self, nomArme, dommageArme) :
+    def __init__(self, nomArme, dommageArme):
         self.nomArme = nomArme
         self.dommageArme = dommageArme
 
@@ -51,7 +50,6 @@ class Modele_Arme :
 
     def get_dommageArme(self):
         return self.dommageArme
-
 
 class Modele_Armure :
     
