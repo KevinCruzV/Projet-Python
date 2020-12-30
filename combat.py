@@ -1,5 +1,5 @@
 from Personnage import *
-from inventaire import inventaire
+from inventaire import *
 from random import randint
 
 
@@ -7,7 +7,7 @@ def combat(Monstre, Hero):
 
     while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
         print("Appuyez sur 1 pour attaquer")
-        print("Appuyez sur 2 pour utiliser un objet")
+        print("Appuyez sur 2 pour ouvrir l'inventaire")
         print("Appuyez sur 3 pour fuir le combat\n")
 
         control = (input("Que voulez vous faire?\n"))
@@ -34,7 +34,7 @@ def combat(Monstre, Hero):
             print("Vous êtes mort...\n")
             break
         elif control == 2:
-            inventory()
+            choix_inventaire(Inventaire)
         elif control == 3:
             fuite = randint(1, 5)
             if fuite == 3:

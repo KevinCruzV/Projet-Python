@@ -5,7 +5,7 @@ from Modele import *
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
-    "Soins": [kit_de_soins],
+    "Soins": [],
     "Armes": [],
     "Objets rares": [],
     "Fermer l'inventaire": True
@@ -43,8 +43,8 @@ def choix_inventaire(Inventaire):
 
     #Choix des objets
 
-    if choix == 3:
-        print(Inventaire[2])
+    if choix == 3 and len(Inventaire["Armes"]) > 0:
+        print(Inventaire["Objets rares"])
         choix_inventaire(Inventaire)
 
     #Retour à la boucle principale du jeu
@@ -57,17 +57,19 @@ def choix_inventaire(Inventaire):
         choix_inventaire(Inventaire)
 
 
-choix_inventaire(Inventaire)
-print(Kevin.get_nomArme())
 
+
+
+'''choix_inventaire(Inventaire)
+print(Kevin.get_nomArme())
+'''
 
 #Code à placer dans les salles pour rajouter des items dans l'inventaire
 
-'''print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(petit_bandage))
+'''print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
 ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet")))
 if ramasser == 1:
-    Inventaire["Soins"].append(petit_bandage)'''
-
+    Inventaire["Soins"].append(kit_de_soins)'''
 
 
 
