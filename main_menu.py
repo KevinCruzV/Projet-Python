@@ -1,21 +1,44 @@
 from Personnage import *
+from sauvegarde import *
+from direction1 import *
 import os
 #importation  de l'os pour lancer le jeu dans la console
 
 
 #Menu principal qui execute la fonction choisie
 
-#Fonction qui exécute la boucle principale du jeu
+#Fonction qui exécute la boucle principale du jeu 
+
+def main():
+    i=0
+    Salle_0()
+    for i in Salles:
+        if i == len(Salles):
+            #tu entre dans la salles final
+            Salle_final()
+        else :
+            direction()
 
 
-def main_loop():
-    # TODO main_menu()
-    main_menu()
+
+
+
+
+
+
+
+
+
+
+#Fonction qui explique commennt jouer au jeu
+def HowToPlay():
+    print("Pour jouer, vous devez entrer un des chiffres disponible et qui définira ensuite votre action.\n")
+    print("Projet en python d'un rpg textuel\n")
+    TestUser(TestUserInput=False)
+
 #Fonction pour tester ce qu'entre comme valeur l'utilisateur et qui ramène au menu si la condition est vérifiée
-
-
 def TestUser(TestUserInput=False):
-
+    
     while TestUserInput == False:
         UserInput = input("Appuyez sur 1 pour retourner au menu:")
         try:
@@ -28,27 +51,11 @@ def TestUser(TestUserInput=False):
         except ValueError:
             input("Appuyez sur 1 pour retourner au menu:")
 
-#Fonction qui explique commennt jouer au jeu
-
-
-def HowToPlay():
-    print("Pour jouer, vous devez entrer un des chiffres disponible et qui définira ensuite votre action.\n")
-    TestUser(TestUserInput=False)
-
-
-#Fonction à propos du jeu
-
-
-def About():
-    print("Projet en python d'un rpg textuel\n")
-    TestUser(TestUserInput=False)
 
 #Fonction du menu principal qui permet de lancer la fonction choisie
-
-
-def main_menu(TestUserInput=False):
-    print("1: Nouvelle partie")
-    print("2: load Partie")
+def menu(TestUserInput=False):
+    print("1: Nouvelle partie :")
+    print("2: load Partie :")
     print("3: A propos du jeu")
     print("4: Exit\n")
 
@@ -61,25 +68,25 @@ def main_menu(TestUserInput=False):
             if UserInput > 0 and UserInput < 5:
                 TestUserInput = True
             if UserInput == 1:
-                print("Partie initialisée\n")
-                # TODO main_loop()
+                print("Partie initialisée\n Bon courage ^^\n")
+                main()
             if UserInput == 2:
-                print("Accés confirmé\n")
-                HowToPlay()
+                print("Accés confirmé\nVous revenez au vaisseau\n")
+                Load()
             if UserInput == 3:
-                print("Accésconfirmé\n")
-                About()
+                print("Accés confirmé\n Plan d'evacuation\n")
+                HowToPlay()
             if UserInput == 4:
                 print("Autodestruction du vaisseau, vous avez perdu.")
                 os.system(exit())
             elif UserInput < 0:
-                 print("Impossible\n")
+                print("Impossible\n")
             elif UserInput > 4:
-                 print("Impossible\n")
+                print("Impossible\n")
         except ValueError:
                 print("Impossible\n")
 
 
-main_menu
+
 
 #Activation de la fonction du menu principal

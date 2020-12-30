@@ -2,16 +2,13 @@ from combat import *
 from Modele import Modele_Salle
 from random import *
 from inventaire import *
-<<<<<<< HEAD
-=======
 from Arme_et_Armure import *
 
->>>>>>> Salle
+Salles = [1, 2, 3]
 #####  Fonction pour lancer les salles  #####
 
 
-def choixSalles():
-    salles = [1, 2, 3]
+def choixSalles(salles):
     nb = randint(1, 3)
     for i in salles:
         if nb == 1:
@@ -21,8 +18,7 @@ def choixSalles():
             Refectoire()
             SuppSalle(salles, nb)
         if nb == 3:
-            combat(Alien, Kevin)
-
+            pass
         i += 1
 
 
@@ -79,6 +75,10 @@ def SuppSalle(Liste,num):
 
 def Salle_0():
     pass
+
+def Salle_final():
+    pass
+
 
 def Refectoire():
     inventaire = input("Avez vous la clé du réféctoire ? y/n")

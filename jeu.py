@@ -1,2 +1,4 @@
+from main_menu import*
 def jeu():
-    pass
+    menu()
+    

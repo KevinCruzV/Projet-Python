@@ -10,8 +10,8 @@ from combat import *
 def Sauve(Hero, inventaire):
     data = {
         "Héro" : Hero,
-        "Inventaire": Inventaire,
-        "Coordonees" : 0,
+        "Inventaire": 0,
+        "Salle" : Salles,
     }   
     Sauve=open("sauve.pickle", "wb") 
     pickle.dump(data, Sauve)
@@ -20,7 +20,7 @@ def Sauve(Hero, inventaire):
 def Load():
     Load = open("sauve.pickle","rb")
     data = pickle.load(Load)
-    data["Héro"].recap()
+    return data
 
 #Hero1 = Hero("Kevin",20,10,20,1,0,None,None)
 #Epee = Modele_Arme("Epee", 20)
@@ -31,4 +31,3 @@ def Load():
 #Hero1.Augment_level()
 #Hero1.recap()
 
-Load()
