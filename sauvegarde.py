@@ -4,20 +4,20 @@ from Personnage import *
 from Modele import *
 from Arme_et_Armure import *
 from Salle import *
-from inventaire import *
+from inventaire import Inventaire
 from combat import *
 
 def Sauve(Hero, inventaire):
     data = {
         "Héro" : Hero,
-        "Inventaire": 0,
+        "Inventaire": Inventaire,
         "Salle" : Salles,
     }   
     Sauve=open("sauve.pickle", "wb") 
     pickle.dump(data, Sauve)
     Sauve.close()
 
-def Load():
+def recupData():
     Load = open("sauve.pickle","rb")
     data = pickle.load(Load)
     return data

@@ -1,26 +1,22 @@
 from combat import *
 from Modele import Modele_Salle
 from random import *
+from inventaire import searchInventaire
 from inventaire import *
 from Arme_et_Armure import *
 
-<<<<<<< HEAD
-Salles = [1, 2, 3]
-=======
-
->>>>>>> 0f136d389810872c78b65227ce61137745313bed
 #####  Fonction pour lancer les salles  #####
+Salles = [1,2,3]
 
-
-def choixSalles(salles):
+def choixSalles(salle):
     nb = randint(1, 3)
-    for i in salles:
+    for i in salle:
         if nb == 1:
             Vestiaire()
-            SuppSalle(salles, nb)
+            SuppSalle(salle, nb)
         if nb == 2:
             Refectoire()
-            SuppSalle(salles, nb)
+            SuppSalle(salle, nb)
         if nb == 3:
             pass
         i += 1

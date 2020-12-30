@@ -24,10 +24,13 @@ def main():
 
 
 
+def Load():
+    recupData()
 
 
 
 
+#Fonction qui charge la partie
 
 
 #Fonction qui explique commennt jouer au jeu
@@ -47,7 +50,7 @@ def TestUser(TestUserInput=False):
                 TestUserInput = False
             else:
                 TestUserInput = True
-                main_menu()
+                menu()
         except ValueError:
             input("Appuyez sur 1 pour retourner au menu:")
 
@@ -85,8 +88,6 @@ def menu(TestUserInput=False):
                 print("Impossible\n")
         except ValueError:
                 print("Impossible\n")
-
-
 
 
 #Activation de la fonction du menu principal
