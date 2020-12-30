@@ -47,7 +47,7 @@ class Modele_Arme :
         self.dommageArme = dommageArme
 
     def get_nomArme(self):
-        return self.nomArme  
+        return self.get_nomArme
 
     def get_dommageArme(self):
         return self.dommageArme
