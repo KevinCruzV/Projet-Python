@@ -2,7 +2,7 @@ from combat import *
 from Modele import Modele_Salle
 from random import *
 from inventaire import searchInventaire
-from inventaire import *
+from inventaire import Inventaire
 from Arme_et_Armure import *
 
 #####  Fonction pour lancer les salles  #####
@@ -18,7 +18,8 @@ def choixSalles(salle):
             Refectoire()
             SuppSalle(salle, nb)
         if nb == 3:
-            pass
+            Hangar()
+            SuppSalle(salle, nb)
         i += 1
 
 
@@ -68,13 +69,47 @@ def SuppSalle(Liste,num):
 
 
 
-
-
 #####  Salles #####
 
 
 def Salle_0():
-    pass
+
+    print("\n")
+    print("*pishhhhhh* ....\n ...Vous ouvrez les yeux et regardez tout autour de vous.... \n")
+    print("Vous êtes dans un pièce blanche...\nIl y a pleins de materiels informatiques et une table opératoire avec posé dessus du matériels chirurgicales")
+    print("Vous vous retournez et observez que vous venez de sortir d'une capsule.\n")
+    print("? : Que se passe t-il ? Où suis-je ?\n")
+    print("Vous portez une combinaison de sommeil avec avec sur votre poitrine brodé le prenom : \n")
+    Hero=hero(str(input("Quel est le prenom ?\n")),10,5,0,1,0,None,None)
+    print(Hero.get_nomPersonnage(), ": Tres bien... ", Hero.get_nomPersonnage()," hein.. *souris*. Pas mal.")
+    print(Hero.get_nomPersonnage(),": ...Bon il faut que j'en sache plus\n")
+    print("Il y a un scalpel a coté de vous. Voulez vous le prendre ?")
+
+    prendre = int(input(("Que voulez vous faire ? 1 = prendre l'objet | 2 = Laisser l'objet\n")))
+    if prendre == 1:
+        Inventaire["Armes"].append(Scalpel)
+        print("\n")
+        ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'equiper ? 1 = ouvrir | 2 = Laisse dans l'inventaire\n"))
+        if ouvrir == 1:
+            choix_inventaire(Inventaire, Hero)
+            Hero.recap()
+        else :
+            print("Range l'arme dans l'inventaire")    
+    if prendre == 2:
+        print("Vous laissez le", Scalpel.get_nomArme())
+
+    print("Maintenant vous avancez et vous trouver un porte avec un digicode")
+    print("Griffoné sur le mur de la porte, on peut lire la suite de chiffre : 90234\n")
+    print("Vous essayez donc d'ouvrir la porte en tapant sur le clavier du digicode")
+
+    Code = int(input("Entrer un nombre :\n"))
+    while Code != 90234 :
+        print("*Warning Mauvais Code*")
+        Code = int(input("Entrer un nombre :\n"))
+
+    print("La porte s'ouvre et vous vous retrouver face a un couloir avec tres peu de lumiere.")
+    print("*tap* *tap* *tap*, vous entendez un bruit de pas rapide s'eloigner vers la gauche")
+
 
 def Salle_final():
     pass
