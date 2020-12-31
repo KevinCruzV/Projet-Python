@@ -4,6 +4,7 @@ from Map import *
 
 def direction ():
     #while (pour limiter le depacement de la map par rapport a gauche / d1roite)
+    print("\n")
     a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
     while a != 'd' or a != 'g' : 
         a = input("Où voulez vous aller ? gauche ou droite (g/d)" )

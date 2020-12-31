@@ -6,72 +6,67 @@ from Arme_et_Armure import *
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
-<<<<<<< HEAD
-    "Soins": [kit_de_soins, kit_de_soins, kit_de_soins],
-    "Armes": [Pistolet_Laser, Epee],
-    "Objets rares": [Cle_refectoire],
-=======
     "Soins": [],
     "Armes": [],
     "Objets rares": [],
->>>>>>> a81e0e581a05ae9ec22d3621d7d3948f964a7ee8
     "Fermer l'inventaire": True
 }
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
 #Lorsque qu'un items de soins est utilisé, il est immédiatemment supprimé de la liste
 
-def choix_inventaire(Inventaire, Hero):
+def choix_inventaire(inventaire, hero):
     choix = int(input("Que voulez vous dans l'inventaire? 1 = Soins | 2 = Armes | 3 = Objets importants | 4 = Fermer l'inventaire"))
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
 #Lorsque qu'un items de soins est utilisé, il est immédiatemment supprimé de la liste
 
+    if len(inventaire["Soins"]) or len(inventaire["Armes"]) or len(inventaire["Objets rares"]) <= 0:
+        print("Cette catégorie est vide")
+        choix_inventaire(Inventaire, hero)
+
     #Choix des soins
 
-    if choix == 1 and len(Inventaire["Soins"]) > 0:
-        for x in Inventaire["Soins"]:
+    if choix == 1 and len(inventaire["Soins"]) > 0:
+        for x in inventaire["Soins"]:
             print(" -", x.nomObjet)
-        choix_section = int(input("Que voulez vous selectionner?: ")) - 1
-        Hero.vie_addition(Inventaire["Soins"][(choix_section)].vieEnPlus)
-        Inventaire["Soins"].pop([0][choix_section - choix_section])
-        print("Vous avez maintenant", Hero.get_viePersonnage(), "points de vie\n")
-        choix_inventaire(Inventaire, Hero)
+        choix_section = int(input("Que voulez vous selectionner?: \n")) - 1
+        hero.vie_addition(inventaire["Soins"][(choix_section)].vieEnPlus)
+        inventaire["Soins"].pop([0][choix_section - choix_section])
+        print("Vous avez maintenant", hero.get_viePersonnage(), "points de vie\n")
+        choix_inventaire(inventaire, hero)
 
     #Choix des armes
 
-    if choix == 2 and len(Inventaire["Armes"]) > 0:
-        for x in Inventaire["Armes"]:
+    if choix == 2 and len(inventaire["Armes"]) > 0:
+        for x in inventaire["Armes"]:
             print(" -", x.nomArme)
-        choix_section = int(input("Que voulez vous selectionner?: ")) - 1
-        Hero.set_arme(Inventaire["Armes"][int(choix_section)])
-        Hero.attaque_adition(Inventaire["Armes"][int(choix_section)].get_dommageArme())
-        print(Hero.recap())
-        choix_inventaire(Inventaire, Hero)
+        choix_section = int(input("Que voulez vous selectionner?:\n")) - 1
+        hero.set_arme(inventaire["Armes"][int(choix_section)])
+        hero.attaque_adition(inventaire["Armes"][int(choix_section)].get_dommageArme())
+        print(hero.recap())
+        print("TO DO : fonction pour supp l'arme quand elle est mise et inversement quand elle est rangé")
+        choix_inventaire(inventaire, hero)
 
     #Choix des objets
 
-    if choix == 3 and len(Inventaire["Armes"]) > 0:
-        print(Inventaire["Objets rares"])
+    if choix == 3 and len(inventaire["Armes"]) > 0:
+        print("TO DO : pour armure")
+        print(inventaire["Objets rares"])
 
     #Retour à la boucle principale du jeu
 
     if choix == 4:
-        print("TODO")
+        return print("Vous fermez l'inventaire")
 
-    if len(Inventaire["Soins"]) or len(Inventaire["Armes"]) or len(Inventaire["Objets rares"]) <= 0:
+    print("Vous fermé l'inventaire")    
+
+    if len(inventaire["Soins"]) or len(inventaire["Armes"]) or len(inventaire["Objets rares"]) <= 0:
         print("Cette catégorie est vide")
-        choix_inventaire(Inventaire, Hero)
+        choix_inventaire(Inventaire, hero)
 
 
-<<<<<<< HEAD
-def searchInventaire(Inventaire, objet):
-       for i in len(Inventaire["Objets rares"]) :
-            if i == objet :
-                return True
-=======
 #choix_inventaire(Inventaire)
->>>>>>> a81e0e581a05ae9ec22d3621d7d3948f964a7ee8
 
 #choix_inventaire(Inventaire)
 
@@ -82,21 +77,11 @@ def searchInventaire(Inventaire, objet):
 
 #Code à placer dans les salles pour rajouter des items dans l'inventaire
 
-<<<<<<< HEAD
-#print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
-#ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet")))
-#if ramasser == 1:
-#    Inventaire["Soins"].append(kit_de_soins)
-
-
-
-=======
 def searchInventaire(Inventaire, objet):
     for i in len(Inventaire) :
         for j in len(Inventaire[i]) :
             if Inventaire[i][j] == objet :
                 return True
->>>>>>> a81e0e581a05ae9ec22d3621d7d3948f964a7ee8
 
 #def ajout_inventaire(Inventaire):
 

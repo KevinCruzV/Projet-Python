@@ -29,8 +29,8 @@ class Objet_de_defense(Objet_de_Quete):
 kit_de_soins = Objet_de_soin("Kit de soins", 40)
 
 #Armes :
-
-Blaster_rouille = Modele_Arme("Blaster Rouillé", 5)
+Scalpel = Modele_Arme("Scalpel",5)
+Blaster_rouille = Modele_Arme("Blaster Rouillé", 8)
 Fouet_laser = Modele_Arme("Fouet Laser", 15)
 Epee = Modele_Arme("Epee", 20)
 Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)

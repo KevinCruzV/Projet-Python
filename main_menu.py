@@ -16,6 +16,8 @@ def main():
         if i == len(Salles):
             #tu entre dans la salles final
             Salle_final()
+            Credit()
+            os.system(exit())
         else :
             direction()
 
@@ -23,14 +25,14 @@ def main():
 
 
 
-
+#Fonction qui charge la partie
 def Load():
     recupData()
 
 
-
-
-#Fonction qui charge la partie
+# Credit
+def Credit():
+    print("Ce jeu a ete devellopé blablabla")
 
 
 #Fonction qui explique commennt jouer au jeu
@@ -90,4 +92,4 @@ def menu(TestUserInput=False):
                 print("Impossible\n")
 
 
-#Activation de la fonction du menu principal
+main()

@@ -77,10 +77,6 @@ def Del1(L):
 
 
 
-MapAZero(map)
-MapDebut(map)
-DeplacementMapXGauche(map)
-DeplacementMapYDroite(map)
-VoirMap(map)
+
 
 
