@@ -1,6 +1,6 @@
 from Personnage import *
-from inventaire import *
 from random import randint
+from inventaire import *
 
 
 def combat(Monstre, Hero):
@@ -34,15 +34,21 @@ def combat(Monstre, Hero):
             print("Vous êtes mort...\n")
             break
         elif control == 2:
-            choix_inventaire(Inventaire)
+            choix_inventaire(Inventaire, Kevin)
         elif control == 3:
             fuite = randint(1, 5)
             if fuite == 3:
                 print("Vous parvenez à vous échapper!\n")
                 break
+            else:
+                print(Monstre.get_nomPersonnage(), "attaque!")
+                Monstre.attack_monster(Hero)
+                print("Vous avez maintenant", Hero.viePersonnage, " /100 pv\n")
 
 
 
-#Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
-#combat(Alien, Kevin)
+
+
+Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
+combat(Alien, Kevin)
 
