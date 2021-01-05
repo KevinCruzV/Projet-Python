@@ -1,4 +1,6 @@
 from Personnage import *
+from Modele import *
+from Salle import *
 from sauvegarde import *
 from direction1 import *
 import os
@@ -12,6 +14,7 @@ import os
 def main():
     i=0
     Salle_0()
+    TonPerso = Salle_0
     for i in Salles:
         if i == len(Salles):
             #tu entre dans la salles final
@@ -19,7 +22,7 @@ def main():
             Credit()
             os.system(exit())
         else :
-            direction()
+            direction(Salles, TonPerso, Inventaire)
 
 
 
@@ -27,7 +30,17 @@ def main():
 
 #Fonction qui charge la partie
 def Load():
-    recupData()
+    Data = recupData()
+    if Data != None:
+        print("Accés confirmé\nVous revenez au vaisseau\n")
+        dataRecap(Data)
+        direction(Data["Salle"], Data["Héro"], Data["Inventaire"])
+
+
+    else:
+        print("Vous ne pouvez pas revenir au vaisseau (Pas de sauveagardeoui)\n ")
+        menu()    
+   
 
 
 # Credit
@@ -72,18 +85,33 @@ def menu(TestUserInput=False):
             UserInput = int(UserInput)
             if UserInput > 0 and UserInput < 5:
                 TestUserInput = True
+
+            #Jouer au jeu
+
             if UserInput == 1:
                 print("Partie initialisée\n Bon courage ^^\n")
                 main()
+
+            #Sauvegarde
+
             if UserInput == 2:
-                print("Accés confirmé\nVous revenez au vaisseau\n")
-                Load()
+                    print("Accés confirmé\nVous revenez au vaisseau\n")
+                    Load()
+
+            #Le How To Play
+
             if UserInput == 3:
                 print("Accés confirmé\n Plan d'evacuation\n")
                 HowToPlay()
+
+            #Sortir du jeu
+
             if UserInput == 4:
                 print("Autodestruction du vaisseau, vous avez perdu.")
                 os.system(exit())
+
+            #Erreurs 
+
             elif UserInput < 0:
                 print("Impossible\n")
             elif UserInput > 4:

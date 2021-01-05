@@ -2,7 +2,7 @@ from Salle import *
 from Map import *
 
 
-def direction ():
+def direction (salle, hero, inventaire):
     #while (pour limiter le depacement de la map par rapport a gauche / d1roite)
     print("\n")
     a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
@@ -11,22 +11,22 @@ def direction ():
         
         if a == 'd':
             a = True
-            droite()
+            droite(salle, hero, inventaire)
 
         if a == 'g':
             a = False
-            gauche()
+            gauche(salle, hero, inventaire)
 
 
 
-def droite():
+def droite(salle, hero, inventaire):
     print("Vous avez choisis d'aller à droite")
     #Random_Salle()
-    choixSalles(Salles)
-def gauche(): 
+    choixSalles(salle, hero, inventaire)
+def gauche(salle, hero, inventaire): 
     print("Vous avez choisis d'aller à gauche")
     #Random_Salle()
-    choixSalles(Salles)
+    choixSalles(salle, hero, inventaire)
 
 
 #direction()        

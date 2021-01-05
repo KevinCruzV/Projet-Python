@@ -9,7 +9,7 @@ Inventaire = {
     "Soins": [],
     "Armes": [],
     "Objets rares": [],
-    "Fermer l'inventaire": True
+    #"Fermer l'inventaire": True
 }
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
