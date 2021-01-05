@@ -13,30 +13,35 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         self.armure = None
         self.arme = None 
         self.exp = 0
-        print("\n")
-        print("Badge Spatial:\nNom : ", nomPersonnage, " | Vie : ", viePersonnage, " | Attaque : ", attaquePersonnage, " | Defense : ", defensePersonnage, " | Niveau : ", levelPersonnage, " | Arme : Rien ", "| Armure : Rien", "\n")
+       
 
 
 
     def recap(self):
         if self.arme == None and self.armure == None :
+            print("\n")
             print("Badge Spatial:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : Rien ", "| Armure : Rien " "\n")
 
         if self.arme == None and self.armure is not None :
+            print("\n")
             print("Badge Spatial:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : Rien ", "| Armure : ", self.armure.get_nomArmure(), "\n") 
 
         if self.arme is not None and self.armure == None :
+            print("\n")
             print("Badge Spatial:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.nomArme, "| Armure : Rien", "\n")
 
         if self.arme is not None and self.armure is not None :
+            print("\n")
             print("Badge Spatial:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.nomArme, "| Armure : ", self.armure.get_nomArmure(), "\n")
 
 
 
-   
+
+
 
     def a_une_arme(self, arme):
         print("Vous êtes equipé de l'arme", arme.get_nomArme(), "!")
+        print("Vous rajoutez +",arme.get_dommageArme(),"a votre attaque")
         if self.arme is not None :
             self.attaquePersonnage -= self.arme.get_dommageArme()
         self.attaque_adition(arme.get_dommageArme())
@@ -56,7 +61,8 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         # Fonction Armure #
 
     def a_une_armure(self, armure):
-        print("Vous etes equipé d'une", armure.get_nomArmure())       
+        print("Vous etes equipé d'une", armure.get_nomArmure()) 
+        print("Vous rajoutez +",armure.get_defenseArmure(),"a votre defense")      
         if self.armure is not None :
             self.defensePersonnage -= self.armure.get_defenseArmure()
         self.defense_adition(armure.get_defenseArmure())
@@ -94,8 +100,7 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         else :    
             pass
 
-    
-           
+              
 
 class MonstresForts(Modele_Personnage):
 
