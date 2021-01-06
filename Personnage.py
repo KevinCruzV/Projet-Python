@@ -1,6 +1,6 @@
 from Modele import *
 from Arme_et_Armure import *
-from inventaire import Inventaire
+
 
 
 
@@ -123,7 +123,7 @@ class MonstresNormaux(Modele_Personnage):
 
     def attack_monster(self, cible):
         cible.dommage(self.attaquePersonnage)
-        print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.")
+        print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
 
 
 
@@ -133,7 +133,7 @@ class MonstresNormaux(Modele_Personnage):
 #Robot = MonstresForts("Robot", 70, 50, 20, 100, 0)
 #Epee = Modele_Arme("Epée", 20)
 #Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
-#Kevin = Hero("Kevin",20,10,20,1,0,None,None)
+Kevin = hero("Kevin",100,10,20,1,0,None,None)
 #rmure = Modele_Armure("combi",30)
 '''Kevin.a_une_arme(Epee)
 Kevin.a_une_armure(Armure)

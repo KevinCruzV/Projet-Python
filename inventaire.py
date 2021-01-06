@@ -1,8 +1,6 @@
 from Personnage import *
 from Arme_et_Armure import *
 
-
-
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
@@ -36,8 +34,6 @@ def choix_inventaire(inventaire, hero):
     elif choix == 1 and len(inventaire["Soins"])<= 0:
          print("Cette catégorie est vide\n")
          choix_inventaire(Inventaire, hero)
-
-
 
     #Choix des armes
 
@@ -86,20 +82,6 @@ def choix_inventaire(inventaire, hero):
     if choix == 5:
         return print("Vous fermez l'inventaire\n")
 
-       
-
-
-
-
-#choix_inventaire(Inventaire)
-
-#choix_inventaire(Inventaire)
-
-
-#choix_inventaire(Inventaire)
-#print(Hero.get_nomArme())
-
-
 #Code à placer dans les salles pour rajouter des items dans l'inventaire
 
 def searchInventaire(Inventaire, objet):
@@ -108,5 +90,9 @@ def searchInventaire(Inventaire, objet):
             if Inventaire[i][j] == objet :
                 return True
 
+<<<<<<< HEAD
 #def ajout_inventaire(Inventaire):
 
+=======
+#choix_inventaire(Inventaire, Kevin)
+>>>>>>> d020cf25fc1af2f430c8747409473a956107d25e
