@@ -130,7 +130,7 @@ class MonstresNormaux(Modele_Personnage):
 
 
 
-
+#Robot = MonstresForts("Robot", 70, 50, 20, 100, 0)
 #Epee = Modele_Arme("Epée", 20)
 #Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 #Kevin = Hero("Kevin",20,10,20,1,0,None,None)
