@@ -38,10 +38,11 @@ Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 #Armure :
 Combinaison_Spatial_trouee = Modele_Armure("Combinaison spatial trouée", 5)
 Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone", 15)
-
+Exosquelette = Modele_Armure("Exosquelette", 20)
 #Objets de Quetes :
 Cle_refectoire = Objet_de_Quete("Clé du réfectoire")
 Seringue_adrenaline = Objet_de_soin("Seringue d'adrénaline", 10)
+Lampe = Objet_de_Quete("lampe de poche")
 
 
 

@@ -10,7 +10,7 @@ import os
 #Fonction qui exécute la boucle principale du jeu 
 
 def main():
-    i=0
+    i = 0
     Salle_0()
     for i in Salles:
         if i == len(Salles):
