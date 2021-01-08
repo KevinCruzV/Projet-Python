@@ -10,17 +10,17 @@ from Arme_et_Armure import *
 #####  Fonction pour lancer les salles  #####
 Salles = [1,2,3]
 
-def choixSalles(salle, hero, inventaire):
+def choixSalles(salle):
     nb = randint(1, 3)
     for i in salle:
         if nb == 1:
-            Vestiaire(hero, inventaire)
+            Vestiaire()
             SuppSalle(salle, nb)
         if nb == 2:
-            Refectoire(hero, inventaire)
+            Refectoire()
             SuppSalle(salle, nb)
         if nb == 3:
-            Hangar(hero, inventaire)
+            Hangar()
             SuppSalle(salle, nb)
         i += 1
 
@@ -81,10 +81,10 @@ def Salle_0():
     print("Vous vous retournez et observez que vous venez de sortir d'une capsule.\n")
     print("? : Que se passe t-il ? Où suis-je ?\n")
     print("Vous portez une combinaison de sommeil avec avec sur votre poitrine brodé le prenom : \n")
-    Hero=hero(str(input("Quel est le prenom ?\n")),10,5,0,1,0,None,None)
-    Hero.recap()
-    print(Hero.get_nomPersonnage(), ": Tres bien... ", Hero.get_nomPersonnage()," hein.. *souris*. Pas mal.")
-    print(Hero.get_nomPersonnage(),": ...Bon il faut que j'en sache plus\n")
+    Heros=hero(str(input("Quel est le prenom ?\n")),10,5,0,1,0,None,None)
+    Heros.recap()
+    print(Heros.get_nomPersonnage(), ": Tres bien... ", Heros.get_nomPersonnage()," hein.. *souris*. Pas mal.")
+    print(Heros.get_nomPersonnage(),": ...Bon il faut que j'en sache plus\n")
     print("Il y a un scalpel a coté de vous. Voulez vous le prendre ?")
 
     prendre = int(input(("Que voulez vous faire ? 1 = prendre l'objet | 2 = Laisser l'objet\n")))
@@ -93,8 +93,8 @@ def Salle_0():
         print("\n")
         ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'equiper ? 1 = ouvrir | 2 = Laisse dans l'inventaire\n"))
         if ouvrir == 1:
-            choix_inventaire(Inventaire, Hero)
-            Hero.recap()
+            choix_inventaire(Inventaire, Heros)
+            Heros.recap()
         else :
             print("Range l'arme dans l'inventaire")    
     if prendre == 2:
@@ -111,18 +111,18 @@ def Salle_0():
 
     print("La porte s'ouvre et vous vous retrouver face a un couloir avec tres peu de lumiere.")
     print("*tap* *tap* *tap*, vous entendez un bruit de pas rapide s'eloigner vers la gauche")
-    return Hero
+    return Heros
     
-
+Hero = Salle_0()
 
 def Salle_final():
     pass
 
 
-def Refectoire(hero, inventaire):
+def Refectoire():
     Inventaire = input("Avez vous la clé du réféctoire ? y/n")
     if Inventaire == 'y':
-        if searchInventaire(inventaire, Cle_refectoire) :
+        if searchInventaire(Inventaire, Cle_refectoire) :
             Refectoire = Modele_Salle("Refectoire")
             Q = input("Il y a une faille dans le " + Refectoire.get_nomSalle() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
             if Q == "n":
@@ -138,10 +138,10 @@ def Refectoire(hero, inventaire):
 
     #Elle peut etre la premiere salle
 
-def Vestiaire(hero, inventaire):
+def Vestiaire():
     Vestiaire = Modele_Salle("Vestaire")
     print("Le", Vestiaire.get_nomSalle(),"est sombre... Vous n'y voyez rien. Vous essayez de marché dans le noir lorsque vous butez sur un objet. Mais quel est-il ?\n " )
-    hero.recap()
+    Hero.recap()
     #print("TO DO : fonction Lampe")
     #print("TO DO : fonction Inventaire")
     #print("Vous pouvez maintenant voir. Mais... Un horrible spectacle est devant vous, du sang.. Du sang partout et des traces de griffure")
@@ -150,12 +150,12 @@ def Vestiaire(hero, inventaire):
     #print("TO DO : fonction Combat")
 
 
-def Hangar(hero, inventaire):
+def Hangar():
     Hangar = Modele_Salle("Hangar")
     print("Vous entrez dans l'immense", Hangar.get_nomSalle(),". Vide de vaisseaux, vous sentez une odeur de souffre et de sang. Lorsque tout a coup ! Un grognement étrange se fait entendre. PLOUC, PLOUC, vous levez la tête") 
     print("TO DO : Combat avec un Monstre Moyen")
 
-def Armurerie(hero, inventaire):
+def Armurerie():
     Armurerie = Modele_Salle("Armurerie")
     print("Vous arrivez devant la porte de", Armurerie.get_nomSalle())
     print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
@@ -171,3 +171,5 @@ def Armurerie(hero, inventaire):
 
 #Random_Salle()
 #choixSalles()
+
+print(Hero)

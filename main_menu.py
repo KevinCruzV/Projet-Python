@@ -14,15 +14,14 @@ import os
 def main():
     i=0
     Salle_0()
-    TonPerso = Salle_0
     for i in Salles:
         if i == len(Salles):
-            #tu entre dans la salles final
+            #Tu entre dans la salle final
             Salle_final()
             Credit()
             os.system(exit())
         else :
-            direction(Salles, TonPerso, Inventaire)
+            direction()
 
 
 
@@ -34,7 +33,14 @@ def Load():
     if Data != None:
         print("Accés confirmé\nVous revenez au vaisseau\n")
         dataRecap(Data)
-        direction(Data["Salle"], Data["Héro"], Data["Inventaire"])
+        Hero = Data["Hero"]
+        for i in Data["salle"]:
+            if i == len(Data["Salle"]):
+                Salle_final()
+                Credit()
+                os.system(exit())
+            else :    
+                choixSalles(Data["Salle"])
 
 
     else:
@@ -119,5 +125,4 @@ def menu(TestUserInput=False):
         except ValueError:
                 print("Impossible\n")
 
-
-main()
+# main()
