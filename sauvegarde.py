@@ -1,14 +1,13 @@
 import pickle
-from Personnage import *
-from Arme_et_Armure import *
-from inventaire import *
-from Salle import Salles
-from Salle import Salle_0
+from Arme_et_Armure import * 
+from inventaire import Inventaire
+from Salle import *
+
 
 
 def Sauve():
     data = {
-        "Héro" : Hero,
+        # "Héro" : Hero,
         "Inventaire": Inventaire,
         "Salle" : Salles,
     }
@@ -39,5 +38,4 @@ def dataRecap(Data):
 #Hero.Augment_level()
 #Hero.recap()
 #Sauve()
-
 

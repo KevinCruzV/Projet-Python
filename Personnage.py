@@ -107,8 +107,8 @@ class MonstresForts(Modele_Personnage):
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
         self.attaque_speciale = attaque_speciale
-        print(" /! Un monstre spécial apparait !\ ")
-        print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, "| Attaque speciale :", attaque_speciale, " | Niveau : ", levelPersonnage, "\n")
+        #print(" /! Un monstre spécial apparait !\ ")
+        #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, "| Attaque speciale :", attaque_speciale, " | Niveau : ", levelPersonnage, "\n")
 
     def get_attaque_speciale(self):
         return self.attaque_speciale
@@ -118,8 +118,8 @@ class MonstresNormaux(Modele_Personnage):
 
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
-        print("Un monstre apparait !")
-        print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, " | Niveau : ", levelPersonnage, "\n")
+        #print("Un monstre apparait !")
+        #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, " | Niveau : ", levelPersonnage, "\n")
 
     def damage(self, attaque):
         self.viePersonnage -= attaque
@@ -131,14 +131,17 @@ class MonstresNormaux(Modele_Personnage):
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
 
 
+###############################      Personnage du Jeux      ######################################
+
+
+Alien = MonstresNormaux('Alien',20,2,0,5)
+Robot = MonstresForts("Robot", 70, 50, 20, 100, 0)
 
 
 
-
-#Robot = MonstresForts("Robot", 70, 50, 20, 100, 0)
+####################################################################################################  
 #Epee = Modele_Arme("Epée", 20)
 #Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
-Kevin = hero("Kevin",100,10,20,1,0,None,None)
 #rmure = Modele_Armure("combi",30)
 '''Kevin.a_une_arme(Epee)
 Kevin.a_une_armure(Armure)

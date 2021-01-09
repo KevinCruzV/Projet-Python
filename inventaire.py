@@ -89,10 +89,3 @@ def searchInventaire(Inventaire, objet):
         for j in len(Inventaire[i]) :
             if Inventaire[i][j] == objet :
                 return True
-
-<<<<<<< HEAD
-#def ajout_inventaire(Inventaire):
-
-=======
-#choix_inventaire(Inventaire, Kevin)
->>>>>>> d020cf25fc1af2f430c8747409473a956107d25e

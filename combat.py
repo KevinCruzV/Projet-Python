@@ -34,7 +34,7 @@ def combat(Monstre, Hero):
             print("Vous êtes mort...\n")
             break
         elif control == 2:
-            choix_inventaire(Inventaire, Kevin)
+            choix_inventaire(Inventaire, Hero)
         elif control == 3:
             fuite = randint(1, 5)
             if fuite == 3:
@@ -48,6 +48,3 @@ def combat(Monstre, Hero):
 
 
 
-
-Alien = MonstresNormaux("Alien", 25, 10, 5, 1)
-Kevin = hero("Kevin",30,10,5,4,0,0,0)

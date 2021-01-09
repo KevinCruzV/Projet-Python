@@ -12,12 +12,12 @@ import os
 #Fonction qui exécute la boucle principale du jeu 
 
 def main():
-    i = 0
-    Salle_0()
+    Hero=hero(str(input("quel est ton prénom ? \n")),10,5,0,1,0,None,None)
+    Salle_0(Hero)
     for i in Salles:
         if i == len(Salles):
             #Tu entre dans la salle final
-            Salle_final()
+            Salle_final(Hero)
             Credit()
             os.system(exit())
         else :
@@ -125,4 +125,12 @@ def menu(TestUserInput=False):
         except ValueError:
                 print("Impossible\n")
 
-# main()
+                
+
+
+
+main()
+
+
+
+

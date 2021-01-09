@@ -1,5 +1,6 @@
 from Salle import *
-from Map import *
+from main_menu import Salles
+from main_menu import choixSalles
 
 
 def direction ():
