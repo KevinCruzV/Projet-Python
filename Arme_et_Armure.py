@@ -9,12 +9,12 @@ class Objet_de_soin(Objet_de_Quete):
     def __init__(self, nomObjet, vieEnPlus):
         super().__init__(nomObjet)
         self.vieEnPlus = vieEnPlus
-
+        
 
     def get_VieEnPlus(self):
         return self.vieEnPlus
 
-
+    
 
 class Objet_de_defense(Objet_de_Quete):
     

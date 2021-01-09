@@ -1,10 +1,13 @@
 from combat import *
 from Modele import Modele_Salle
 from random import *
+from Personnage import *
 from inventaire import searchInventaire
 from inventaire import Inventaire
 from Arme_et_Armure import *
 from time import *
+
+Hero=hero(str(input("quel est ton prénom ? \n")),10,5,0,1,0,None,None)
 
 #####  Fonction pour lancer les salles  #####
 Salles = [1,2,3]
@@ -13,13 +16,13 @@ def choixSalles(salle):
     nb = randint(1, 3)
     for i in salle:
         if nb == 1:
-            Vestiaire()
+            Vestiaire(Hero)
             SuppSalle(salle, nb)
         if nb == 2:
-            Refectoire()
+            Refectoire(Hero)
             SuppSalle(salle, nb)
         if nb == 3:
-            Hangar()
+            Hangar(Hero)
             SuppSalle(salle, nb)
         i += 1
 
@@ -73,8 +76,8 @@ def SuppSalle(Liste,num):
 #####  Salles #####
 
 
-def Salle_0():
-    Salle_0 = Modele_Salle("Salle 0")
+def Salle_0(Hero):
+    Salle_0 = Modele_Salle("salle des capsules")
     print("\n")
     print("? : Hey ! HEY ! REVEILLE TOI ! \n")
     sleep(3)
@@ -88,14 +91,14 @@ def Salle_0():
     sleep(3)
     print(Robot.nomPersonnage, " :... dans la", Salle_0.get_nomSalle() ,"! T'as rien écouté ou quoi ?! La mission a rencontré un petit imprévu, j'ai entendu une explosion alors je suis venu ici et j'ai du te sortir de ta capsule plus tôt que prévu... \n")
     sleep(6)
-    Hero=hero(str(input("*Nom robot* : Ah et j'oubliais, quel est ton prénom ? \n")),10,5,0,1,0,None,None)
-    sleep(3)
-    print(Robot.nomPersonnage, ": Très bien ", Hero.get_nomPersonnage()," viens avec moi, allons voir ce qui s'est passé au plus vite. Oh et tu ferais mieux de prendre de quoi te défendre, on sait jamais ce qui nous attends là-bas. \n")
+
+    print(Robot.nomPersonnage, ": Très bien ", Hero.get_nomPersonnage()," c'est ça ? Viens avec moi, allons voir ce qui s'est passé au plus vite. Oh et tu ferais mieux de prendre de quoi te défendre, on sait jamais ce qui nous attends là-bas. \n")
     sleep(6)
     print("Il y a un", Scalpel.get_nomArme() ,"sur une table d'opération... \n")
     sleep(5)
     prendre = int(input(("Que voulez vous faire ? 1 = Prendre l'objet | 2 = Laisser l'objet \n")))
     sleep(2)
+    print("\n")
     if prendre == 1:
         Inventaire["Armes"].append(Scalpel)
         print(Robot.nomPersonnage, ": Okay, je pense que ça fera l'affaire. \n")
@@ -137,18 +140,17 @@ def Salle_0():
     print("La porte s'ouvre, vous êtes éblouit par la lumière du couloir.\n")
     sleep(3)
     print("*tap* *tap* *tap*, des bruits de pas s'éloignent vers la gauche...\n")
-
+    return Hero
     
-
 
 
 def Salle_final():
     pass
 
 
-def Refectoire():
-    inventaire = input("Avez vous la clé du réféctoire ? y/n")
-    if inventaire == 'y':
+def Refectoire(hero):
+    Inventaire = input("Avez vous la clé du réféctoire ? y/n")
+    if Inventaire == 'y':
         if searchInventaire(Inventaire, Cle_refectoire) :
             Refectoire = Modele_Salle("Refectoire")
             Q = input("Il y a une faille dans le " + Refectoire.get_nomSalle() + " elle vous fait perdre de l'oxygène. Voulez vous continuer ? o/n")
@@ -165,7 +167,7 @@ def Refectoire():
 
     #Elle peut etre la premiere salle
 
-def Vestiaire():
+def Vestiaire(Hero):
     Vestiaire = Modele_Salle("Vestiaire")
     print("Le", Vestiaire.get_nomSalle(),"est sombre... Vous n'y voyez rien. Vous marchez à tâtons dans le noir lorsque vous butez sur un objet...\n " )
     sleep(3)
@@ -239,7 +241,7 @@ def Vestiaire():
     
 
 
-def Hangar():
+def Hangar(Hero):
     Hangar = Modele_Salle("Hangar")
     print("Vous entrez dans le", Hangar.get_nomSalle(), ". Vous sentez une odeur de souffre et de sang. \n")
     sleep(3)
@@ -335,7 +337,7 @@ def Hangar():
         
     
 
-def Armurerie():
+def Armurerie(Hero):
     Armurerie = Modele_Salle("Armurerie")
     print("Vous arrivez devant la porte de", Armurerie.get_nomSalle())
     print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
@@ -351,7 +353,5 @@ def Armurerie():
 
 #Random_Salle()
 #choixSalles()
-Alien = MonstresNormaux('Alien',20,2,0,5)
-Robot = MonstresNormaux('ROBOT',100,5,0,1,)
-Hero = hero('Kevin',10,10,10,10,0,0,0)
-choix_inventaire(Inventaire, Hero)
+
+
