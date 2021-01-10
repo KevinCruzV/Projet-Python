@@ -5,9 +5,9 @@ from Salle import *
 
 
 
-def Sauve():
+def Sauve(Hero, salle, inventaire):
     data = {
-        # "Héro" : Hero,
+        "Héro" : Hero,
         "Inventaire": Inventaire,
         "Salle" : Salles,
     }

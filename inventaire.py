@@ -40,7 +40,7 @@ def choix_inventaire(inventaire, hero):
     if choix == 2 and len(inventaire["Armes"]) > 0:
         for x in inventaire["Armes"]:
             print(" -", x.nomArme)
-        choix_section = int(input("Que voulez vous selectionner?:\n")) - 1
+        choix_section = int(input("Que voulez vous selectionner? :\n")) - 1
         hero.a_une_arme(inventaire["Armes"][int(choix_section)])
         print("\n")
         print(hero.recap())
@@ -63,14 +63,13 @@ def choix_inventaire(inventaire, hero):
         print("TO DO : fonction pour supp l'armure quand elle est mise et inversement quand elle est rangé")
         choix_inventaire(inventaire, hero)
 
-    elif choix == 2 and len(inventaire["Armures"])<= 0:
+    elif choix == 3 and len(inventaire["Armures"])<= 0:
          print("Cette catégorie est vide\n")
          choix_inventaire(Inventaire, hero)
 
     #Choix des objets
 
     if choix == 4 and len(inventaire["Objets rares"]) > 0:
-        print("TO DO : pour armure")
         print(inventaire["Objets rares"])
 
     elif choix == 4 and len(inventaire["Objets rares"])<= 0:
@@ -81,11 +80,11 @@ def choix_inventaire(inventaire, hero):
 
     if choix == 5:
         return print("Vous fermez l'inventaire\n")
+        
 
 #Code à placer dans les salles pour rajouter des items dans l'inventaire
 
 def searchInventaire(Inventaire, objet):
-    for i in len(Inventaire) :
-        for j in len(Inventaire[i]) :
-            if Inventaire[i][j] == objet :
+    for j in len(Inventaire["Objets Rare"]) :
+            if j == objet :
                 return True

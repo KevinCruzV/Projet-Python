@@ -1,6 +1,6 @@
-from Salle import *
-from main_menu import Salles
-from main_menu import choixSalles
+#from Salle import *
+#from Salle import Salles
+
 
 
 def direction ():
@@ -11,23 +11,22 @@ def direction ():
         a = input("Où voulez vous aller ? gauche ou droite (g/d)" )
         
         if a == 'd':
-            a = True
-            droite()
+            return True
 
-        if a == 'g':
-            a = False
-            gauche()
-
+        elif a == 'g':
+            return False
+            # gauche()
 
 
-def droite():
-    print("Vous avez choisis d'aller à droite")
-    #Random_Salle()
-    choixSalles(Salles)
-def gauche(): 
-    print("Vous avez choisis d'aller à gauche")
-    #Random_Salle()
-    choixSalles(Salles)
+
+# def droite():
+#     print("Vous avez choisis d'aller à droite")
+#     #Random_Salle()
+#     return True
+# def gauche(): 
+#     print("Vous avez choisis d'aller à gauche")
+#     #Random_Salle()
+#     return False
 
 
 #direction()        

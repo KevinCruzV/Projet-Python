@@ -2,7 +2,7 @@ from Personnage import *
 from Modele import *
 from Salle import *
 from sauvegarde import *
-from direction1 import *
+from direction1 import direction
 import os
 #importation  de l'os pour lancer le jeu dans la console
 
@@ -21,7 +21,12 @@ def main():
             Credit()
             os.system(exit())
         else :
-            direction()
+            if direction() :
+                choixSalles(Salles, Hero)
+            else :
+                choixSalles(Salles, Hero)   
+            
+
 
 
 
@@ -33,18 +38,20 @@ def Load():
     if Data != None:
         print("Accés confirmé\nVous revenez au vaisseau\n")
         dataRecap(Data)
-        Hero = Data["Hero"]
-        for i in Data["salle"]:
+        Hero = Data["Héro"]
+        for i in Data["Salle"]:
             if i == len(Data["Salle"]):
-                Salle_final()
+                P = VarHero(Hero)
+                Salle_final(P)
+                Win()
                 Credit()
                 os.system(exit())
             else :    
-                choixSalles(Data["Salle"])
+                choixSalles(Data["Salle"], Hero)
 
 
     else:
-        print("Vous ne pouvez pas revenir au vaisseau (Pas de sauveagardeoui)\n ")
+        print("Vous ne pouvez pas revenir au vaisseau (Pas de sauveagarde)\n ")
         menu()    
    
 
@@ -127,10 +134,39 @@ def menu(TestUserInput=False):
 
                 
 
+def choixSalles(salle, hero):
+    nb = randint(1, 3)
+    P = VarHero(hero)
+    for i in salle:
+        if nb == 1:
+            Vestiaire(P)
+            SuppSalle(salle, nb)
+            print(P)
+            Sauve(P,Salles,Inventaire)
+        if nb == 8:
+            CapsuleDeSauvetage(P)
+            SuppSalle(salle, nb)
+            print(P)
+            Sauve(P,Salles,Inventaire)
+        if nb == 3:
+            Hangar(P)
+            SuppSalle(salle, nb)
+            print(P)
+            Sauve(P,Salles,Inventaire)
+        i += 1
 
 
-main()
+def GameOver():
+    print("\n")
+    sleep(2)
+    print("GAME OVER ! vous n'avez pas reussi a quitter le vaiseau.")
 
+def Win():
+    print("\n")
+    sleep(2)
+    print("Vous avez reussi a vous enfuir du vaisseau !")
+
+Load()
 
 
 

@@ -4,7 +4,8 @@ from Arme_et_Armure import *
 
 
 
-
+def VarHero(hero):
+    return hero
 
 class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
@@ -40,7 +41,7 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
 
     def a_une_arme(self, arme):
-        print("Vous êtes equipé de l'arme", arme.get_nomArme(), "!")
+        print("Vous êtes equipé de l'arme", arme.nomArme, "!")
         print("Vous rajoutez +",arme.get_dommageArme(),"a votre attaque")
         if self.arme is not None :
             self.attaquePersonnage -= self.arme.get_dommageArme()
@@ -118,24 +119,28 @@ class MonstresNormaux(Modele_Personnage):
 
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
-        #print("Un monstre apparait !")
+        self.ExpADonner = 50
+        print("Un", nomPersonnage ,"apparait !")
         #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, " | Niveau : ", levelPersonnage, "\n")
 
     def damage(self, attaque):
         self.viePersonnage -= attaque
-        print("Le monstre à subit", attaque, "dégats")
+        print("Le monstre à subit", attaque, "dégats")   
 
+    def get_ExpADonne(self):
+        return self.ExpADonner
 
     def attack_monster(self, cible):
         cible.dommage(self.attaquePersonnage)
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
 
 
+
 ###############################      Personnage du Jeux      ######################################
 
 
 Alien = MonstresNormaux('Alien',20,2,0,5)
-Robot = MonstresForts("Robot", 70, 50, 20, 100, 0)
+Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
 
 
 
