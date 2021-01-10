@@ -142,16 +142,19 @@ def choixSalles(salle, hero):
             Vestiaire(P)
             SuppSalle(salle, nb)
             print(P)
+            P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
         if nb == 8:
             CapsuleDeSauvetage(P)
             SuppSalle(salle, nb)
             print(P)
+            P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
         if nb == 3:
             Hangar(P)
             SuppSalle(salle, nb)
             print(P)
+            P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
         i += 1
 
