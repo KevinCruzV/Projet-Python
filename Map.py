@@ -1,9 +1,11 @@
-map = [ [0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0] ]
+def CreatMap() :
+    Map = [ [0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0] ]
+    return Map
 
 #Fonction de la map
 
 def VoirMap(Map):
-    for row in map:
+    for row in Map:
         print(row) 
     print("----------------")
 
@@ -11,16 +13,16 @@ def VoirMap(Map):
 def MapAZero(Map):
     x=0
     y=0 
-    map[y][x] = 0 
-    for row in map:
+    Map[y][x] = 0 
+    for row in Map:
         print(row) 
     print("----------------")   
 
 def MapDebut(Map):
     x=0
     y=0 
-    map[y][x] = 1 
-    for row in map:
+    Map[y][x] = 1 
+    for row in Map:
         print(row) 
     print("----------------")
 
@@ -29,8 +31,8 @@ def DeplacementMapXGauche(Map):
     y=0
     MapAZero(map)
     x = x + 1
-    map[y][x] = 1
-    for row in map:
+    Map[y][x] = 1
+    for row in Map:
         print(row)
     print("----------------")   
     
@@ -39,8 +41,8 @@ def DeplacementMapYDroite(Map):
     y=0
     MapAZero(map)
     y = y + 1
-    map[y][x] = 1
-    for row in map:
+    Map[y][x] = 1
+    for row in Map:
         print(row)    
     print("----------------")  
 

@@ -9,12 +9,12 @@ class Objet_de_soin(Objet_de_Quete):
     def __init__(self, nomObjet, vieEnPlus):
         super().__init__(nomObjet)
         self.vieEnPlus = vieEnPlus
-
+        
 
     def get_VieEnPlus(self):
         return self.vieEnPlus
 
-
+    
 
 class Objet_de_defense(Objet_de_Quete):
     
@@ -42,8 +42,9 @@ Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 Combinaison_Spatial_trouee = Modele_Armure("Combinaison spatial trouée", 5)
 Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone", 15)
 Exosquelette = Modele_Armure("Exosquelette", 20)
+
 #Objets de Quetes :
-Cle_refectoire = Objet_de_Quete("Clé du réfectoire")
+Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsule de sauvetage")
 Seringue_adrenaline = Objet_de_soin("Seringue d'adrénaline", 10)
 Lampe = Objet_de_Quete("lampe de poche")
 
