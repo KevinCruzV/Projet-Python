@@ -344,7 +344,7 @@ def Hangar(Hero):
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
 
-def Laboratoire():
+def Laboratoire(Hero):
     Laboratoire = Modele_Salle("Laboratoire")
     print("Vous arrivez dans le", Laboratoire.get_nomSalle(),". La pièce est faiblement illuminée par les lampes de bureau laissées allumées. \n")
     sleep(4)
@@ -494,6 +494,7 @@ def Laboratoire():
         
     # VarHero(Hero)
 
+<<<<<<< HEAD
 def ChambreFroide():
     ChambreFroid = Modele_Salle("Chambre froide")
     print("Vous poussez la porte de la chambre froide")
@@ -505,6 +506,37 @@ def ChambreFroide():
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !")
     combat(Alien, Hero)
+=======
+def Salle_des_Communications(Hero):
+    Salle_des_Communications = Modele_Salle("Salle des communication")
+    print("\n")
+    sleep(2)
+    print("Vous rentrez dans une pièce. Il y a tres peu de lumière. ")
+    sleep(1)
+    questionLampe = input("Voulez vous utiliser la Lampe ? (y/n)\n")
+    if questionLampe == 'y':
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": A ben tiens, on est arrivé dans la", Salle_des_Communications.get_nomSalle())
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Essayes de voir si tu peux contacter la terre !")
+        print("\n")
+        sleep(1)
+        print("Vous vous dirigez vers la console de communication holographique et essayez de lancer un communication")
+        sleep(1)
+        print("Console : *Erreur Système*")
+        sleep(1)
+        print("Console : *Intrusion dans le système de communication*")
+        sleep(1)
+        print("Console : *Erreur* *Erreur*")
+        sleep(1)
+        print("Console : *Les Communications sont desactivé*")
+        print("\n")
+        sleep(2)
+        print(Hero.get_nomPersonnage(),":  ")
+        
+    elif questionLampe =='n':    
+        pass
+>>>>>>> Salle
             
             
 
@@ -528,7 +560,15 @@ def Armurerie(Hero):
 
 #Random_Salle()
 #choixSalles()
+<<<<<<< HEAD
 Hero = hero('Kevin',10,10,10,10,0,0,0)
 Laboratoire()
+=======
+# Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
+# Alien = MonstresNormaux('Alien',20,2,0,5)
+# Robot = MonstresNormaux('ROBOT',100,5,0,1,)
+# Hero = hero('Kevin',10,10,10,10,0,0,0)
+# Laboratoire(Hero)
+>>>>>>> Salle
 
 

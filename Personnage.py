@@ -142,9 +142,12 @@ class MonstresNormaux(Modele_Personnage):
 Alien = MonstresNormaux('Alien',20,2,0,5)
 Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
 Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
+<<<<<<< HEAD
 Alien = MonstresNormaux('Alien',20,2,0,5)
 Robot = MonstresNormaux('ROBOT',100,5,0,1,)
 
+=======
+>>>>>>> Salle
 
 
 ####################################################################################################  
