@@ -156,7 +156,7 @@ Kevin.recap()
 '''
 
 #Epee = Modele_Arme("Epee", 20)
-#Kevin = Hero("Kevin",20,10,20,1,0,None,None)
+#Kevin = hero("Kevin",20,10,20,1,0,None,None)
 #Epee = Modele_Arme("Epee", 20)
 #Armure = Modele_Armure("combi",30)
 #Kevin.a_une_arme(Epee)

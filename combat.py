@@ -45,9 +45,3 @@ def combat(Monstre, Hero):
         
     if Hero.viePersonnage <= 0:
         print("Vous êtes mort...\n")
-        
-
-
-
-    
-
