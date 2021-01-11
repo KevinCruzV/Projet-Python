@@ -78,7 +78,7 @@ def SuppSalle(Liste,num):
 
 
 def Salle_0(Hero):
-    Salle_0 = Modele_Salle("salle des capsules")
+    Salle_0 = Modele_Salle("Salle d'hibernation")
     print("\n")
     print("Voix : Hey ! HEY ! REVEILLE TOI ! \n")
     sleep(3)
@@ -494,9 +494,17 @@ def Laboratoire():
         
     # VarHero(Hero)
 
-
-        
-
+def ChambreFroide():
+    ChambreFroid = Modele_Salle("Chambre froide")
+    print("Vous poussez la porte de la chambre froide")
+    sleep(2)
+    print("Vous remarquez que la plupart des réserves ont été consomées")
+    print("mais un bout de viande près de vous semble encore frais")
+    sleep(2)
+    print("Vous vous approchez mais remarquez en enlevant des dèbris que c'est un bras!")
+    sleep(1)
+    print("Quelque chose vous tombe dessus depuis le plafond !")
+    combat(Alien, Hero)
             
             
 
