@@ -171,11 +171,8 @@ def Win():
     sleep(2)
     print("Vous avez reussi a vous enfuir du vaisseau !")
 
-<<<<<<< HEAD
 
-=======
 main()
->>>>>>> Salle
 
 
 

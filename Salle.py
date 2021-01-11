@@ -494,7 +494,6 @@ def Laboratoire(Hero):
         
     # VarHero(Hero)
 
-<<<<<<< HEAD
 def ChambreFroide():
     ChambreFroid = Modele_Salle("Chambre froide")
     print("Vous poussez la porte de la chambre froide")
@@ -506,7 +505,6 @@ def ChambreFroide():
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !")
     combat(Alien, Hero)
-=======
 def Salle_des_Communications(Hero):
     Salle_des_Communications = Modele_Salle("Salle des communication")
     print("\n")
@@ -536,7 +534,6 @@ def Salle_des_Communications(Hero):
         
     elif questionLampe =='n':    
         pass
->>>>>>> Salle
             
             
 
@@ -560,15 +557,12 @@ def Armurerie(Hero):
 
 #Random_Salle()
 #choixSalles()
-<<<<<<< HEAD
 Hero = hero('Kevin',10,10,10,10,0,0,0)
-Laboratoire()
-=======
+
 # Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
 # Alien = MonstresNormaux('Alien',20,2,0,5)
 # Robot = MonstresNormaux('ROBOT',100,5,0,1,)
 # Hero = hero('Kevin',10,10,10,10,0,0,0)
 # Laboratoire(Hero)
->>>>>>> Salle
 
 
