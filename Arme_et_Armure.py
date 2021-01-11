@@ -27,6 +27,9 @@ class Objet_de_defense(Objet_de_Quete):
 #Objets de soins :
 
 kit_de_soins = Objet_de_soin("Kit de soins", 40)
+champignons_blancs = Objet_de_soin("Champignons blancs", 70)
+fleurs_oranges = Objet_de_soin("Fleurs oranges", 70)
+plantes_bleues = Objet_de_soin("Plantes bleues", 70)
 
 #Armes :
 Scalpel = Modele_Arme("Scalpel",5)

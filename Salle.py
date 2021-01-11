@@ -236,7 +236,8 @@ def Vestiaire():
                     print("*Vous rangez l'arme dans l'inventaire*")
                 sleep(3)
                 print(Robot.nomPersonnage,": Bonne initiative, avec ça le prochain monstre qui viendra nous attaquer a du soucis à se faire ! \n")
-    
+                sleep(4)
+                print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
 
 
 def Hangar():
@@ -329,7 +330,160 @@ def Hangar():
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
 
+def Laboratoire():
+    Laboratoire = Modele_Salle("Laboratoire")
+    print("Vous arrivez dans le", Laboratoire.get_nomSalle(),". La pièce est faiblement illuminée par les lampes de bureau laissées allumées. \n")
+    sleep(4)
+    print(Robot.get_nomPersonnage(),":", Hero.get_nomPersonnage() ,"il y a quelqu'un assis là-bas. Il a l'air mal en point... \n")
+    sleep(4)
+    print("? : Hé... approche... des aliens se sont introduits dans le vaisseau... on était censés être à l'abri mais il y a eu une explosion. \n")
+    sleep(5)
+    print("? : Un d'eux m'a eu... il devait être contagieux, la morsure s'est infectée... je ne peux déjà plus bouger, si ça continue je vais sûrement y rester... \n")
+    sleep(6)
+    print("? : Moi c'est", Soldat.get_nomPersonnage() ,"...et il va falloir que tu m'aide pour qu'on s'en sorte tout les deux. *kof**kof* \n")
+    sleep(5)
+    print(Robot.get_nomPersonnage(),":", Hero.get_nomPersonnage(),"tu veux l'aider je suppose ? \n")
+    sleep(2)
+    question1 = int(input("Que voulez vous faire ? 1 = L'aider | 2 = Passer mon chemin \n"))
+    if question1 == 1:
+        print("Vous décidez de l'aider. \n")
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Le contraire m'aurait étonné, mettons nous au travail alors ! \n")
+        sleep(4)
+        print(Soldat.get_nomPersonnage(),": Merci infiniment ! Il va falloir que tu crée un remède... tu vas devoir mélanger 10g de sodium... avec 20ml de soude *kof*. Tu passeras ensuite à la seconde partie... il s'agira de mélanger la poudre de carbone, il en faut 24g *kof* avec des cristaux d'uranium, mets en 3 maximum... et pour le dernier igrédient... c'est *kof**kof*... \n")
+        sleep(10)
+        print(Robot.get_nomPersonnage(),": C'est pas vrai ! Il a perdu connaissance...mais il respire encore, il est pas trop tard pour le sauver !\n")
+        sleep(5)
+        print(Robot.get_nomPersonnage(),": Donc résumons, 20g de sodium, 10ml de soude. Ensuite 24g de poudre de carbone et 4 cristaux d'uranium.\n")
+        sleep(6)
+        print("Vous avancez vers la table la plus proche et commencez à créer le remède.\n")
+        sleep(4)
+        remede = []
+        while len(remede) < 4:
+            Q1 = input("Que voulez vous ajouter ?")
+            Q2 = input("Quelle quantité ?")
+            remede.append(str(Q1) + " : " + str(Q2))
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Maintenant il reste le dernier ingrédient, il a pas eu le temps de nous le dire... Il reste que deux ingrédients, c'est forcément l'un d'eux.\n")
+        sleep(5)
+        print("À votre droite, un flacon rouge, de l'acide sulfurique. À votre gauche, un flacon bleu, du mercure. \n")
+        sleep(5)
+        print(Robot.get_nomPersonnage(),":", Hero.get_nomPersonnage(),"choisis bien, tu n'as qu'une seule chance. \n")
+        sleep(4)
+        question2 = int(input("Quel flacon choisissez vous ? 1 = L'acide sulfurique | 2 = Le mercure \n"))
+        if question2 == 1:
+            sleep(2)
+            print(Robot.get_nomPersonnage(),": Très bien, ajoute lentement l'acide sulfurique dans notre préparation. \n")
+            remede.append("acide sulfurique")
+        else:
+            sleep(2)
+            print(Robot.get_nomPersonnage(),": D'accord, met le mercure dans la solution, n'en renverse pas surtout. \n")
+            remede.append("mercure")
+        sleep(1)
+        print("Votre remède est constitué de :")
+        sleep(1)
+        for i in remede:
+            print(i)
+        sleep(4)
+        print("Vous vous approchez de", Soldat.get_nomPersonnage(),", il respire lentement et est à bout de force. Vous lui faites boire le remède. \n")
+        sleep(4)
+        print(Robot.get_nomPersonnage(), ": Voilà une bonne chose de faite. \n")
+        sleep(2)
+        print("Soundain, sa peau se noircit, ses pupilles s'agrandissent et il a l'air de gonfler de l'intérieur. \n")
+        sleep(4)
+        print(Robot.get_nomPersonnage(),": On dirait que le remède n'a pas marché ! Attention",Hero.get_nomPersonnage(),"! \n")
+        sleep(4)
+        combat(Soldat,Hero)
+        if Hero.get_viePersonnage() <= 0:
+                return 0
+        print(Robot.get_nomPersonnage(),": C'était plutôt impressionnant ! Bien joué",Hero.get_nomPersonnage(),"! \n")
+        sleep(4)
+        print("Vous vous dirigez vers la sortie. Il y a des kits médicaux dans un placard ouvert. \n")
+        sleep(4)
+        question3 = input("Voulez vous les ramasser ? y/n \n")
+        if question3 == "y":
+            Inventaire["Soins"].append(kit_de_soins)
+            sleep(2)
+            print("Vous avez trouvé des kits médicaux. Vous les rangez dans votre inventaire. \n")    
+        else:
+            pass
+        sleep(4)
+        print("Vous quittez le", Laboratoire.get_nomSalle(),". \n")
+    else:
+        print("Vous ne l'aidez pas.")
+        sleep(2)
+        print(Robot.get_nomPersonnage(),"Oh... euh d'accord continuons pas là. \n")
+        sleep(4)
+        print("Vous approchez de la serre où sont stockées les herbes médicinales. La porte est verrouillée. Un écran interactif s'allume.")
+        sleep(4)
+        print("BOT : Bienvenue à vous ! \n")
+        sleep(2)
+        passe = None
+        while passe == None:
+            question5 = int(input("BOT : Avez-vous le passe pour entrer ? 1 = Oui | 2 = Je l'ai perdu \n"))
+            if question5 == 1:
+                sleep(2)
+                print("BOT : Aucun passe détecté. \n")
+            else:
+                passe = 1
+        sleep(2)        
+        print("BOT : Vous allez être soumis à un test pour vérifier votre identité. \n")
+        sleep(4)
+        print("BOT : Initialisation de l'épreuve d'authentification. \n")
+        sleep(4)
+        essais = 0
+        while True:
+            question6 = input()("BOT : Je commence la nuit, et finis au matin, on me trouve au fond du jardin, et au milieu de l'étang. Qui suis-je ? \n")
+            if question6 == "n" or question6 == "N":
+                print("BOT : Bonne réponse ! \n")
+                sleep(2)
+                break
+            else:
+                print("Mauvaise réponse ! \n")
+                sleep(2)
+            essais = essais + 1
+            if essais > 3:
+                print(Robot.get_nomPersonnage(),": C'est peut-être une lettre, non ? \n")
+                sleep(1)
+            if essais > 5:
+                print(Robot.get_nomPersonnage(),": Je crois que j'ai trouvé ! C'est sûrement la lettre n ! \n")
+                sleep(2)
+        print("BOT : Ouverture de la porte en cours... \n")
+        sleep(2)
+        print("La porte s'ouvre et vous entrez dans la serre.")
+        sleep(4)
+        print(Robot.get_nomPersonnage(),": Waouh ça en fait des plantes ! Regarde par ici, elles ont de drôles de formes. Prenons en plusieurs, ça peut servir. \n")
+        sleep(4)
+        print("Des plantes bleues phosphorescentes sont plantées dans de la terre humide. À côté d'elles se trouvent des fleurs oranges dont les pétales flottent dans l'air. De l'autre côté, des champignons blancs produisent de la vapeur. \n")
+        sleep(7)
+        question7 = int(input("Quelle plante voulez vous prendre en premier ? 1 = Les plantes bleues | 2 = Les fleurs oranges | 3 = Les champignons blancs \n"))
+        if question7 == 1:
+            sleep(2)
+            print("Vous arrachez les plantes bleues de la terre humide et les rangez dans votre inventaire. \n")
+            Inventaire["Soins"].append(plantes_bleues)
+        if question7 == 2:
+            sleep(2)
+            print("Vous arrachez les fleurs oranges et les rangez dans votre inventaire. \n")
+            Inventaire["Soins"].append(fleurs_oranges)
+        if question7 == 3:
+            sleep(2)
+            print("Vous arrachez les champignons blancs et les rangez dans votre inventaire. \n")
+            Inventaire["Soins"].append(champignons_blancs)
+        sleep(4)
+        print("BOT : CODE ERREUR ! CODE ERREUR ! Un objet à été retiré de son emplacement initial ! \n")
+        sleep(4)
+        print("Des lumières rouges clignotent et la porte commence à se refermer. \n")
+        sleep(4)
+        print(Robot.get_nomPersonnage(),": Oh oh... Je crois qu'on était pas censés prendre ça.",Hero.get_nomPersonnage(),"tant pis pour les autres plantes on a pas le temps, si la porte se referme on restera coincés ici pour toujours ! \n")
+        sleep(6)
+        print("Vous courrez vers la sortie de la serre et quittez le", Laboratoire.get_nomSalle(),"par la même occasion. \n")
+        
 
+
+        
+
+            
+            
 
 
         
@@ -351,7 +505,8 @@ def Armurerie():
 
 #Random_Salle()
 #choixSalles()
+Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
 Alien = MonstresNormaux('Alien',20,2,0,5)
 Robot = MonstresNormaux('ROBOT',100,5,0,1,)
 Hero = hero('Kevin',10,10,10,10,0,0,0)
-choix_inventaire(Inventaire, Hero)
+Laboratoire()
