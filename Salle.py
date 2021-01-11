@@ -510,10 +510,16 @@ def Salle_des_Communications(Hero):
         sleep(1)
         print("Vous vous dirigez vers la console de communication holographique et essayez de lancer un communication")
         sleep(1)
-        print("")
+        print("Console : *Erreur Système*")
+        sleep(1)
+        print("Console : *Intrusion dans le système de communication*")
+        sleep(1)
+        print("Console : *Erreur* *Erreur*")
+        sleep(1)
+        print("Console : *Les Communications sont desactivé*")
         print("\n")
         sleep(2)
-        print(Hero.get_nomPersonnage(),": ")
+        print(Hero.get_nomPersonnage(),":  ")
         
     elif questionLampe =='n':    
         pass
@@ -540,10 +546,10 @@ def Armurerie(Hero):
 
 #Random_Salle()
 #choixSalles()
-Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-Alien = MonstresNormaux('Alien',20,2,0,5)
-Robot = MonstresNormaux('ROBOT',100,5,0,1,)
-Hero = hero('Kevin',10,10,10,10,0,0,0)
-Laboratoire(Hero)
+# Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
+# Alien = MonstresNormaux('Alien',20,2,0,5)
+# Robot = MonstresNormaux('ROBOT',100,5,0,1,)
+# Hero = hero('Kevin',10,10,10,10,0,0,0)
+# Laboratoire(Hero)
 
 
