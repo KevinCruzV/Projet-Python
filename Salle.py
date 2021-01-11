@@ -163,7 +163,7 @@ def CapsuleDeSauvetage(hero):
     if Inventaire == 'y':
         if searchInventaire(Inventaire,Cle_de_la_Salle_des_Capsules_de_sauvetage) :
             CapsuleDeSauvetage = Modele_Salle("Salle des capsules de sauvetage")
-
+        
 
 
         else :
@@ -528,9 +528,6 @@ def Armurerie(Hero):
 
 #Random_Salle()
 #choixSalles()
-Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-Alien = MonstresNormaux('Alien',20,2,0,5)
-Robot = MonstresNormaux('ROBOT',100,5,0,1,)
 Hero = hero('Kevin',10,10,10,10,0,0,0)
 Laboratoire()
 
