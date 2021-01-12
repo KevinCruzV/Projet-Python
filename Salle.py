@@ -494,7 +494,7 @@ def Laboratoire(Hero):
         
     # VarHero(Hero)
 
-def ChambreFroide():
+def ChambreFroide(Hero):
     ChambreFroid = Modele_Salle("Chambre froide")
     print("Vous poussez la porte de la chambre froide")
     sleep(2)
