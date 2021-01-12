@@ -164,12 +164,15 @@ def GameOver():
     sleep(2)
     print("GAME OVER ! vous n'avez pas reussi a quitter le vaiseau.")
 
+    
+
 def Win():
     print("\n")
     sleep(2)
     print("Vous avez reussi a vous enfuir du vaisseau !")
 
-Load()
+
+main()
 
 
 

@@ -139,8 +139,11 @@ class MonstresNormaux(Modele_Personnage):
 ###############################      Personnage du Jeux      ######################################
 
 
-Alien = MonstresNormaux('Alien',20,2,0,5)
+
 Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
+Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
+Alien = MonstresNormaux('Alien',20,2,0,5)
+#Robot = MonstresNormaux('ROBOT',100,5,0,1,)
 
 
 
@@ -156,7 +159,7 @@ Kevin.recap()
 '''
 
 #Epee = Modele_Arme("Epee", 20)
-#Kevin = Hero("Kevin",20,10,20,1,0,None,None)
+#Kevin = hero("Kevin",20,10,20,1,0,None,None)
 #Epee = Modele_Arme("Epee", 20)
 #Armure = Modele_Armure("combi",30)
 #Kevin.a_une_arme(Epee)

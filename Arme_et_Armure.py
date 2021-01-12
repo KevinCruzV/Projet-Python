@@ -47,15 +47,13 @@ Gantelets_electriques = ("Gantelets électriques", 20)
 Mitaines_gamma = ("Mitaines gamma", 26)
 Gants_combustion = ("Gants de combustion", 24)
 
-
-
-#Armure :
-Combinaison_Spatial_trouee = Modele_Armure("Combinaison spatiale trouée", 5)
-Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison spatiale en carbone", 15)
+#Armures :
+Combinaison_Spatial_trouee = Modele_Armure("Combinaison spatial trouée", 5)
+Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone", 15)
 Exosquelette = Modele_Armure("Exosquelette", 20)
 
 #Objets de Quetes :
-Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsule de sauvetage")
+Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")
 Seringue_adrenaline = Objet_de_soin("Seringue d'adrénaline", 10)
 Lampe = Objet_de_Quete("lampe de poche")
 

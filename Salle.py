@@ -78,7 +78,7 @@ def SuppSalle(Liste,num):
 
 
 def Salle_0(Hero):
-    Salle_0 = Modele_Salle("salle des capsules")
+    Salle_0 = Modele_Salle("Salle d'hibernation")
     print("\n")
     print("Voix : Hey ! HEY ! REVEILLE TOI ! \n")
     sleep(3)
@@ -164,7 +164,7 @@ def CapsuleDeSauvetage(hero):
     if Inventaire == 'y':
         if searchInventaire(Inventaire,Cle_de_la_Salle_des_Capsules_de_sauvetage) :
             CapsuleDeSauvetage = Modele_Salle("Salle des capsules de sauvetage")
-
+        
 
 
         else :
@@ -349,7 +349,7 @@ def Hangar(Hero):
     VarHero(Hero)
     Sauve(Hero, Laboratoire, Inventaire)
 
-def Laboratoire():
+def Laboratoire(Hero):
     Laboratoire = Modele_Salle("Laboratoire")
     print("Vous arrivez dans le", Laboratoire.get_nomSalle(),". La pièce est faiblement illuminée par les lampes de bureau laissées allumées. \n")
     sleep(4)
@@ -499,6 +499,51 @@ def Laboratoire():
         
     VarHero(Hero)
     Sauve(Hero, Laboratoire, Inventaire)
+    # VarHero(Hero)
+
+def ChambreFroide():
+    ChambreFroid = Modele_Salle("Chambre froide")
+    print("Vous poussez la porte de la chambre froide")
+    sleep(2)
+    print("Vous remarquez que la plupart des réserves ont été consomées")
+    print("mais un bout de viande près de vous semble encore frais")
+    sleep(2)
+    print("Vous vous approchez mais remarquez en enlevant des dèbris que c'est un bras!")
+    sleep(1)
+    print("Quelque chose vous tombe dessus depuis le plafond !")
+    combat(Alien, Hero)
+def Salle_des_Communications(Hero):
+    Salle_des_Communications = Modele_Salle("Salle des communication")
+    print("\n")
+    sleep(2)
+    print("Vous rentrez dans une pièce. Il y a tres peu de lumière. ")
+    sleep(1)
+    questionLampe = input("Voulez vous utiliser la Lampe ? (y/n)\n")
+    if questionLampe == 'y':
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": A ben tiens, on est arrivé dans la", Salle_des_Communications.get_nomSalle())
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Essayes de voir si tu peux contacter la terre !")
+        print("\n")
+        sleep(1)
+        print("Vous vous dirigez vers la console de communication holographique et essayez de lancer un communication")
+        sleep(1)
+        print("Console : *Erreur Système*")
+        sleep(1)
+        print("Console : *Intrusion dans le système de communication*")
+        sleep(1)
+        print("Console : *Erreur* *Erreur*")
+        sleep(1)
+        print("Console : *Les Communications sont desactivé*")
+        print("\n")
+        sleep(2)
+        print(Hero.get_nomPersonnage(),":  ")
+        
+    elif questionLampe =='n':    
+        pass
+            
+            
+
 
     
 def Armurerie(Hero):
@@ -678,4 +723,12 @@ Alien = MonstresNormaux('Alien',35,2,0,5)
 Robot = MonstresNormaux('ROBOT',100,5,0,1)
 Hero = hero('Kevin',10,10,10,10,0,0,0)
 Armurerie(Hero)
+Hero = hero('Kevin',10,10,10,10,0,0,0)
+
+# Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
+# Alien = MonstresNormaux('Alien',20,2,0,5)
+# Robot = MonstresNormaux('ROBOT',100,5,0,1,)
+# Hero = hero('Kevin',10,10,10,10,0,0,0)
+# Laboratoire(Hero)
+
 
