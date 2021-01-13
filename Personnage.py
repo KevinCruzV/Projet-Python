@@ -91,9 +91,9 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def Augment_level(self):
         if self.get_exp() == 100 :
             self.levelPersonnage += 1
-            self.viePersonnage += 20
-            self.attaquePersonnage += 15
-            self.defensePersonnage += 30 
+            self.viePersonnage += 10
+            self.attaquePersonnage += 8
+            self.defensePersonnage += 7 
             self.exp = 0
             print("Vous avez augmenté d'un niveau !")
             print("Vous etes maintenant au niveau : ", self.get_levelPersonnage())
@@ -101,13 +101,35 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         else :    
             pass
 
-              
+
+
+
+class PNG(Modele_Personnage):     
+   def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
+        super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
+         
+
+
+
+
+
+
+
+class BOSS(Modele_Personnage):
+ def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale, PointAttackSpe): 
+    super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)    
+    self.attaque_speciale = attaque_speciale
+    self.PointAttackSpe = 50
+
+
 
 class MonstresForts(Modele_Personnage):
 
-    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
+    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale, PointAttackSpe):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
+        self.ExpADonner = 100
         self.attaque_speciale = attaque_speciale
+        self.PointAttackSpe = 25
         #print(" /! Un monstre spécial apparait !\ ")
         #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, "| Attaque speciale :", attaque_speciale, " | Niveau : ", levelPersonnage, "\n")
 
@@ -120,7 +142,7 @@ class MonstresNormaux(Modele_Personnage):
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
         self.ExpADonner = 50
-        print("Un", nomPersonnage ,"apparait !")
+        #print("Un", nomPersonnage ,"apparait !")
         #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, " | Niveau : ", levelPersonnage, "\n")
 
     def damage(self, attaque):
@@ -139,13 +161,29 @@ class MonstresNormaux(Modele_Personnage):
 ###############################      Personnage du Jeux      ######################################
 
 
+<<<<<<< HEAD
 
 Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
 Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
 Alien = MonstresNormaux('Alien',20,2,0,5)
 #Robot = MonstresNormaux('ROBOT',100,5,0,1,)
 
+=======
+AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1)
+AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2)
+AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3)
+AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4)
+AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5)
 
+AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36)
+AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40)
+AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50)
+AlienF4 = MonstresForts("Alien adulte",80,45,28,9,"Griffe Acide",57)
+Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69)
+>>>>>>> Salle
+
+Soldat = PNG('Oleg', 20, 2, 0, 5, 1)
+ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 
 ####################################################################################################  
 #Epee = Modele_Arme("Epée", 20)
