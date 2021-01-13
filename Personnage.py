@@ -160,16 +160,21 @@ class MonstresNormaux(Modele_Personnage):
 
 ###############################      Personnage du Jeux      ######################################
 
+AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1)
+AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2)
+AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3)
+AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4)
+AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5)
 
-
-Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
-Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-Alien = MonstresNormaux('Alien',20,2,0,5)
-#Robot = MonstresNormaux('ROBOT',100,5,0,1,)
-
+AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36)
+AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40)
+AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50)
+AlienF4 = MonstresForts("Alien adulte",80,45,28,9,"Griffe Acide",57)
+Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69)
 
 Soldat = PNG('Oleg', 20, 2, 0, 5, 1)
 ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
+
 
 ####################################################################################################  
 #Epee = Modele_Arme("Epée", 20)
