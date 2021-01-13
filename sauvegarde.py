@@ -9,7 +9,7 @@ def Sauve(Hero, salle, inventaire):
     data = {
         "Héro" : Hero,
         "Inventaire": Inventaire,
-        "Salle" : Salles,
+        "Salle" : salle,
     }
 
     Sauve=open("sauve.pickle", "wb") 

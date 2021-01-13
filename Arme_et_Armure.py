@@ -28,7 +28,7 @@ class Objet_de_defense(Objet_de_Quete):
 
 kit_de_soins = Objet_de_soin("Kit de soins", 40)
 champignons_blancs = Objet_de_soin("Champignons blancs", 70)
-fleurs_oranges = Objet_de_soin("Fleurs oranges", 70)
+fleurs_oranges = Objet_de_soin("Fleurs oranges", 20)
 plantes_bleues = Objet_de_soin("Plantes bleues", 70)
 
 #Armes :
@@ -40,8 +40,9 @@ Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
 
 #Armures :
 Combinaison_Spatial_trouee = Modele_Armure("Combinaison spatial trouée", 5)
-Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone", 15)
-Exosquelette = Modele_Armure("Exosquelette", 20)
+Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone", 12)
+Buste_Polyethane = Modele_Armure("Buste en Polyethane",16) 
+Exosquelette = Modele_Armure("Exosquelette", 22)
 
 #Objets de Quetes :
 Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")
