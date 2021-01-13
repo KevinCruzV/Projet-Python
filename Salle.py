@@ -5,6 +5,7 @@ from Personnage import *
 from inventaire import searchInventaire
 from inventaire import Inventaire
 from Arme_et_Armure import *
+from sauvegarde import Sauve
 from time import *
 
 
@@ -142,7 +143,7 @@ def Salle_0(Hero):
     sleep(3)
     print("*tap* *tap* *tap*, des bruits de pas s'éloignent vers la gauche...\n")
     VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+    Sauve(Hero, Salles, Inventaire)
     
 
 
@@ -205,7 +206,8 @@ def Vestiaire(Hero):
             print("On l'a échappé belle pour cette fois. Qu'est-ce qui a bien pu se passer pour que de tels monstres s'introduisent dans le vaisseau. \n")
             sleep(4)
             print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
-            
+            VarHero(Hero)
+            Sauve(Hero, Laboratoire, Inventaire)
 
     else :
         sleep(3)
@@ -230,6 +232,8 @@ def Vestiaire(Hero):
                 print("Vous n'avez pas ramasser l'arme. \n")
                 sleep(2)
                 print(Robot.nomPersonnage,": Je pense que tu as raison, on devrait le laissez tranquille. \n")
+                VarHero(Hero)
+                Sauve(Hero, Salles, Inventaire)
             else:
                 sleep(2)
                 print("Vous avez trouvez un", Blaster_rouille.nomArme,". Vous l'ajoutez à votre inventaire. \n")
@@ -247,8 +251,8 @@ def Vestiaire(Hero):
                 print(Robot.nomPersonnage,": Bonne initiative, avec ça le prochain monstre qui viendra nous attaquer a du soucis à se faire ! \n")
                 sleep(4)
                 print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+                VarHero(Hero)
+                Sauve(Hero, Laboratoire, Inventaire)
 
 
 def Hangar(Hero):
@@ -333,12 +337,14 @@ def Hangar(Hero):
                 print("Le monstre est juste devant vous, il vous fixe avec de grands yeux noirs. \n")
                 sleep(3)
                 combat(AlienN2,Hero)
+                VarHero(Hero)
+                Sauve(Hero, Laboratoire, Inventaire)                
             else:
-                print("Vous n'allumez votre lampe de poche \n")
+                print("Vous n'allumez pas votre lampe de poche \n")
                 sleep(2)
                 print("Des bruits de pas viennent dans votre direction... quelque chose est en train de courir vers vous. \n ")
                 sleep(3)
-                combat(AlienN2,Hero)
+                combat(AlienN2,Hero)                
             if Hero.get_viePersonnage() <= 0:
                 return 0
             else:
@@ -346,8 +352,8 @@ def Hangar(Hero):
                 print(Robot.get_nomPersonnage,": Tu devrais vraiment revoir ta façon de réfléchir, foncer dans la gueule du loup comme ça c'était pas une bonne idée ! \n")
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+                VarHero(Hero)
+                Sauve(Hero, Salles, Inventaire)
 
 def Laboratoire(Hero):
     Laboratoire = Modele_Salle("Laboratoire")
@@ -428,6 +434,8 @@ def Laboratoire(Hero):
             pass
         sleep(4)
         print("Vous quittez le", Laboratoire.get_nomSalle(),". \n")
+        VarHero(Hero)
+        Sauve(Hero, Laboratoire, Inventaire)        
     else:
         print("Vous ne l'aidez pas.")
         sleep(2)
@@ -496,9 +504,9 @@ def Laboratoire(Hero):
         print(Robot.get_nomPersonnage(),": Oh oh... Je crois qu'on était pas censés prendre ça.",Hero.get_nomPersonnage(),"tant pis pour les autres plantes on a pas le temps, si la porte se referme on restera coincés ici pour toujours ! \n")
         sleep(6)
         print("Vous courrez vers la sortie de la serre et quittez le", Laboratoire.get_nomSalle(),"par la même occasion. \n")
-        
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+    
+        VarHero(Hero)
+        Sauve(Hero, Salles, Inventaire)
     # VarHero(Hero)
 
 def ChambreFroide(Hero):
@@ -511,7 +519,10 @@ def ChambreFroide(Hero):
     print("Vous vous approchez mais remarquez en enlevant des dèbris que c'est un bras!")
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !")
-    combat(Alien, Hero)
+    combat(AlienF2, Hero)
+    VarHero(Hero)
+    Sauve(Hero, Laboratoire, Inventaire)
+
 def Salle_des_Communications(Hero):
     Salle_des_Communications = Modele_Salle("Salle des communication")
     print("\n")
@@ -637,13 +648,18 @@ def Salle_des_Communications(Hero):
                 sleep(1)
                 if ouvrir == 1:
                     choix_inventaire(Inventaire, Hero)
-                    print("Vous quittez", Salle_des_Communications.get_nomSalle()) 
+                    print("Vous quittez", Salle_des_Communications.get_nomSalle())
+                    VarHero(Hero)
+                    Sauve(Hero, Laboratoire, Inventaire)                     
                 else :
                     print("*Vous rangez l'arme dans l'inventaire*\n")
-                    print("Vous quittez", Salle_des_Communications.get_nomSalle()) 
+                    print("Vous quittez", Salle_des_Communications.get_nomSalle())
+                    VarHero(Hero)
+                    Sauve(Hero, Laboratoire, Inventaire)                     
         elif ouvrir == 'n':
             print("Vous quittez", Salle_des_Communications.get_nomSalle())                
-                    
+            VarHero(Hero)
+            Sauve(Hero, Laboratoire, Inventaire)        
 
 
     
@@ -814,17 +830,14 @@ def Armurerie(Hero):
     sleep(2)
     print("Vous vous dirigez vers la sortie et quittez l'",Armurerie.get_nomSalle(),". \n")
     VarHero(Hero)
-    #Sauve(Hero, Armurerie, Inventaire)
+    Sauve(Hero, Salles, Inventaire)
 
 #Random_Salle()
 #choixSalles()
 Alien_blessé = MonstresNormaux('Alien', 20, 2,0,8)
-Soldat = MonstresForts('Oleg', 50, 5, 0, 5, 25)
-Alien = MonstresNormaux('Alien',35,2,0,5)
-Robot = MonstresNormaux('ROBOT',100,5,0,1)
+
 Hero = hero('Kevin',10,10,10,10,0,0,0)
-Armurerie(Hero)
-Hero = hero('Kevin',10,10,10,10,0,0,0)
+
 
 # Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
 # Alien = MonstresNormaux('Alien',20,2,0,5)

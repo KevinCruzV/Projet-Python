@@ -160,6 +160,8 @@ class MonstresNormaux(Modele_Personnage):
 
 ###############################      Personnage du Jeux      ######################################
 
+
+Alien_blesse = MonstresNormaux('Alien Blessé', 20, 2,0,8)
 AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1)
 AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2)
 AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3)
