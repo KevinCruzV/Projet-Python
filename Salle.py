@@ -108,9 +108,9 @@ def Salle_0(Hero):
         sleep(1)
         if ouvrir == 1:
             choix_inventaire(Inventaire, Hero)
-            
+            Hero.recap()
         else :
-            print("*Vous rangez l'arme dans l'inventaire*\n")    
+            print("Vous rangez l'arme dans l'inventaire \n")    
     if prendre == 2:
         sleep(2)
         print(Robot.nomPersonnage, ":... pas de", Scalpel.get_nomArme() ,"alors ? Comme tu voudras mais ne viens pas te plaindre. \n")
@@ -142,6 +142,7 @@ def Salle_0(Hero):
     sleep(3)
     print("*tap* *tap* *tap*, des bruits de pas s'éloignent vers la gauche...\n")
     VarHero(Hero)
+    Sauve(Hero, Laboratoire, Inventaire)
     
 
 
@@ -169,7 +170,8 @@ def CapsuleDeSauvetage(hero):
         else :
             print("Vous n'avez pas la clé du réfectoire !")
             
-    VarHero(hero)
+    VarHero(Hero)
+    Sauve(Hero, Laboratoire, Inventaire)
     
 
 def Vestiaire(Hero):
@@ -246,6 +248,7 @@ def Vestiaire(Hero):
                 sleep(4)
                 print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
     VarHero(Hero)
+    Sauve(Hero, Laboratoire, Inventaire)
 
 
 def Hangar(Hero):
@@ -343,6 +346,8 @@ def Hangar(Hero):
                 print(Robot.get_nomPersonnage,": Tu devrais vraiment revoir ta façon de réfléchir, foncer dans la gueule du loup comme ça c'était pas une bonne idée ! \n")
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
+    VarHero(Hero)
+    Sauve(Hero, Laboratoire, Inventaire)
 
 def Laboratoire(Hero):
     Laboratoire = Modele_Salle("Laboratoire")
@@ -492,6 +497,8 @@ def Laboratoire(Hero):
         sleep(6)
         print("Vous courrez vers la sortie de la serre et quittez le", Laboratoire.get_nomSalle(),"par la même occasion. \n")
         
+    VarHero(Hero)
+    Sauve(Hero, Laboratoire, Inventaire)
     # VarHero(Hero)
 
 def ChambreFroide(Hero):
@@ -639,25 +646,184 @@ def Salle_des_Communications(Hero):
                     
 
 
-        
     
-
 def Armurerie(Hero):
     Armurerie = Modele_Salle("Armurerie")
-    print("Vous arrivez devant la porte de", Armurerie.get_nomSalle())
-    print("Vous trouvez par terre un item de soin = ", Objet_de_Quete.get_nomObjet(kit_de_soins))
-    ramasser = int(input(("Que voulez vous faire? 1 = Ramasser l'objet | 2 = Laisser l'objet")))
-    if ramasser == 1:
-        Inventaire["Soins"].append(kit_de_soins)
-        Inventaire["Soins"].append(kit_de_soins)
-    print("Vous trouvez également un", Pistolet_Laser.nomArme)
-    ramasser = int(input("Que voulez vous faire ? 1 = Ramasser l'objet | 2 = Laisser l'objet"))
-    if ramasser == 1:
-        Inventaire["Armes"].append(Pistolet_Laser)
+    print("Vous arrivez devant la porte de l'", Armurerie.get_nomSalle(),". \n")
+    sleep(2)
+    print("Il y a un trou dans la porte. \n")
+    sleep(2)
+    print(Robot.get_nomPersonnage(),": C'est quelqu'un qui a du forcer pour entrer, c'est pas rassurant tout ça. \n")
+    sleep(3)
+    print("Vous vous faufillez par l'ouverture et entrez dans l'", Armurerie.get_nomSalle(),". \n")
+    sleep(2)
+    print("C'est une salle pleine de coffres et d'armoires.")
+    sleep(2)
+    print(Robot.get_nomPersonnage(),":", Hero.get_nomPersonnage(),"on devrait faire le plein d'armes tant qu'on est ici. \n")
+    sleep(3)
+    print("Vous ouvrez un coffre. Il est vide. \n")
+    sleep(2)
+    print(Robot.get_nomPersonnage(),": Quoi ?! Ah... maintenant que j'y pense c'est logique, les membres de l'équipage ont dû prendre les armes en entendant l'alerte d'intrusion... \n")
+    sleep(4)
+    print("Vous apercevez un atelier au fond de l'",Armurerie.get_nomSalle(),". \n")
+    sleep(3)
+    question1 = input("Voulez vous y aller ? y/n \n")
+    if question1 == "y":
+        print("Vous vous approchez de l'atelier. Il y a des outils pour fabriquer des armes. À côté, un carton d'objets non utilisés.")
+        sleep(4)
+        print(Robot.get_nomPersonnage(),": Tu veux construire une arme ?! Tu t'y connais au moins ? \n")
+        sleep(3)
+        input("1 = Biensûr que je m'y connais ! | 2 = Ça vaut le coup d'essayer... \n")
+        sleep(2)
+        print("Vous commencez la réalisation de l'arme avec les divers objets du carton. \n")
+        sleep(2)
+        objet1 = None
+        objet2 = None
+        while objet1 == None or objet2 == None:
+            print("Que veux tu ajouter en premier ? \n")
+            sleep(1)
+            question2 = int(input("1 = Un sèche-cheveux | 2 = Une poignée de guidon d'un vélo | 3 = Des gants en microfibre \n"))
+            sleep(2)
+            if question2 == 1:
+                objet1 = "le sèche-cheveux"
+                print("Vous saisissez le sèche-cheveux. \n")
+            elif question2 == 2:
+                objet1 = "la poignée de guidon"
+                print("Vous saisissez la poignée de guidon. \n")
+            elif question2 == 3:
+                objet1 = "les gants en microfibre"
+                print("Vous saisissez les gants en microfibre. \n")
+            while objet1 == None or objet2 == None:
+                print("Que veux tu ajouter en deuxième ? \n")
+                sleep(1)
+                question2 = int(input("1 = des câbles électriques | 2 = un mini panneau solaire | 3 = un chalumeau \n"))
+                sleep(2)
+                if question2 == 1:
+                    print("Vous assemblez les câbles électriques avec", objet1,". \n")
+                    objet2 = "les câbles électriques"
+                elif question2 == 2:
+                    print("Vous attachez le panneau solaire avec", objet1,". \n")
+                    objet2 = "le panneau solaire"
+                elif question2 == 3:
+                    print("Vous fixez le chalumeau sur", objet1,". \n")
+                    objet2 = "le chalumeau" 
+                    sleep(4)
+                print("Ton objet est constitué de : \n")
+                i = 1
+                for arme in objet1, objet2:
+                    print("Objet",i,":",arme)
+                    i = i + 1
+                    sleep(3)
+                question3 = int(input("Que voulez vous faire ? 1 = Confirmez la sélection | 2 = Recommencer du début \n"))
+                if question3 == 1:
+                    pass
+                elif question3 == 2:
+                    objet1, objet2 = None, None
+                    break
+        if objet1 == "le sèche-cheveux":
+            if objet2 == "les câbles électriques":
+                sleep(2)
+                print("C'est un pistolet à impulsion électrique ! L'énergie s'accumule dans ses câbles électriques et envoi une décharge de pas moins de 30 000 ampères, correspondant à une tension de 100 millions de volts. C'est l'équivalent de ce que la foudre libère en un éclair ! Vos ennemis auront le coup de foudre garantit ! \n")
+                sleep(4)
+                Inventaire["Armes"].append(Pistolet_electrique)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+            elif objet2 == "le panneau solaire":
+                sleep(2)
+                print("C'est un fusil ultraviolet ! Son panneau solaire concentre l'énergie qu'il reçoit et brûle à une forte intensité. Ce serait comme de s'approcher à 20km du Soleil. Parfait pour se faire griller un steak ( Un peu cramé... ). \n")
+                sleep(4)
+                Inventaire["Armes"].append(Fusil_ultraviolet)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+            elif objet2 == "le chalumeau":
+                sleep(2)
+                print("C'est un canon souffleur ! La puissance du sèche-cheveux combiné à la chaleur du chalumeau, ça fait beaucoup certes, mais c'est efficace ! Ça reviendrait à se placer en dessous du moteur d'une fusée en plein décollage ou dans le cratère d'un volcan en éruption. À cette chaleur, on n'a même pas le temps de se sentir brûler, promis ! \n")
+                sleep(4)
+                Inventaire["Armes"].append(Canon_souffleur)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+        elif objet1 == "la poignée de guidon":
+            if objet2 == "les câbles électriques":
+                sleep(2)
+                print("C'est un fouet électrique ! Ses fils se chargent en électricité selon la puissance avec laquelle vous le lancez. Si vous avez une bonne poigne, vos ennemis ne s'en sortirons pas qu'avec des ampoules ! \n")
+                sleep(4)
+                Inventaire["Armes"].append(Fouet_electrique)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+            elif objet2 == "le panneau solaire":
+                sleep(2)
+                print("C'est un poignard solaire ! Sa lame est un concentré d'énergie solaire, elle est immatérielle, mais ce qui la traverse ressort en cendres. À tenir hors de portée des enfants ! \n")
+                sleep(4)
+                Inventaire["Armes"].append(Poignard_solaire)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+            elif objet2 == "le chalumeau":
+                sleep(2)
+                print("C'est un sabre laser ! Le chalumeau diffuse une flamme si puissance qu'elle se transforme en laser. Même le métal le plus puissant se coupe comme du beurre avec ça ! \n")
+                sleep(4)
+                Inventaire["Armes"].append(Sabre_laser)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+        elif objet1 == "les gants en microfibre":
+            if objet2 == "les câbles électriques":
+                sleep(2)
+                print("Ce sont des gantelets électriques ! L'électricité  se propage dans les gants et quand elle atteind sa charge maximale, elle la projette directement sur la cible. Ça décoiffe ! \n")
+                sleep(4)
+                Inventaire["Armes"].append(Gantelets_electriques)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+            elif objet2 == "le panneau solaire":
+                sleep(2)
+                print("Ce sont des mitaines gamma  ! Le panneau accumule énormément d'énergie et la convertit en rayons gamma. Un coup vous filera un bon gros mal de tête avec un coma à la clé !  \n")
+                sleep(4)
+                Inventaire["Armes"].append(Mitaines_gamma)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+            elif objet2 == "le chalumeau":
+                sleep(2)
+                print("Ce sont des gants de combustion ! Le système du chalumeau permet de tirer des boules de feu sur vos ennemis. Et en prime vos mains seront gardées bien au chaud !  \n")
+                sleep(4)
+                Inventaire["Armes"].append(Gants_combustion)
+                print("Le nouvel objet a été ajouté à votre inventaire. \n")
+        print(Robot.get_nomPersonnage(),": Oh... voilà qui va te faciliter la tâche ! \n")
+        
+    print("Vous continuez d'avancer dans l'", Armurerie.get_nomSalle(),". \n")
+    sleep(3)
+    print("Vous apercevez un",Alien_blessé.get_nomPersonnage(),". Il est blessé à plusieurs endroits. \n")
+    sleep(3)
+    print(Robot.get_nomPersonnage(),": Tiens, il est lent et a l'air blessé. Quelqu'un à déjà du l'affronter, on devrait arriver à le semer facilement. \n")
+    sleep(4)
+    print("Vous apercevez un coffre derrière l'",Alien_blessé.get_nomPersonnage(),". Il est ouvert mais n'est pas vide. Pour y accéder il vous faudra affronter l'",Alien_blessé.get_nomPersonnage(),". \n")
+    sleep(4)
+    question4 = int(input("Que voulez-vous faire ? 1 = L'affronter | 2 = S'échapper \n"))
+    sleep(2)
+    if question4 == 1:
+        print(Robot.get_nomPersonnage,": Sérieusement tu compte te battre ? Très bien c'est comme tu veux... \n")
+        combat(Alien_blessé,Hero)
+        if Hero.get_viePersonnage() <= 0:
+            return 0
+        print(Robot.get_nomPersonnage(),": Bon maintenant le coffre ! \n")
+        sleep(1)
+        print("Vous vous dirigez vers le coffre. Il y a une",Combinaison_Spatial_en_Carbone.get_nomArmure(),". \n")
+        sleep(3)
+        question5 = input("Voulez vous la prendre ? y/n \n")
+        sleep(1)
+        if question5 == "y":
+            Inventaire["Armures"].append(Combinaison_Spatial_en_Carbone)
+            print("Vous rangez l'armure dans l'inventaire \n")
+            ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
+            if ouvrir == 1:
+                choix_inventaire(Inventaire, Hero)
+                Hero.recap()
+        else:
+            print("Vous ne prenez pas l'armure")
+    else:
+        pass
+    sleep(2)
+    print("Vous vous dirigez vers la sortie et quittez l'",Armurerie.get_nomSalle(),". \n")
     VarHero(Hero)
+    #Sauve(Hero, Armurerie, Inventaire)
 
 #Random_Salle()
 #choixSalles()
+Alien_blessé = MonstresNormaux('Alien', 20, 2,0,8)
+Soldat = MonstresForts('Oleg', 50, 5, 0, 5, 25)
+Alien = MonstresNormaux('Alien',35,2,0,5)
+Robot = MonstresNormaux('ROBOT',100,5,0,1)
+Hero = hero('Kevin',10,10,10,10,0,0,0)
+Armurerie(Hero)
 Hero = hero('Kevin',10,10,10,10,0,0,0)
 
 # Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
