@@ -879,10 +879,72 @@ def SalleDesMachines(hero):
     pass
 
 def Cafeteria(Hero):
-    
+    pass
 
 def Infirmerie(Hero):
-    
+    Infirmerie = Modele_Salle("Infirmerie")
+    print("Vous entrez dans l'", Infirmerie.get_nomSalle(),". \n")
+    sleep(2)
+    print("C'est une petite salle, au mileu il y a une grosse machine. Une sorte de tube relié à toutes sortes d'ordinateurs. \n")
+    sleep(3)
+    print(Robot.get_nomPersonnage(),": Ça ressemble à une machine de soins... Tu devrais essayer, ça te soignera. \n")
+    sleep(3)
+    question1 = input("Voulez vous utiliser la machine de soins ? y/n \n")
+    sleep(1)
+    if question1 == "y":
+        print(Robot.get_nomPersonnage(),":",Hero.get_nomPersonnage(),"entre à l'intérieur, je m'occupe de la configurer.\n")
+        sleep(2)
+    elif question1 == "n":
+        print(Robot.get_nomPersonnage(),": Si",Hero.get_nomPersonnage(),"vas-y, tu as besoin de te soigner.\n")
+        sleep(2)
+    print("Vous entrez dans la machine. La porte se referme, à l'intérieur vous n'entendez rien. \n")
+    sleep(3)
+    print("*Initialisation en cours*\n")
+    sleep(2)
+    print("Une lumière verte vous éblouie et un air chaud parcours votre corps. \n")
+    sleep(3)
+    print("*Session terminée dans...* \n")
+    sleep(2)
+    print("*3..* \n")
+    sleep(2)
+    print("*2..* \n")
+    sleep(2)
+    print("*Erreur détectée... Annulation en cours... Autodestruction dans 5... 4...* \n")
+    sleep(3)
+    print("Vous appelez à l'aide mais la machine est insonorisée, personne ne peut vous entendre. \n")
+    sleep(3)
+    print("*3...* \n")
+    sleep(2)
+    print("Vous frappez désespérément contre la porte. La porte finit par s'ouvrir. \n")
+    sleep(3)
+    print("*2...* \n")
+    sleep(2)
+    print("Vous sortez de la machine. La porte se referme. \n")
+    sleep(2)
+    print("*1...* \n")
+    sleep(2)
+    print("La machine explose de l'intérieur, ce qui retient l'onde de choc. \n")
+    sleep(3)
+    print(Robot.get_nomPersonnage(),":",Hero.get_nomPersonnage(),"comment tu as réussis à sortir ? La machine devait se détruire pourtant... \n")
+    sleep(2)
+    print(Robot.get_nomPersonnage(),": Euh... me regarde pas comme ça, j'ai essayé de te sortir de la mais l'ordinateur n'en faisait qu'à sa tête, il ne m'écoutait plus ! \n")
+    sleep(4)
+    print(Robot.get_nomPersonnage(),": La machine ne t'as pas soigné du coup... Bon, on devrait s'en aller d'ici. \n")
+    sleep(3)
+    print("Vous vous dirigez vers la sortie. Il y a du matériel médical sur un chariot. \n")
+    sleep(3)
+    question2 = input("Voulez vous le prendre ? y/n \n")
+    sleep(2)
+    if question2 == "y":
+        print("Vous avez trouvé une",Seringue_adrenaline.get_nomObjet(),"et un",kit_de_soins.get_nomObjet(),". \n")
+        Inventaire["Soins"].append(Seringue_adrenaline)
+        Inventaire["Soins"].append(kit_de_soins)
+        print("Vous les ajoutez à l'inventaire. \n")
+    elif question2 == "n":
+        print("Vous ne prenez pas les objets. \n")
+    sleep(2)
+    print("Vous quittez l'",Infirmerie.get_nomSalle(),". \n")
+
     
     
 def Bibliotheque(Hero):
@@ -897,13 +959,13 @@ def Bibliotheque(Hero):
     sleep(2)
     print(Robot.get_nomPersonnage(),": ", Hero.get_nomPersonnage(),"c'est peut-être mon imagination mais j'ai l'impression qu'on est suivis et puis il y a des drôles de bruits depuis tout à l'heure... \n")
     sleep(4)
-    print("Vous vous retournez... il n'y a personne... soudain, un livre tombe d'unne étagère. \n")
+    print("Vous vous retournez... il n'y a personne... soudain, un livre tombe d'une étagère. \n")
     sleep(3)
     print(Robot.get_nomPersonnage(),": Ahhhhhhhh !! Oh, c'était qu'un livre, j'ai eu super peur. \n")
     sleep(3)
-    print("Vous continuez d'avancer dans la",Bibliotheque.get_nomSalle(),". Une étagère retient votre attention. Elle n'est pas très haute, mais elle est fermée à clés. Un objet brille sous une pile de livre. \n")
+    print("Vous continuez d'avancer dans la",Bibliotheque.get_nomSalle(),". Une étagère retient votre attention. Elle n'est pas très haute, mais elle est fermée à clés. \n")
     sleep(4)
-    question1 = input("Voulez vous aller voir ? y/n \n")
+    question1 = input("Un objet brille sous une pile de livre. Voulez vous aller voir ? y/n \n")
     sleep(2)
     if question1 == "y":
         print("Vous vous approchez et commencez à soulever les livres. Un alien est en dessous ! Il a l'air de dormir...\n")
@@ -1012,6 +1074,5 @@ def Bibliotheque(Hero):
 
 
 Hero = hero('Kevin',10,10,10,10,0,0,0)
-Cafeteria(Hero)
-Infirmerie(Hero)
+
 Bibliotheque(Hero)
