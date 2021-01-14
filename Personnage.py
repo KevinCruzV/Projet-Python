@@ -57,7 +57,18 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
     def vie_addition(self, VieAddition):
         self.viePersonnage += VieAddition
+    
+    def attaque_boost(self, attaquePersonnage):
+        attaquePersonnage = attaquePersonnage + 5
+        return attaquePersonnage
 
+    def defense_boost(self, defensePersonnage):
+        defensePersonnage = defensePersonnage + 5
+        return defensePersonnage
+    
+    def vie_boost(self, viePersonnage):
+        viePersonnage = viePersonnage + 10
+        return viePersonnage
 
         # Fonction Armure #
 
@@ -141,9 +152,9 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
-Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-Alien = MonstresNormaux('Alien',20,2,0,5)
-#Robot = MonstresNormaux('ROBOT',100,5,0,1,)
+Soldat = MonstresForts('Oleg', 35, 5, 0, 5, 1)
+Alien = MonstresNormaux('Alien',25,2,0,5)
+Alien_blessé = MonstresNormaux('Alien', 20, 2,0,8)
 
 
 

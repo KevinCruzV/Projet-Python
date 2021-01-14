@@ -717,18 +717,7 @@ def Armurerie(Hero):
 
 #Random_Salle()
 #choixSalles()
-Alien_blessé = MonstresNormaux('Alien', 20, 2,0,8)
-Soldat = MonstresForts('Oleg', 50, 5, 0, 5, 25)
-Alien = MonstresNormaux('Alien',35,2,0,5)
-Robot = MonstresNormaux('ROBOT',100,5,0,1)
+
+
+
 Hero = hero('Kevin',10,10,10,10,0,0,0)
-Armurerie(Hero)
-Hero = hero('Kevin',10,10,10,10,0,0,0)
-
-# Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-# Alien = MonstresNormaux('Alien',20,2,0,5)
-# Robot = MonstresNormaux('ROBOT',100,5,0,1,)
-# Hero = hero('Kevin',10,10,10,10,0,0,0)
-# Laboratoire(Hero)
-
-
