@@ -41,15 +41,15 @@ def Load():
         Hero = Data["Héro"]
         for i in Data["Salle"]:
             if i == len(Data["Salle"]):
-                P = VarHero(Hero)
-                Salle_final(P)
+                Salle_final(Hero)
                 Win()
                 Credit()
                 os.system(exit())
-            else :    
-                choixSalles(Data["Salle"], Hero)
-
-
+            else : 
+                if direction():   
+                    choixSalles(Data["Salle"], Hero)
+                else :
+                    choixSalles(Data["Salle"], Hero)
     else:
         print("Vous ne pouvez pas revenir au vaisseau (Pas de sauveagarde)\n ")
         menu()    
@@ -135,27 +135,81 @@ def menu(TestUserInput=False):
                 
 
 def choixSalles(salle, hero):
-    nb = randint(1, 3)
+    nb = randint(1, 20)
     P = VarHero(hero)
     for i in salle:
-        if nb == 1:
+        if nb == 1 or nb == 2 or nb == 3:
             Vestiaire(P)
+            SuppSalle(salle, 1)
+            SuppSalle(salle, 2)
+            SuppSalle(salle, 3)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 2:
+            Infirmerie(P)
             SuppSalle(salle, nb)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
-        if nb == 8:
-            CapsuleDeSauvetage(P)
-            SuppSalle(salle, nb)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+
         if nb == 3:
             Hangar(P)
             SuppSalle(salle, nb)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
+
+        if nb == 4:
+            Armurerie(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 5:
+            Laboratoire(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 6:
+            ChambreFroide(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 7:
+            Salle_des_Communications(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 8:
+            ChambreEquipage(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 9:
+            SalleDesMachines(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)
+
+        if nb == 10:
+            Cafeteria(P)
+            SuppSalle(salle, nb)
+            print(P)
+            P = VarHero(hero)
+            Sauve(P,Salles,Inventaire)                                       
+
         i += 1
 
 
@@ -168,6 +222,8 @@ def GameOver():
 
 def Win():
     print("\n")
+    sleep(2)
+    print("FELICITATION !!!!")
     sleep(2)
     print("Vous avez reussi a vous enfuir du vaisseau !")
 

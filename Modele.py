@@ -28,6 +28,7 @@ class Modele_Personnage :
     def attack_player(self, cible):
         cible.dommage(self.attaquePersonnage)
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.")
+        
 
 
 class Modele_Salle :

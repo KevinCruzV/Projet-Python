@@ -27,9 +27,10 @@ class Objet_de_defense(Objet_de_Quete):
 #Objets de soins :
 
 kit_de_soins = Objet_de_soin("Kit de soins", 40)
-champignons_blancs = Objet_de_soin("Champignons blancs", 70)
+champignons_blancs = Objet_de_soin("Champignons blancs", 15)
 fleurs_oranges = Objet_de_soin("Fleurs oranges", 20)
-plantes_bleues = Objet_de_soin("Plantes bleues", 70)
+plantes_bleues = Objet_de_soin("Plantes bleues", 30)
+Seringue_adrenaline = Objet_de_soin("Seringue d'adrénaline", 10)
 
 #Armes :
 Scalpel = Modele_Arme("Scalpel",5)
@@ -55,7 +56,6 @@ Exosquelette = Modele_Armure("Exosquelette", 22)
 
 #Objets de Quetes :
 Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")
-Seringue_adrenaline = Objet_de_soin("Seringue d'adrénaline", 10)
 Lampe = Objet_de_Quete("lampe de poche")
 
 
