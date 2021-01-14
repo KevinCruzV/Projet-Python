@@ -878,12 +878,122 @@ def ChambreEquipage(hero):
 def SalleDesMachines(hero):
     pass
 
-def Cafeteria(hero):
-    pass
+def Cafeteria(Hero):
+    print("Vous etes dans la caeft")
+    Hero.recap()
 
-def Infirmerie(hero):
-    pass
+def Infirmerie(Hero):
+    Hero.attaque_boost(Hero.get_attaquePersonnage)
     
+    
+def Bibliotheque(Hero):
+    Bibliotheque = Modele_Salle("Bibliothèque")
+    print("Vous entrez dans la", Bibliotheque.get_nomSalle(),". \n")
+    sleep(2)
+    print("Il y a des étagères remplies de livres. Plusieurs d'entre elles sont renversées, et des livres sont par terre. \n")
+    sleep(3)
+    print(Robot.get_nomPersonnage(),": Ça en fait des livres ! \n")
+    sleep(2)
+    print("Au fur et à mesure que vous avancez, vous entendez des petits bruits. \n")
+    sleep(2)
+    print(Robot.get_nomPersonnage(),": ", Hero.get_nomPersonnage(),"c'est peut-être mon imagination mais j'ai l'impression qu'on est suivis et puis il y a des drôles de bruits depuis tout à l'heure... \n")
+    sleep(4)
+    print("Vous vous retournez... il n'y a personne... soudain, un livre tombe d'unne étagère. \n")
+    sleep(3)
+    print(Robot.get_nomPersonnage(),": Ahhhhhhhh !! Oh, c'était qu'un livre, j'ai eu super peur. \n")
+    sleep(3)
+    print("Vous continuez d'avancer dans la",Bibliotheque.get_nomSalle(),". Une étagère retient votre attention. Elle n'est pas très haute, mais elle est fermée à clés. Un objet brille sous une pile de livre. \n")
+    sleep(4)
+    question1 = input("Voulez vous aller voir ? y/n \n")
+    sleep(2)
+    if question1 == "y":
+        print("Vous vous approchez et commencez à soulever les livres. Un alien est en dessous ! Il a l'air de dormir...\n")
+        sleep(3)
+        question2 = int(input("Que voulez vous faire ? 1 = Se battre | 2 = Ne pas le réveiller et prendre la clé \n"))
+        sleep(2)
+        if question2 == 1:
+            print("Vous le réveillez en lui lançant un livre. \n")
+            sleep(2)
+            combat(AlienN1, Hero)
+            print(Robot.get_nomPersonnage(),": Il dormait vraiment ou bien il s'est fait assommer par la chute des livres ? C'est quand même bizarre qu'il était enfouis là-dessous. \n")
+            sleep(3)
+            print("Vous prenez la clé et vous approchez de l'étagère verrouillée. \n")
+            sleep(2)
+        elif question2 == 2:
+            print(Robot.get_nomPersonnage(),": Prends ton temps surtout, faudrait pas qu'il nous saute dessus. \n")
+            sleep(2)
+            print("Vous vous approchez lentement et prenez la clé délicatement. L'alien ne se réveille pas. \n")
+            sleep(3)
+            print("Vous avancez vers l'étagère verrouillée. \n")
+            sleep(2)
+        print("Vous insérez la clé dans la serurre. Ce n'est pas la bonne clé... \n")
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Attends... tu veux dire qu'on va devoir retourner toute la bibliothèque pour retrouver la clé ? \n")
+        sleep(3)
+        print("Pris d'un élan de colère, vous donnez un grand coup sur l'étagère. Abimée par les chutes de livres et d'étagères, la sérrure finit par céder. \n")
+        sleep(4)
+        print("La porte s'ouvre. À l'intérieur, trois livres sont enfermés dans des boites. C'est un métal solide, impossible de le détruire. Vous apercevez une serrure sur chaque boite. \n")
+        sleep(4)
+        print(Robot.get_nomPersonnage(),": Voilà à quoi servait la clé ! \n")
+        sleep(2)
+        print("Vous insérez la clé dans une des boites. Les serrures des autres boites disparaissent immédiatement. \n")
+        sleep(3)
+        print(Robot.get_nomPersonnage(),"On dirait qu'on ne peut l'utiliser qu'une fois. Tu vas devoir choisir. \n")
+        sleep(2)
+        print("Sur la première boite est inscrit : 'Manuel des Points faibles', sur la deuxième : 'Manuel de Vie dans l'Espace' et sur la troisième : 'Gestion de la force'. \n")
+        sleep(2)
+        question3 = int(input("Quelle boite voulez vous ouvrir ? 1 = 'Manuel des Points faibles' | 2 = 'Manuel de Vie dans l'Espace' | 3 = 'Manuel de Combat' \n"))
+        sleep(2)
+        if question3 == 1:
+            print("Vous ouvrez la première boite. \n")
+            sleep(2)
+            print("À l'intérieur, le 'Manuel des Points faibles'. Vous lisez le résumé au dos du livre : 'Vous n'aimez pas beaucoup lire, ce manuel pour jeunes recrues est parfait pour vous. Il n'y a pas beaucoup de texte, mais il regroupe les bases des points faibles ennemis. Vous saurez où frapper pour infliger plus de dégats à vos ennemis ! \n")
+            sleep(6)
+            print("Vous lisez le livre. Vous connaissez maintenant les bases des points faibles ! Vos coups seront concentrés sur les points vitaux de vos ennemis et vous infligerez plus de dégats. \n")
+            sleep(4)
+            Hero.attaque_boost(Hero.get_attaquePersonnage)
+            Hero.recap()
+        elif question3 == 2:
+            print("Vous ouvrez la deuxième boite. \n")
+            sleep(2)
+            print("À l'intérieur, le 'Manuel de Vie dans l'Espace'. Vous lisez le résumé au dos du livre : 'Vous n'aimez pas beaucoup lire, ce manuel pour jeunes recrues est parfait pour vous. Il n'y a pas beaucoup de texte, mais il regroupe les bases de la vie hors atmosphère. Vous saurez gérer votre respiration et vos ressources pour mieux survivre ! \n")
+            sleep(6)
+            print("Vous lisez le livre. Vous connaissez maintenant les bases de la vie spatiale ! Votre vie augmente car vous savez maintenant comment controler votre corps afin de moins vous épuiser. \n")
+            sleep(4)
+            Hero.vie_boost(Hero.get_viePersonnage)
+            Hero.recap()
+        elif question3 == 3:
+            print("Vous ouvrez la troisième boite. \n")
+            sleep(2)
+            print("À l'intérieur, le 'Manuel de Combat'. Vous lisez le résumé au dos du livre : 'Vous n'aimez pas beaucoup lire, ce manuel pour jeunes recrues est parfait pour vous. Il n'y a pas beaucoup de texte, mais il regroupe les bases du combat. Vous saurez comment vous protégez face aux attaques ennemies ! \n")
+            sleep(6)
+            print("Vous lisez le livre. Vous connaissez maintenant les bases du combat ! Votre défense augmente car vous savez maintenant parer les coups ennemis. \n")
+            sleep(4)
+            Hero.defense_boost(Hero.get_defensePersonnage)
+            Hero.recap()
+    elif question1 == "n":
+        print(Robot.get_nomPersonnage(),": Tant pis pour l'étagère. \n")
+        sleep(2)
+        print("Cette fois, vous en êtes sûr, quelqu'un vous observe. Un alien sort de derrière une étagère et pousse un cri strident. \n")
+        sleep(3)
+        print("L'alien enfouis sous les livres se réveille. Ils se rapprochent l'un de l'autre et .... fusionnent. Ils ne font plus qu'un, l'alien est deux fois plus gros et a un corps difforme, et deux têtes ! \n")
+        sleep(4)
+        print(Robot.get_nomPersonnage(),": Oh oh... on aurait du s'occuper de celui qui dormait tout à l'heure... \n")
+        combat(AlienF0,Hero)
+        print(Robot.get_nomPersonnage(),": qui aurait cru que deux d'entre eux pouvaient fusionner... \n")
+        sleep(2)  
+    print("Vous apercevez la porte de sortie de la",Bibliotheque.get_nomSalle(),". Elle est encombrée par des tas de livres mais il y a un hublot assez grand pour s'y faufiller. \n")
+    sleep(4)
+    print(Robot.get_nomPersonnage(),": À toi l'honneur,",Hero.get_nomPersonnage(),".\n")
+    sleep(2)
+    print("Vous brisez la vitre du hublot et passez à travers. \n")
+    sleep(2)
+    print("Vous quittez la",Bibliotheque.get_nomSalle(),". \n")
+
+
+        
+
+
 
 
 
@@ -900,5 +1010,7 @@ def Infirmerie(hero):
 
 
 
-
 Hero = hero('Kevin',10,10,10,10,0,0,0)
+Cafeteria(Hero)
+Infirmerie(Hero)
+Bibliotheque(Hero)

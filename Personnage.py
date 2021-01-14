@@ -62,16 +62,16 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         self.viePersonnage += VieAddition
     
     def attaque_boost(self, attaquePersonnage):
-        attaquePersonnage = attaquePersonnage + 5
-        return attaquePersonnage
+        self.attaquePersonnage = self.attaquePersonnage + 5
+        return self.attaquePersonnage
 
     def defense_boost(self, defensePersonnage):
-        defensePersonnage = defensePersonnage + 5
-        return defensePersonnage
+        self.defensePersonnage = self.defensePersonnage + 5
+        return self.defensePersonnage
     
     def vie_boost(self, viePersonnage):
-        viePersonnage = viePersonnage + 10
-        return viePersonnage
+        self.viePersonnage = self.viePersonnage + 10
+        return self.viePersonnage
 
         # Fonction Armure #
 
@@ -244,8 +244,8 @@ AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
 
 
 
-Alien = MonstresNormaux('Alien',25,2,0,5)
-Alien_blessé = MonstresNormaux('Alien', 20, 2,0,8)
+Alien = MonstresNormaux('Alien',25,2,0,5, 0)
+AlienF0 = MonstresForts("Alien siamois",60,32,18,7,"Double Griffure",38,"oui")
 AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
 AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
 AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50, "oui")
