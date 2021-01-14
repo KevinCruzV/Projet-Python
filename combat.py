@@ -28,23 +28,23 @@ def combat(Monstre, Hero):
 
         if control == 1:
             if Monstre.a_une_attaque_spe(Monstre.get_a_une_attack_spe()):
-                AttaqueSpé = randint(1,5)
-                if AttaqueSpé == 4:
+                AttaqueSpe = randint(1,5)
+                if AttaqueSpe == 4:
                     print("\n")
                     Hero.attack_player(Monstre)
                     Monstre.attackSpe_sur(Hero)
                     sleep(1)
                     print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                     sleep(1)
-                    print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero ,"pv\n")
-                else :
+                    print("Vous avez maintenant", Hero.viePersonnage, " /", "100pv\n")
+                else:
                     print("\n")
                     Hero.attack_player(Monstre)
                     Monstre.attack_monster(Hero)
                     sleep(1)
                     print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                     sleep(1)
-                    print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero ,"pv\n")                        
+                    print("Vous avez maintenant", Hero.viePersonnage, " /", "100pv\n")
             else:
                 print("\n")
                 Hero.attack_player(Monstre)
@@ -52,7 +52,7 @@ def combat(Monstre, Hero):
                 sleep(1)
                 print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                 sleep(1)
-                print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero ,"pv\n")
+                print("Vous avez maintenant", Hero.viePersonnage, " /", "100pv\n")
 
         elif control == 2:
             choix_inventaire(Inventaire, Hero)
@@ -71,14 +71,20 @@ def combat(Monstre, Hero):
                 print("\n")
                 combat(Monstre,Hero)
                 
-    if Monstre.viePersonnage <= 0:
-        print("Vous avez éliminé:", Monstre.get_nomPersonnage())
-        Hero.barre_Exp(Monstre.get_ExpADonne())
-        Hero.Augment_level()
+        if Monstre.viePersonnage <= 0:
+            print("Vous avez éliminé:", Monstre.get_nomPersonnage(), "!")
+            Hero.barre_Exp(Monstre.get_ExpADonne())
+            Hero.Augment_level()
+            break
+
         
-    if Hero.viePersonnage <= 0:
-        print("Vous êtes mort...\n")
+        if Hero.viePersonnage <= 0:
+            print("Vous êtes mort...\n")
+            break
 
 
-Hero=hero("Kevin",10,5,0,1,0,None,None)
-combat(AlienF1, Hero)
+
+
+
+#Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
+#combat(AlienF3, Hero)
