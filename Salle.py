@@ -899,10 +899,6 @@ def Infirmerie(hero):
 # Hero = hero('Kevin',10,10,10,10,0,0,0)
 
 
-# Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-# Alien = MonstresNormaux('Alien',20,2,0,5)
-# Robot = MonstresNormaux('ROBOT',100,5,0,1,)
-# Hero = hero('Kevin',10,10,10,10,0,0,0)
-# Laboratoire(Hero)
 
 
+Hero = hero('Kevin',10,10,10,10,0,0,0)
