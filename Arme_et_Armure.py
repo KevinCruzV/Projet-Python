@@ -57,6 +57,7 @@ Exosquelette = Modele_Armure("Exosquelette", 22)
 #Objets de Quetes :
 Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")
 Lampe = Objet_de_Quete("lampe de poche")
+Talkie_Walkie = Objet_de_Quete("talkie walkie")
 
 
 

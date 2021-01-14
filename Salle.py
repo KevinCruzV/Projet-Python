@@ -48,18 +48,23 @@ def Salle_0(Hero):
     sleep(3)
     print("Vous vous réveillez dans une salle blanche... Autour de vous, il y du matériel informatique et une table d'opération avec dessus des instruments chirurgicaux... \n")
     sleep(5)
-    print("Voix : C'est pas trop tôt, j'ai cru que tu te réveillerais jamais ! Moi c'est", Robot.nomPersonnage, ". Je te parle a travers les hauts parleurs du vaisseau !\n")
+    print("Voix : C'est pas trop tôt, j'ai cru que tu te réveillerais jamais ! Moi c'est", Robot.nomPersonnage, "L'IA du vaisseau. Je te parle a travers les hauts parleurs de la pièce !\n")
     sleep(4)
     print(Robot.nomPersonnage,": Nous sommes dans la", Salle_0.get_nomSalle() ,"tu arrive a te souvenir de quelque chose ? \n")
     sleep(4)
     print("? : Où suis-je ? Que se passe t-il ? \n")
     sleep(3)
-    print(Robot.nomPersonnage, " :... dans la", Salle_0.get_nomSalle() ,"! T'as rien écouté ou quoi ?! La mission a rencontré un petit imprévu, j'ai entendu une explosion alors je suis venu ici et j'ai du te sortir de ta capsule plus tôt que prévu... \n")
+    print(Robot.nomPersonnage, " :... dans la", Salle_0.get_nomSalle() ,"! T'as rien écouté ou quoi ?! La mission a rencontré un petit imprévu, j'ai entendu une explosion alors et j'ai du te sortir de ta capsule plus tôt que prévu... \n")
     sleep(6)
-
     print(Robot.nomPersonnage, ": Très bien ", Hero.get_nomPersonnage()," c'est ça ? Viens avec moi, allons voir ce qui s'est passé au plus vite. Oh et tu ferais mieux de prendre de quoi te défendre, on sait jamais ce qui nous attends là-bas. \n")
     sleep(6)
-    print("Il y a un", Scalpel.nomArme ,"sur une table d'opération... \n")
+    print(Robot.get_nomPersonnage(),": Prends le ", Talkie_Walkie.nomObjet, " sur la table d'opération, ce sera plus discret pour parler")
+    sleep(3)
+    print(Hero.get_nomPersonnage(),": Ok d'accord") 
+    sleep(3)
+    Inventaire["Objets Rares"].append(Talkie_Walkie)
+    print("Vous rangez ",Talkie_Walkie.nomObjet," dans l'inventaire \n")
+    print("Il y a aussi un", Scalpel.nomArme ,"sur la table d'opération... \n")
     sleep(5)
     prendre = int(input(("Que voulez vous faire ? 1 = Prendre l'objet | 2 = Laisser l'objet \n")))
     sleep(2)
@@ -873,19 +878,41 @@ def Armurerie(Hero):
     VarHero(Hero)
 
 def ChambreEquipage(hero):
-    ChambreEquipage = Modele_Salle("Quartier de l'équipage")
+    ChambreEquipage = Modele_Salle("les quartiers de l'équipage")
     print("\n")
     sleep(1)
-    print("Vous marchez doucement longeant le long couloir. Il y fait un frois glaciale une odeur de sang se fait sentir.")   
+    print("Vous marchez doucement en longeant le long couloir. Il y fait un froid glaciale, une odeur de sang se fait sentir.")   
+    sleep(2)
+    print("Le cri strident d'un soldat entrain de mourir se fait entendre, vous accourez dans la premiere piece que vous voyez et fermez la porte.\n")
+    sleep(2)
+    print(hero.get_nomPersonnage(),": *Essoufflé* Jarvis ? Tu penses *Essoufflé* que cette chose m'a vu ? ")
+    sleep(2)
+    print("Jarvis : Oui t'as eu chaud mais je pense pas qu'elle nous ai suivi")
+    sleep(2)
+    print(hero.get_nomPersonnage(),": Je crois que je suis dans", ChambreEquipage.get_nomSalle(),"\n")
+    sleep(1)
+    print("Vous regardez autour de vous et voyez une pièce en désordre, surement dû a l'affolement de l'équipage.")
+    sleep(2)
+    print("Les lits sont retournés et les placards ouverts. Vous trouvez par terre une photo taché de sang.\n")
+    prendre = input("Prendre la photo ? ( y = oui | n = non )\n")
+    if prendre == 'y':
+        sleep(1)
+        print("*Prends la photo*")
+        sleep(1)
+        print("Il y a un homme avec sa femme et ses enfants\n")
+        sleep(2)
+        print(Hero.get_nomPersonnage(),": Surement un soldat. C'est triste, Je me demande comment ces choses on bien pu etre laché dans le vaisseau ?")
+    else :
+        pass
+
+
+
+
 
 def SalleDesMachines(hero):
     pass
 
-def Cafeteria(hero):
-    pass
 
-def Infirmerie(hero):
-    pass
     
 
 
