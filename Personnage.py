@@ -1,6 +1,6 @@
 from Modele import *
 from Arme_et_Armure import *
-
+from time import *
 
 
 
@@ -41,7 +41,10 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
 
     def a_une_arme(self, arme):
+        print("\n")
+        sleep(1)
         print("Vous êtes equipé de l'arme", arme.nomArme, "!")
+        sleep(1)
         print("Vous rajoutez +",arme.get_dommageArme(),"a votre attaque")
         if self.arme is not None :
             self.attaquePersonnage -= self.arme.get_dommageArme()
@@ -73,7 +76,10 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         # Fonction Armure #
 
     def a_une_armure(self, armure):
-        print("Vous etes equipé d'une", armure.get_nomArmure()) 
+        print("\n")
+        sleep(1)
+        print("Vous etes equipé d'une", armure.get_nomArmure())
+        sleep(1) 
         print("Vous rajoutez +",armure.get_defenseArmure(),"a votre defense")      
         if self.armure is not None :
             self.defensePersonnage -= self.armure.get_defenseArmure()
@@ -102,9 +108,9 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def Augment_level(self):
         if self.get_exp() == 100 :
             self.levelPersonnage += 1
-            self.viePersonnage += 20
-            self.attaquePersonnage += 15
-            self.defensePersonnage += 30 
+            self.viePersonnage += 10
+            self.attaquePersonnage += 8
+            self.defensePersonnage += 7 
             self.exp = 0
             print("Vous avez augmenté d'un niveau !")
             print("Vous etes maintenant au niveau : ", self.get_levelPersonnage())
@@ -112,26 +118,96 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         else :    
             pass
 
-              
+
+
+
+class PNG(Modele_Personnage):     
+   def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
+        super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
+         
+
+
+
+
+
+
+
+class BOSS(Modele_Personnage):
+    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, Nom_attaque_speciale, PointAttackSpe, AttackSpe): 
+        super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)    
+        self.Nom_attaque_speciale = Nom_attaque_speciale
+        self.PointAttackSpe = 50
+        self.AttackSpe = AttackSpe
+
+    def attack_monster(self, cible):
+        cible.dommage(self.attaquePersonnage)
+        sleep(1)
+        print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
+
+    def a_une_attaque_spe(self,spe):
+        if spe is not None:
+            return True
+        else:
+            return False
+
+    def get_a_une_attack_spe(self):
+        return self.AttackSpe
+
+    def get_attaque_speciale(self):
+        return self.Nom_attaque_speciale
+
+    def attackSpe_sur(self, cible):
+        cible.dommage(self.PointAttackSpe)
+        sleep(1)
+        print(self.get_nomPersonnage(), "utilise son attaque spécial", self.get_attaque_speciale())
+        sleep(1)
+        print(cible.get_nomPersonnage(), "a prit", self.PointAttackSpe, "de dégats.")  
+
 
 class MonstresForts(Modele_Personnage):
 
-    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
+    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, Nom_attaque_speciale, PointAttackSpe, AttackSpe):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
-        self.attaque_speciale = attaque_speciale
+        self.ExpADonner = 100
+        self.Nom_attaque_speciale = Nom_attaque_speciale
+        self.PointAttackSpe = 25
+        self.AttackSpe = AttackSpe
         #print(" /! Un monstre spécial apparait !\ ")
         #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, "| Attaque speciale :", attaque_speciale, " | Niveau : ", levelPersonnage, "\n")
 
+    def attack_monster(self, cible):
+        cible.dommage(self.attaquePersonnage)
+        sleep(1)
+        print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
+
     def get_attaque_speciale(self):
-        return self.attaque_speciale
+        return self.Nom_attaque_speciale
+
+    def a_une_attaque_spe(self,spe):
+        if spe is not None:
+            return True
+        else:
+            return False
+
+    def get_a_une_attack_spe(self):
+        return self.AttackSpe
+
+    def attackSpe_sur(self, cible):
+        cible.dommage(self.PointAttackSpe)
+        sleep(1)
+        print(self.get_nomPersonnage(), "utilise son attaque spécial", self.get_attaque_speciale())
+        sleep(1)
+        print(cible.get_nomPersonnage(), "a prit", self.PointAttackSpe, "de dégats.")    
 
 
 class MonstresNormaux(Modele_Personnage):
 
-    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage):
+    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, AttackSpe):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
         self.ExpADonner = 50
-        print("Un", nomPersonnage ,"apparait !")
+        self.AttackSpe = AttackSpe
+
+        #print("Un", nomPersonnage ,"apparait !")
         #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, " | Niveau : ", levelPersonnage, "\n")
 
     def damage(self, attaque):
@@ -143,19 +219,41 @@ class MonstresNormaux(Modele_Personnage):
 
     def attack_monster(self, cible):
         cible.dommage(self.attaquePersonnage)
+        sleep(1)
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
 
+    def get_a_une_attack_spe(self):
+        return self.AttackSpe
+
+    def a_une_attaque_spe(self,spe):
+        if spe is not None:
+            return True
+        else:
+            return False
 
 
 ###############################      Personnage du Jeux      ######################################
 
 
+Alien_blesse = MonstresNormaux('Alien Blessé', 20, 2,0,8, None)
+AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1, None)
+AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2, None)
+AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3, None)
+AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4, None)
+AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
 
-Robot = MonstresForts("Jarvis", 70, 50, 20, 100, 0)
-Soldat = MonstresForts('Oleg', 35, 5, 0, 5, 1)
+
+
 Alien = MonstresNormaux('Alien',25,2,0,5)
 Alien_blessé = MonstresNormaux('Alien', 20, 2,0,8)
+AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
+AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
+AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50, "oui")
+AlienF4 = MonstresForts("Alien adulte",80,45,28,9,"Griffe Acide",57, "oui")
+Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69, "oui")
 
+Soldat = PNG('Oleg', 20, 2, 0, 5, 1)
+ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 
 
 ####################################################################################################  

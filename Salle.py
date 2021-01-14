@@ -10,43 +10,7 @@ from time import *
 
 
 #####  Fonction pour lancer les salles  #####
-Salles = [1,2,3]
-
-# def choixSalles(salle):
-#     nb = randint(1, 3)
-#     P = VarHero(Hero)
-#     for i in salle:
-#         if nb == 1:
-#             Vestiaire(P)
-#             SuppSalle(salle, nb)
-#         if nb == 2:
-#             Refectoire(P)
-#             SuppSalle(salle, nb)
-#         if nb == 3:
-#             Hangar(P)
-#             SuppSalle(salle, nb)
-#         i += 1
-
-
-
-
-'''def Random_Salle():
-    #salles=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
-    salles = [1, 2, 3]
-    nb = randint(1, 3)
-    for i in salles:
-        if SearchFor(salles, nb):
-            if nb == 1:
-                Vestiaire()
-                SuppSalle(salles,nb)
-            elif nb == 2:
-                Refectoire()
-                SuppSalle(salles,nb)
-            #Il faut continuer a faire les salles
-
-        else :
-            nb = randint(1,22)
-            i=i+1'''
+Salles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 
 
@@ -125,12 +89,16 @@ def Salle_0(Hero):
 
     Code = int(input("Entrer un nombre :\n"))
     while Code != 90234 :
+        sleep(1)
+        print("*Tapotes sur le cadran*")
         sleep(2)
         print("*Warning Mauvais Code*\n")
         sleep(2)
         print(Robot.nomPersonnage, ": sans le bon code, on s'en ira jamais d'ici...\n")
         sleep(2)
         Code = int(input("Entrer un nombre :\n"))
+    sleep(1)
+    print("*Tapotes sur le cadran*")        
     sleep(2)
     print("*Code Bon*")
     sleep(2)
@@ -142,7 +110,7 @@ def Salle_0(Hero):
     sleep(3)
     print("*tap* *tap* *tap*, des bruits de pas s'éloignent vers la gauche...\n")
     VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+    
     
 
 
@@ -156,6 +124,9 @@ def Salle_final(hero):
     Salle_de_controle = Modele_Salle("Salle de controle")
     #Continuer la salle final
 
+
+
+
 #Salle Bonus
 def CapsuleDeSauvetage(hero):
     sleep(2)
@@ -164,14 +135,84 @@ def CapsuleDeSauvetage(hero):
     if Inventaire == 'y':
         if searchInventaire(Inventaire,Cle_de_la_Salle_des_Capsules_de_sauvetage) :
             CapsuleDeSauvetage = Modele_Salle("Salle des capsules de sauvetage")
+            print("\n")
+            sleep(2)
+            print("Jarvis : C'est la salle des capsules !! Tu crois que les capsules de sauvetage sont utilisables ?")
+            sleep(2)
+            print(hero.get_nomPersonnage(),": Je crois bien que oui ! C'est ma chance !")
+            sleep(2)
+            print("Jarvis : Mais tu est sûr de vouloir l'utilisé ??? il te reste encore des chose a faire ici ")
+            sleep(2)
+            print("Jarvis : Enfin apres tout je ne suis que L'IA du vaisseau. Mais bon à mon avis tu devrais rester")
+            sleep(2)
+            print(hero.get_nomPersonnage(),": Quoi ? Mais c'est peut être ma seul chance")
+            sleep(2)
+            print("Jarvis : T'en sait rien et moi j'ai encore besoi... Enfin je veux dire peut etre des personnes ont encore besoin de toi dans le vaisseau.")
+            print("\n")
+            sleep(1)
+            prendreCapsule = input("Prend-tu une des capsules ? (y = oui | n = non)")
+            if prendreCapsule == 'y':
+                sleep(2)
+                print(hero.get_nomPersonnage()," : Je préfère tenter ma chance ! Je reviendrai avec de l'aide")
+                sleep(2)
+                print("Jarvis : Bon comme tu veux... Mais reviens avec du monde ! D'accord...? ")
+                sleep(2)
+                print(hero.get_nomPersonnage(), ": Ne t'en fais pas\n")
+                sleep(1)
+                print("*Tapote sur le cadran*")
+                sleep(1)
+                print("*PSHHHHHH* Ouverture du Sas de la capsule")
+                sleep(1)
+                print(Hero.get_nomPersonnage(),": Je te dis à Dieu mon ami.")
+
+            elif prendreCapsule == 'n': 
+                sleep(2) 
+                print( Hero.get_nomPersonnage(),": Non tu as raison, il me reste des gens à aider")
+                sleep(2)
+                print("Jarvis : Sage décision")
+                print("\n")
+                prendre = input("Vous trouvez de l'adrenaline (y = oui | n = non)")
+                if prendre == 'y':
+                    Inventaire["Soins"].append(Seringue_adrenaline)
+                    sleep(3)
+                    ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
+                    sleep(1)
+                    if ouvrir == 1:
+                        choix_inventaire(Inventaire, Hero)
+                        Hero.recap()
+                    else:
+                        print("Vous rangez l'objet dans votre inventaire")    
+                    sleep(2)   
+                    print("Vous vous retournez vite pensant entendre un bruit mais rien")
+                    sleep(2)
+                    print("Vous faites 2 pas et par reflexe esquivez de justesse un jet d'acide")
+                    sleep(2)
+                    print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
+                    sleep(2)
+                    combat(AlienF4, Hero)
+
+                elif prendre == 'n': 
+                    sleep(2)   
+                    print("Vous vous retournez vite pensant entendre un bruit mais rien")
+                    sleep(2)
+                    print("Vous faites 2 pas et par reflexe esquivez de justesse un jet d'acide")
+                    sleep(2)
+                    print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
+                    sleep(2)
+                    combat(AlienF4, Hero)       
+    else :
+        sleep(2)
+        print("Vous n'avez pas la clé du réfectoire !")
+        sleep(2)
+        print("Vous vous retournez vite pensant entendre un bruit mais rien")
+        sleep(2)
+        print("Vous faites 2 pas et par reflexe esquivez de justesse un jet d'acide")
+        sleep(2)
+        print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
+        sleep(2)
+        combat(AlienF4, Hero)
+        VarHero(Hero)
         
-
-
-        else :
-            print("Vous n'avez pas la clé du réfectoire !")
-            
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
     
 
 def Vestiaire(Hero):
@@ -196,15 +237,16 @@ def Vestiaire(Hero):
         sleep(3)
         print(Robot.nomPersonnage, ": Je suis d'accord on ferais mieux d'y aller, et puis avec un peu de chance il s'en sortira... Qu'est-ce que ... Attention !! \n")
         sleep(5)
-        print("Une ombre se dirige vers vous, vous l'éclairez avec la",Lampe.get_nomObjet(),". C'est un",Alien.get_nomPersonnage(),", il est couvert de sang... mais est-ce le sien ? \n")
+        print("Une ombre se dirige vers vous, vous l'éclairez avec la",Lampe.get_nomObjet(),". C'est un",AlienN1.get_nomPersonnage(),", il est couvert de sang... mais est-ce le sien ? \n")
         sleep(5)
-        combat(Alien,Hero)
+        combat(AlienN1,Hero)
         if Hero.get_viePersonnage() <= 0:
             return 0
         else:
             print("On l'a échappé belle pour cette fois. Qu'est-ce qui a bien pu se passer pour que de tels monstres s'introduisent dans le vaisseau. \n")
             sleep(4)
             print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
+            VarHero(Hero)
             
 
     else :
@@ -217,7 +259,7 @@ def Vestiaire(Hero):
         sleep(5)
         print("Un grognement venant du fond du",Vestiaire.get_nomSalle(),"retentit, et ensuite des bruits de pas... les pas se rapprochent, ils seront bientôt tout près... \n")
         sleep(5)
-        combat(Alien,Hero)
+        combat(AlienN3,Hero)
         if Hero.get_viePersonnage() <= 0:
             return 0
         else:
@@ -230,6 +272,8 @@ def Vestiaire(Hero):
                 print("Vous n'avez pas ramasser l'arme. \n")
                 sleep(2)
                 print(Robot.nomPersonnage,": Je pense que tu as raison, on devrait le laissez tranquille. \n")
+                VarHero(Hero)
+                
             else:
                 sleep(2)
                 print("Vous avez trouvez un", Blaster_rouille.nomArme,". Vous l'ajoutez à votre inventaire. \n")
@@ -247,8 +291,8 @@ def Vestiaire(Hero):
                 print(Robot.nomPersonnage,": Bonne initiative, avec ça le prochain monstre qui viendra nous attaquer a du soucis à se faire ! \n")
                 sleep(4)
                 print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+                VarHero(Hero)
+                
 
 
 def Hangar(Hero):
@@ -332,13 +376,15 @@ def Hangar(Hero):
                 sleep(2)
                 print("Le monstre est juste devant vous, il vous fixe avec de grands yeux noirs. \n")
                 sleep(3)
-                combat(Alien,Hero)
+                combat(AlienN2,Hero)
+                VarHero(Hero)
+                                
             else:
-                print("Vous n'allumez votre lampe de poche \n")
+                print("Vous n'allumez pas votre lampe de poche \n")
                 sleep(2)
                 print("Des bruits de pas viennent dans votre direction... quelque chose est en train de courir vers vous. \n ")
                 sleep(3)
-                combat(Alien,Hero)
+                combat(AlienN2,Hero)                
             if Hero.get_viePersonnage() <= 0:
                 return 0
             else:
@@ -346,8 +392,8 @@ def Hangar(Hero):
                 print(Robot.get_nomPersonnage,": Tu devrais vraiment revoir ta façon de réfléchir, foncer dans la gueule du loup comme ça c'était pas une bonne idée ! \n")
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
+                VarHero(Hero)
+                
 
 def Laboratoire(Hero):
     Laboratoire = Modele_Salle("Laboratoire")
@@ -428,6 +474,8 @@ def Laboratoire(Hero):
             pass
         sleep(4)
         print("Vous quittez le", Laboratoire.get_nomSalle(),". \n")
+        VarHero(Hero)
+                
     else:
         print("Vous ne l'aidez pas.")
         sleep(2)
@@ -496,12 +544,12 @@ def Laboratoire(Hero):
         print(Robot.get_nomPersonnage(),": Oh oh... Je crois qu'on était pas censés prendre ça.",Hero.get_nomPersonnage(),"tant pis pour les autres plantes on a pas le temps, si la porte se referme on restera coincés ici pour toujours ! \n")
         sleep(6)
         print("Vous courrez vers la sortie de la serre et quittez le", Laboratoire.get_nomSalle(),"par la même occasion. \n")
+    
+        VarHero(Hero)
         
-    VarHero(Hero)
-    Sauve(Hero, Laboratoire, Inventaire)
     # VarHero(Hero)
 
-def ChambreFroide():
+def ChambreFroide(Hero):
     ChambreFroid = Modele_Salle("Chambre froide")
     print("Vous poussez la porte de la chambre froide")
     sleep(2)
@@ -511,7 +559,10 @@ def ChambreFroide():
     print("Vous vous approchez mais remarquez en enlevant des dèbris que c'est un bras!")
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !")
-    combat(Alien, Hero)
+    combat(AlienF2, Hero)
+    VarHero(Hero)
+    
+
 def Salle_des_Communications(Hero):
     Salle_des_Communications = Modele_Salle("Salle des communication")
     print("\n")
@@ -534,15 +585,121 @@ def Salle_des_Communications(Hero):
         sleep(1)
         print("Console : *Erreur* *Erreur*")
         sleep(1)
-        print("Console : *Les Communications sont desactivé*")
+        print("Console : *Les Communications exterieurs sont desactivé*")
         print("\n")
         sleep(2)
-        print(Hero.get_nomPersonnage(),":  ")
-        
+        print(Robot.get_nomPersonnage(),": Eh ben tiens... Quoi encore ? Une intrusion dans le systeme de communication...\n Qui aurait fait ça ? Surement celui qui à laché ces créatures dans le vaisseau")
+        sleep(2)
+        print(Hero.get_nomPersonnage(),": Bon.. Je fais quoi du coup si je peux pas contacter la Terre ?")
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Hmmm. Et si tu essayais non pas de communiquer avec l'exterieur mais plutôt avec l'interieur.")
+        sleep(2)
+        print(Robot.get_nomPersonnage(),": Si tu arrives à trouver un membre d'équipage qui aurait une des clés quantiques pour faire demarrer le vaisseau, tu pourrais partir d'ici !")
+        CommunicationInterieur = str(input("Voulez vous utiliser les communications interieurs ? (y/n)"))
+        if CommunicationInterieur == 'y':
+            sleep(2)
+            print(Hero.get_nomPersonnage(), ": Très Bien. Je vais essayer.\n")
+            sleep(1)
+            print("*Communication interne du Vaisseau Etablie*")
+            sleep(2)
+            print(Hero.get_nomPersonnage(),"A.. Allo... Je sais pas si vous m'entendez mais je suis dans la salle des communications. Y'a t-il quelqu'un ??\n")
+            sleep(2)
+            print("...")
+            sleep(1)
+            print("...\n")
+            sleep(2)
+            print("? : Oui ! je suis là ! je vous entends. Vous m'entendez ?")
+            sleep(2)
+            print(Hero.get_nomPersonnage(),": Oui ! Qui êtes vous ? Ou êtes vous ?")
+            sleep(2)
+            print(ViceCapitaine.get_nomPersonnage(),": Je m'appel Alexei et je suis le vice capitaine du vaisseau, je me trouve dans le couloir a l'entrée de la salle de commande")
+            sleep(2)            
+            print(ViceCapitaine.get_nomPersonnage(),": Et je peux pas vraiment me deplacer.. Je me suis blessé à la jambe en voulant echapper a une de ces sales bestioles")
+            sleep(2)
+            print(Hero.get_nomPersonnage(),": Ok, juste un truc. Vous avez une de ses clés pour démarer le vaisseau ? ")
+            sleep(2)
+            print(ViceCapitaine.get_nomPersonnage(),": Ouai, je l'a porte tout le temps sur moi. Vous voulez faire demarer le vaisseau ? ")
+            sleep(2)
+            print(Hero.get_nomPersonnage(),": Precisement et me barrer d'ici. Ok je viens a votre rencontre, bougez pas d'ici")
+            sleep(2)
+            print(ViceCapitaine.get_nomPersonnage(),": Super. Je vous attend alors et autre chose je sais qui a liberé ces choses j'ai vu un truc metalli.. \n")
+            sleep(2)
+            print("*Communication coupé*\n")
+            sleep(2)
+            print(Hero.get_nomPersonnage(),": Bon j'y vais\n")
+            sleep(2)
+            print("En vous retournant vous appercevé une silhouete.. De la bave tombe au sol ") 
+            sleep(1)
+            print("*Grrrr*\n")
+            print(AlienN3.get_nomPersonnage,"vous attaque !\n")
+            combat(AlienN3,Hero)           
+
+        elif CommunicationInterieur == 'n':
+            print("\n")
+            sleep(2)
+            print("Jarvis : Tes sûr de toi ? C'est pas très intelligent ça. Mais bon on fera autrement")
+            sleep(2)
+            print("Un", Buste_Polyethane.nomArmure,"se trouve sur la chaise de la", Salle_des_Communications.get_nomSalle())
+            sleep(1)
+            prendre = int(input(("Que voulez vous faire ? 1 = Prendre l'objet | 2 = Laisser l'objet \n")))
+            sleep(2)
+            print("\n")
+            if prendre == 1:
+                Inventaire["Armures"].append(Buste_Polyethane)
+                print(Robot.nomPersonnage, ": Tu sera stylé avec ça. \n")
+                sleep(3)
+                ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
+                sleep(1)
+                if ouvrir == 1:
+                    choix_inventaire(Inventaire, Hero)
+                    
+                else :
+                    print("*Vous rangez l'armure dans l'inventaire*\n")    
+            elif prendre == 2:
+                sleep(2)
+                print("Vous laissez l'objet")
+            sleep(2)    
+            print("La porte se ferme soudainement, vous sentez une presence se deplacer sur le plafond. Vous dirigez votre lampe vers le haut")
+            sleep(2)
+            print("Un",AlienF1.nomPersonnage,"vous surprend")
+            print(Hero.get_nomPersonnage,": il s'en est fallu de peu. Bon il faut que je quitte cette piece")
     elif questionLampe =='n':    
-        pass
-            
-            
+        print("\n")
+        sleep(2)
+        print("Jarvis : Tu veux economiser les batteries de la lampe ? On est dans un jeu textuel idiot.. Enfin bref ")
+        sleep(2)
+        print("Jarvis : Je distingue à peine des ecrans")
+        sleep(2)
+        print(Hero.get_nomPersonnage(), ": ça me dit rien qui va on s'en va\n")
+        sleep(1)
+        print("Avant de partir vous voyez sur le coté un casier")
+        ouvrir = str(input("Voulez vous l'ouvrir ? y = oui | n = non "))
+        if ouvrir =='y':
+            print("\n")
+            sleep(2)
+            print("Vous y trouvez une",fleurs_oranges.nomObjet)
+            prendre = int(input(("Que voulez vous faire ? 1 = Prendre l'objet | 2 = Laisser l'objet \n")))
+            sleep(2)
+            print("\n")
+            if prendre == 1:
+                Inventaire["Soin"].append(fleurs_oranges)
+                sleep(3)
+                ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
+                sleep(1)
+                if ouvrir == 1:
+                    choix_inventaire(Inventaire, Hero)
+                    print("Vous quittez", Salle_des_Communications.get_nomSalle())
+                    VarHero(Hero)
+                                         
+                else :
+                    print("*Vous rangez l'arme dans l'inventaire*\n")
+                    print("Vous quittez", Salle_des_Communications.get_nomSalle())
+                    VarHero(Hero)
+                                         
+        elif ouvrir == 'n':
+            print("Vous quittez", Salle_des_Communications.get_nomSalle())                
+            VarHero(Hero)
+                    
 
 
     
@@ -676,21 +833,22 @@ def Armurerie(Hero):
                 sleep(4)
                 Inventaire["Armes"].append(Gants_combustion)
                 print("Le nouvel objet a été ajouté à votre inventaire. \n")
+
         print(Robot.get_nomPersonnage(),": Oh... voilà qui va te faciliter la tâche ! \n")
         
     print("Vous continuez d'avancer dans l'", Armurerie.get_nomSalle(),". \n")
     sleep(3)
-    print("Vous apercevez un",Alien_blessé.get_nomPersonnage(),". Il est blessé à plusieurs endroits. \n")
+    print("Vous apercevez un",Alien_blesse.get_nomPersonnage(),". Il est blessé à plusieurs endroits. \n")
     sleep(3)
     print(Robot.get_nomPersonnage(),": Tiens, il est lent et a l'air blessé. Quelqu'un à déjà du l'affronter, on devrait arriver à le semer facilement. \n")
     sleep(4)
-    print("Vous apercevez un coffre derrière l'",Alien_blessé.get_nomPersonnage(),". Il est ouvert mais n'est pas vide. Pour y accéder il vous faudra affronter l'",Alien_blessé.get_nomPersonnage(),". \n")
+    print("Vous apercevez un coffre derrière l'",Alien_blesse.get_nomPersonnage(),". Il est ouvert mais n'est pas vide. Pour y accéder il vous faudra affronter l'",Alien_blesse.get_nomPersonnage(),". \n")
     sleep(4)
     question4 = int(input("Que voulez-vous faire ? 1 = L'affronter | 2 = S'échapper \n"))
     sleep(2)
     if question4 == 1:
         print(Robot.get_nomPersonnage,": Sérieusement tu compte te battre ? Très bien c'est comme tu veux... \n")
-        combat(Alien_blessé,Hero)
+        combat(Alien_blesse,Hero)
         if Hero.get_viePersonnage() <= 0:
             return 0
         print(Robot.get_nomPersonnage(),": Bon maintenant le coffre ! \n")
@@ -713,10 +871,33 @@ def Armurerie(Hero):
     sleep(2)
     print("Vous vous dirigez vers la sortie et quittez l'",Armurerie.get_nomSalle(),". \n")
     VarHero(Hero)
-    #Sauve(Hero, Armurerie, Inventaire)
+
+def ChambreEquipage(hero):
+    pass    
+
+def SalleDesMachines(hero):
+    pass
+
+def Cafeteria(hero):
+    pass
+
+def Infirmerie(hero):
+    pass
+    
+
+
+
+
+
+
+
 
 #Random_Salle()
 #choixSalles()
+
+
+# Hero = hero('Kevin',10,10,10,10,0,0,0)
+
 
 
 
