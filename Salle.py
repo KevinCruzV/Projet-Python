@@ -873,7 +873,10 @@ def Armurerie(Hero):
     VarHero(Hero)
 
 def ChambreEquipage(hero):
-    pass    
+    ChambreEquipage = Modele_Salle("Quartier de l'équipage")
+    print("\n")
+    sleep(1)
+    print("Vous marchez doucement longeant le long couloir. Il y fait un frois glaciale une odeur de sang se fait sentir.")   
 
 def SalleDesMachines(hero):
     pass
@@ -892,17 +895,6 @@ def Infirmerie(hero):
 
 
 
-#Random_Salle()
-#choixSalles()
 
-
-# Hero = hero('Kevin',10,10,10,10,0,0,0)
-
-
-# Soldat = MonstresForts('Oleg', 20, 2, 0, 5, 1)
-# Alien = MonstresNormaux('Alien',20,2,0,5)
-# Robot = MonstresNormaux('ROBOT',100,5,0,1,)
-# Hero = hero('Kevin',10,10,10,10,0,0,0)
-# Laboratoire(Hero)
 
 
