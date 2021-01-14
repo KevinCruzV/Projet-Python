@@ -879,11 +879,10 @@ def SalleDesMachines(hero):
     pass
 
 def Cafeteria(Hero):
-    print("Vous etes dans la caeft")
-    Hero.recap()
+    
 
 def Infirmerie(Hero):
-    Hero.attaque_boost(Hero.get_attaquePersonnage)
+    
     
     
 def Bibliotheque(Hero):
@@ -989,6 +988,8 @@ def Bibliotheque(Hero):
     print("Vous brisez la vitre du hublot et passez à travers. \n")
     sleep(2)
     print("Vous quittez la",Bibliotheque.get_nomSalle(),". \n")
+
+
 
 
         
