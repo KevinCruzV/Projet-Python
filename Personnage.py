@@ -119,18 +119,10 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
             pass
 
 
-
-
 class PNG(Modele_Personnage):     
    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
          
-
-
-
-
-
-
 
 class BOSS(Modele_Personnage):
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, Nom_attaque_speciale, PointAttackSpe, AttackSpe): 
