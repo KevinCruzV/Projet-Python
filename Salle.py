@@ -901,9 +901,14 @@ def ChambreEquipage(hero):
         sleep(1)
         print("Il y a un homme avec sa femme et ses enfants\n")
         sleep(2)
-        print(Hero.get_nomPersonnage(),": Surement un soldat. C'est triste, Je me demande comment ces choses on bien pu etre laché dans le vaisseau ?")
+        print(Hero.get_nomPersonnage(),": Surement un soldat. C'est triste, Je me demande comment ces choses on bien pu etre laché dans le vaisseau ?\n")
+        sleep(2)
+        print("Vous ")
+
     else :
-        pass
+        sleep(2)
+        print("Vous deposez la Photo")
+        print("Tout d'un coup, quelque chose frappe la porte")
 
 
 
