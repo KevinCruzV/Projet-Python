@@ -2,14 +2,16 @@ from Personnage import *
 from random import randint
 from inventaire import *
 from time import *
+#from colorama import *
 
 
 def combat(Monstre, Hero):
 
     while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
-        print("Appuyez sur 1 pour attaquer")
-        print("Appuyez sur 2 pour ouvrir l'inventaire")
-        print("Appuyez sur 3 pour fuir le combat\n")
+        #print(Fore.RED, "\n")
+        print(" Appuyez sur 1 pour attaquer")
+        print(" Appuyez sur 2 pour ouvrir l'inventaire")
+        print(" Appuyez sur 3 pour fuir le combat\n")
 
         control = (input("Que voulez vous faire?\n"))
         #test de l'input "control"
@@ -83,8 +85,5 @@ def combat(Monstre, Hero):
             break
 
 
-
-
-
 #Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
-#combat(AlienF3, Hero)
+#combat(AlienF3, Kevin)

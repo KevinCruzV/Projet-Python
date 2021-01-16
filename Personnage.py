@@ -16,8 +16,6 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
         self.exp = 0
        
 
-
-
     def recap(self):
         if self.arme == None and self.armure == None :
             print("\n")
@@ -233,7 +231,6 @@ AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2, None)
 AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3, None)
 AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4, None)
 AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
-
 
 
 
