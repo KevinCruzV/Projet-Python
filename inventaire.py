@@ -1,5 +1,6 @@
 from Personnage import *
 from Arme_et_Armure import *
+#from colorama import *
 
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
@@ -15,7 +16,9 @@ Inventaire = {
 #Lorsque qu'un items de soins est utilisé, il est immédiatemment supprimé de la liste
 
 def choix_inventaire(inventaire, hero):
-    choix = int(input("Que voulez vous dans l'inventaire? 1 = Soins | 2 = Armes | 3 = Armures | 4 = Objets importants | 5 = Fermer l'inventaire\n"))
+    #print(Fore.YELLOW, "\n")
+    choix = int(input("Que voulez vous dans l'inventaire? 1 = Soins | 2 = Armes | 3 = Armures | 4 = Objets importants "
+                      "| 5 = Fermer l'inventaire\n"))
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
 #Lorsque qu'un items de soins est utilisé, il est immédiatemment supprimé de la liste
@@ -96,3 +99,6 @@ def searchInventaire(Inventaire, objet):
     for j in len(Inventaire["Objets Rare"]) :
             if j == objet :
                 return True
+
+
+#choix_inventaire(Inventaire, Kevin)

@@ -4,6 +4,7 @@ from Salle import *
 from sauvegarde import *
 from direction1 import direction
 import os
+
 #importation  de l'os pour lancer le jeu dans la console
 
 
@@ -12,19 +13,21 @@ import os
 #Fonction qui exécute la boucle principale du jeu 
 
 def main():
-    Hero=hero(str(input("quel est ton prénom ? \n")),10,5,0,1,0,None,None)
+    Hero=hero(str(input("Quel est ton prénom ? \n")),10,5,0,1,0,None,None)
     Salle_0(Hero)
-    for i in Salles:
-        if i == len(Salles):
-            #Tu entre dans la salle final
-            Salle_final(Hero)
-            Credit()
-            os.system(exit())
-        else :
-            if direction() :
-                choixSalles(Salles, Hero)
-            else :
-                choixSalles(Salles, Hero)   
+    while Hero.viePersonnage > 0:
+            for i in Salles:
+                if i == len(Salles):
+                    #Tu entre dans la salle final
+                    Salle_final(Hero)
+                    Credit()
+                    os.system(exit())
+                else :
+                    if direction() :
+                        choixSalles(Salles, Hero)
+                    else :
+                        choixSalles(Salles, Hero)
+    GameOver()
             
 
 
@@ -85,9 +88,9 @@ def TestUser(TestUserInput=False):
 #Fonction du menu principal qui permet de lancer la fonction choisie
 def menu(TestUserInput=False):
     print("1: Nouvelle partie :")
-    print("2: load Partie :")
-    print("3: A propos du jeu")
-    print("4: Exit\n")
+    print(" 2: Load Partie :")
+    print(" 3: A propos du jeu")
+    print(" 4: Exit\n")
 
     # Boucle pour tester ce qu'entre comme valeur l'utilisateur et qui ensuite déclenche une fonction si la condition est vérifiée
 
@@ -223,10 +226,6 @@ def GameOver():
     print("\n")
     sleep(2)
     print("GAME OVER ! vous n'avez pas reussi a quitter le vaiseau.")
-
-    
-
-
 
 
 
