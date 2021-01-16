@@ -1838,18 +1838,3 @@ def Win1():
     print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 #Hero = hero('Kevin',10,10,10,10,0,0,0)
-
-<<<<<<< HEAD
-
-
-
-
-
-
-    
-
-
-
-
-=======
->>>>>>> 0f4f5748a71be815ac36892081d31ca1a861d40e
