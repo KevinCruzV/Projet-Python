@@ -57,20 +57,48 @@ def Load():
 
 # Credit
 def Credit():
+    print("\n")
     print("Ce jeu a ete devellopé blablabla")
+    sleep(3)
+    demande = input("Voulez vous retourner au menu ? (y/n)\n")
+    if demande != 'n': 
+        sleep(3)
+        print("Ce jeu a ete devellopé blablabla")
+        sleep(3)
+        print("\n")
+        menu()
+    elif demande == 'y':  
+        print("\n")  
+        menu()
 
 
 #Fonction qui explique commennt jouer au jeu
 def HowToPlay():
-    print("Pour jouer, vous devez entrer un des chiffres disponible et qui définira ensuite votre action.\n")
-    print("Projet en python d'un rpg textuel\n")
-    TestUser(TestUserInput=False)
+    sleep(3)
+    print("Pour jouer, vous devez entrer un des chiffres ou une des lettres disponible. Ce qui définira ensuite votre action.\n")
+    sleep(3)
+    print("Plongez vous dans l'univers de science fiction qu'est ce jeu\n")
+    sleep(3)
+    demande = input("Voulez vous retourner au menu ? (y/n)\n")
+    if demande == 'n': 
+        print("\n")
+        sleep(3)
+        print("Pour jouer, vous devez entrer un des chiffres disponible et qui définira ensuite votre action.\n")
+        sleep(3)
+        print("\n")
+        menu()
+        print("Projet en python d'un rpg textuel\n")
+    elif demande == 'y':
+        print("\n")    
+        menu()
+
+ 
 
 #Fonction pour tester ce qu'entre comme valeur l'utilisateur et qui ramène au menu si la condition est vérifiée
 def TestUser(TestUserInput=False):
     
     while TestUserInput == False:
-        UserInput = input("Appuyez sur 1 pour retourner au menu:")
+        UserInput = input("Appuyez sur 1 pour retourner au menu : ")
         try:
             UserInput = int(UserInput)
             if UserInput != 1:
@@ -79,20 +107,21 @@ def TestUser(TestUserInput=False):
                 TestUserInput = True
                 menu()
         except ValueError:
-            input("Appuyez sur 1 pour retourner au menu:")
+            input("Appuyez sur 1 pour retourner au menu : ")
 
 
 #Fonction du menu principal qui permet de lancer la fonction choisie
 def menu(TestUserInput=False):
-    print("1: Nouvelle partie :")
-    print("2: load Partie :")
+    print("\n")
+    print("1: Nouvelle partie : ")
+    print("2: load Partie : ")
     print("3: A propos du jeu")
     print("4: Exit\n")
 
     # Boucle pour tester ce qu'entre comme valeur l'utilisateur et qui ensuite déclenche une fonction si la condition est vérifiée
 
     while TestUserInput == False:
-        UserInput = input("Entrez un chiffre entre 1 et 4:")
+        UserInput = input("Entrez un chiffre entre 1 et 4 : ")
         try:
             UserInput = int(UserInput)
             if UserInput > 0 and UserInput < 5:
@@ -101,34 +130,41 @@ def menu(TestUserInput=False):
             #Jouer au jeu
 
             if UserInput == 1:
-                print("Partie initialisée\n Bon courage ^^\n")
+                print("\n")
+                print("Partie initialisée\nBon courage ^^\n")
                 main()
 
             #Sauvegarde
 
             if UserInput == 2:
+                    print("\n")
                     print("Accés confirmé\nVous revenez au vaisseau\n")
                     Load()
 
             #Le How To Play
 
             if UserInput == 3:
-                print("Accés confirmé\n Plan d'evacuation\n")
+                print("\n")
+                print("Accés confirmé\nPlan d'evacuation : \n")
                 HowToPlay()
 
             #Sortir du jeu
 
             if UserInput == 4:
-                print("Autodestruction du vaisseau, vous avez perdu.")
+                print("\n")
+                print("Autodestruction du vaisseau.")
                 os.system(exit())
 
             #Erreurs 
 
             elif UserInput < 0:
+                print("\n")
                 print("Impossible\n")
             elif UserInput > 4:
+                print("\n")
                 print("Impossible\n")
         except ValueError:
+                print("\n")
                 print("Impossible\n")
 
                 
@@ -225,7 +261,6 @@ def GameOver():
     print("GAME OVER ! vous n'avez pas reussi a quitter le vaiseau.")
 
     
-
 
 
 

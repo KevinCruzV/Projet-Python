@@ -4,8 +4,8 @@ from Arme_et_Armure import *
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
-    "Soins": [],
-    "Armes": [],
+    "Soins": [kit_de_soins],
+    "Armes": [Pistolet_Laser],
     "Armures": [],
     "Objets rares": [],
     #"Fermer l'inventaire": True

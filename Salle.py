@@ -299,7 +299,7 @@ def CapsuleDeSauvetage(hero):
             CapsuleDeSauvetage = Modele_Salle("Salle des capsules de sauvetage")
             print("\n")
             sleep(2)
-            print("Jarvis : C'est la salle des capsules !! Tu crois que les capsules de sauvetage sont utilisables ?")
+            print("Jarvis : C'est la", CapsuleDeSauvetage.get_nomSalle(), "!! Tu crois que les capsules de sauvetage sont utilisables ?")
             sleep(2)
             print(hero.get_nomPersonnage(),": Je crois bien que oui ! C'est ma chance !")
             sleep(2)
@@ -325,7 +325,7 @@ def CapsuleDeSauvetage(hero):
                 sleep(1)
                 print("*PSHHHHHH* Ouverture du Sas de la capsule")
                 sleep(1)
-                print(Hero.get_nomPersonnage(),": Je te dis à Dieu mon ami.\n")
+                print(hero.get_nomPersonnage(),": Je te dis à Dieu mon ami.\n")
                 sleep(1)
                 print("*Intrusion système : Capsule non utilisable*")
                 sleep(1)
@@ -340,7 +340,7 @@ def CapsuleDeSauvetage(hero):
 
             elif prendreCapsule == 'n': 
                 sleep(2) 
-                print( Hero.get_nomPersonnage(),": Non tu as raison, il me reste des gens à aider")
+                print( hero.get_nomPersonnage(),": Non tu as raison, il me reste des gens à aider")
                 sleep(2)
                 print("Jarvis : Sage décision")
                 print("\n")
@@ -351,8 +351,8 @@ def CapsuleDeSauvetage(hero):
                     ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
                     sleep(1)
                     if ouvrir == 1:
-                        choix_inventaire(Inventaire, Hero)
-                        Hero.recap()
+                        choix_inventaire(Inventaire, hero)
+                        hero.recap()
                     else:
                         print("Vous rangez l'objet dans votre inventaire")    
                     sleep(2)   
@@ -362,7 +362,7 @@ def CapsuleDeSauvetage(hero):
                     sleep(2)
                     print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
                     sleep(2)
-                    combat(AlienF4, Hero)
+                    combat(AlienF4, hero)
 
                 elif prendre == 'n': 
                     sleep(2)   
@@ -372,7 +372,7 @@ def CapsuleDeSauvetage(hero):
                     sleep(2)
                     print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
                     sleep(2)
-                    combat(AlienF4, Hero)       
+                    combat(AlienF4, hero)       
     else :
         sleep(2)
         print("Vous n'avez pas la clé du réfectoire !")
@@ -383,8 +383,8 @@ def CapsuleDeSauvetage(hero):
         sleep(2)
         print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
         sleep(2)
-        combat(AlienF4, Hero)
-        VarHero(Hero)
+        combat(AlienF4, hero)
+        VarHero(hero)
         
     
 
@@ -723,8 +723,8 @@ def Laboratoire(Hero):
     # VarHero(Hero)
 
 def ChambreFroide(Hero):
-    ChambreFroide = Modele_Salle("Chambre froide")
-    print("Vous poussez la porte de la chambre froide")
+    ChambreFroide = Modele_Salle("chambre froide")
+    print("Vous poussez la porte de la", ChambreFroide.get_nomSalle())
     sleep(2)
     print("Vous remarquez que la plupart des réserves ont été consomées")
     print("mais un bout de viande près de vous semble encore frais")
@@ -1190,8 +1190,8 @@ def ChambreEquipage(hero):
                 ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
                 sleep(1)
                 if ouvrir == 1:
-                    choix_inventaire(Inventaire, Hero)
-                    Hero.recap()
+                    choix_inventaire(Inventaire, hero)
+                    hero.recap()
                 else :
                     sleep(1)
                     print("Vous rangez l'arme dans l'inventaire \n")
@@ -1341,8 +1341,8 @@ def ChambreEquipage(hero):
                 ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
                 sleep(1)
                 if ouvrir == 1:
-                    choix_inventaire(Inventaire, Hero)
-                    Hero.recap()
+                    choix_inventaire(Inventaire, hero)
+                    hero.recap()
                 else :
                     sleep(1)
                     print("Vous rangez l'arme dans l'inventaire \n")
@@ -1491,8 +1491,8 @@ def ChambreEquipage(hero):
                 ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
                 sleep(1)
                 if ouvrir == 1:
-                    choix_inventaire(Inventaire, Hero)
-                    Hero.recap()
+                    choix_inventaire(Inventaire, hero)
+                    hero.recap()
                 else :
                     sleep(1)
                     print("Vous rangez l'arme dans l'inventaire \n")
@@ -1739,12 +1739,3 @@ def Win1():
 
 
 
-
-
-
-
-
-
-Hero = hero('Kevin',10,10,10,10,0,0,0)
-
-Bibliotheque(Hero)
