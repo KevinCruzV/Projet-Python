@@ -51,6 +51,7 @@ Gants_combustion = ("Gants de combustion", 24)
 #Armures :
 Combinaison_Spatial_trouee = Modele_Armure("Combinaison spatial trouée", 5)
 Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone", 12)
+Pyjama = Modele_Armure("Pyjama", 0)
 Buste_Polyethane = Modele_Armure("Buste en Polyethane",16) 
 Exosquelette = Modele_Armure("Exosquelette", 22)
 
@@ -58,6 +59,8 @@ Exosquelette = Modele_Armure("Exosquelette", 22)
 Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")
 Lampe = Objet_de_Quete("lampe de poche")
 Talkie_Walkie = Objet_de_Quete("talkie walkie")
+Clé_Demarage_Vaisseau = Objet_de_Quete("clé de démarage du vaisseau")
+MicroPuce = Objet_de_Quete("micro-puce")
 
 
 

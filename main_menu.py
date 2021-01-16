@@ -42,7 +42,6 @@ def Load():
         for i in Data["Salle"]:
             if i == len(Data["Salle"]):
                 Salle_final(Hero)
-                Win()
                 Credit()
                 os.system(exit())
             else : 
@@ -220,12 +219,30 @@ def GameOver():
 
     
 
-def Win():
+def Win2():
     print("\n")
     sleep(2)
     print("FELICITATION !!!!")
     sleep(2)
-    print("Vous avez reussi a vous enfuir du vaisseau !")
+    print("Vous avez reussi à vous enfuir du vaisseau !")
+    sleep(2)
+    print("Vous êtes en direction de la Terre, mais le vaisseau aussi...")
+    sleep(2)
+    print("Vous avez préféré votre vie à celle d'une planète")
+    sleep(1)
+    print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
+
+
+def Win1():
+    print("\n")
+    sleep(2)
+    print("FELICITATION !!!!")  
+    sleep(2)
+    print("Vous avez sauvé la Terre en dépit de votre propre vie")
+    sleep(2)
+    print ("Repos eternel soldat")
+    sleep(2)
+    print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 
 main()
