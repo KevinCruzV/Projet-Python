@@ -248,4 +248,6 @@ def Win1():
 main()
 
 
+a = "coucou"
+
 

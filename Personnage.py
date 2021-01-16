@@ -60,7 +60,18 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
 
     def vie_addition(self, VieAddition):
         self.viePersonnage += VieAddition
+    
+    def attaque_boost(self, attaquePersonnage):
+        self.attaquePersonnage = self.attaquePersonnage + 5
+        return self.attaquePersonnage
 
+    def defense_boost(self, defensePersonnage):
+        self.defensePersonnage = self.defensePersonnage + 5
+        return self.defensePersonnage
+    
+    def vie_boost(self, viePersonnage):
+        self.viePersonnage = self.viePersonnage + 10
+        return self.viePersonnage
 
         # Fonction Armure #
 
@@ -108,18 +119,10 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
             pass
 
 
-
-
 class PNG(Modele_Personnage):     
    def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, attaque_speciale):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
          
-
-
-
-
-
-
 
 class BOSS(Modele_Personnage):
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, Nom_attaque_speciale, PointAttackSpe, AttackSpe): 
@@ -231,6 +234,10 @@ AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3, None)
 AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4, None)
 AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
 
+
+
+Alien = MonstresNormaux('Alien',25,2,0,5, 0)
+AlienF0 = MonstresForts("Alien siamois",60,32,18,7,"Double Griffure",38,"oui")
 AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
 AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
 AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50, "oui")
