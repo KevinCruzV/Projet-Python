@@ -134,10 +134,10 @@ def menu(TestUserInput=False):
                 
 
 def choixSalles(salle, hero):
-    nb = randint(1, 20)
+    nb = randint(1, 19)
     P = VarHero(hero)
     for i in salle:
-        if nb == 1 or nb == 2 or nb == 3:
+        if nb == 1 or nb == 11 or nb == 12:
             Vestiaire(P)
             SuppSalle(salle, 1)
             SuppSalle(salle, 2)
@@ -146,16 +146,19 @@ def choixSalles(salle, hero):
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 2:
+        if nb == 2 or nb == 13 or nb == 14:
             Infirmerie(P)
-            SuppSalle(salle, nb)
+            SuppSalle(salle, 2)
+            SuppSalle(salle, 13)
+            SuppSalle(salle, 14)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 3:
+        if nb == 3 or nb == 15:
             Hangar(P)
-            SuppSalle(salle, nb)
+            SuppSalle(salle, 3)
+            SuppSalle(salle, 15)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
@@ -167,23 +170,27 @@ def choixSalles(salle, hero):
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 5:
+        if nb == 5 or nb == 16:
             Laboratoire(P)
-            SuppSalle(salle, nb)
+            SuppSalle(salle, 5)
+            SuppSalle(salle, 16)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 6:
+        if nb == 6 or nb == 17:
             ChambreFroide(P)
-            SuppSalle(salle, nb)
+            SuppSalle(salle, 6)
+            SuppSalle(salle, 17)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 7:
+        if nb == 7 or nb == 18 or nb == 19:
             Salle_des_Communications(P)
-            SuppSalle(salle, nb)
+            SuppSalle(salle, 7)
+            SuppSalle(salle, 18)
+            SuppSalle(salle, 19)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
@@ -196,14 +203,14 @@ def choixSalles(salle, hero):
             Sauve(P,Salles,Inventaire)
 
         if nb == 9:
-            SalleDesMachines(P)
+            Bibliotheque(P)
             SuppSalle(salle, nb)
             print(P)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
         if nb == 10:
-            Cafeteria(P)
+            CapsuleDeSauvetage(P)
             SuppSalle(salle, nb)
             print(P)
             P = VarHero(hero)
@@ -219,35 +226,9 @@ def GameOver():
 
     
 
-def Win2():
-    print("\n")
-    sleep(2)
-    print("FELICITATION !!!!")
-    sleep(2)
-    print("Vous avez reussi à vous enfuir du vaisseau !")
-    sleep(2)
-    print("Vous êtes en direction de la Terre, mais le vaisseau aussi...")
-    sleep(2)
-    print("Vous avez préféré votre vie à celle d'une planète")
-    sleep(1)
-    print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 
-def Win1():
-    print("\n")
-    sleep(2)
-    print("FELICITATION !!!!")  
-    sleep(2)
-    print("Vous avez sauvé la Terre en dépit de votre propre vie")
-    sleep(2)
-    print ("Repos eternel soldat")
-    sleep(2)
-    print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 
-main()
-
-
-a = "coucou"
 
 

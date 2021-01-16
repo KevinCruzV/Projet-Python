@@ -10,7 +10,7 @@ from time import *
 
 
 #####  Fonction pour lancer les salles  #####
-Salles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+Salles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 
 
 
@@ -732,7 +732,7 @@ def ChambreFroide(Hero):
     print("Vous vous approchez mais remarquez en enlevant des dèbris que c'est un bras!")
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !")
-    combat(AlienF2, Hero)
+    combat(AlienF3, Hero)
     VarHero(Hero)
     
 
@@ -1521,28 +1521,6 @@ def ChambreEquipage(hero):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def Cafeteria(Hero):
-    pass
-
 def Infirmerie(Hero):
     Infirmerie = Modele_Salle("Infirmerie")
     print("Vous entrez dans l'", Infirmerie.get_nomSalle(),". \n")
@@ -1637,7 +1615,7 @@ def Bibliotheque(Hero):
         if question2 == 1:
             print("Vous le réveillez en lui lançant un livre. \n")
             sleep(2)
-            combat(AlienN1, Hero)
+            combat(AlienF2, Hero)
             print(Robot.get_nomPersonnage(),": Il dormait vraiment ou bien il s'est fait assommer par la chute des livres ? C'est quand même bizarre qu'il était enfouis là-dessous. \n")
             sleep(3)
             print("Vous prenez la clé et vous approchez de l'étagère verrouillée. \n")
@@ -1702,7 +1680,7 @@ def Bibliotheque(Hero):
         print("L'alien enfouis sous les livres se réveille. Ils se rapprochent l'un de l'autre et .... fusionnent. Ils ne font plus qu'un, l'alien est deux fois plus gros et a un corps difforme, et deux têtes ! \n")
         sleep(4)
         print(Robot.get_nomPersonnage(),": Oh oh... on aurait du s'occuper de celui qui dormait tout à l'heure... \n")
-        combat(AlienF0,Hero)
+        combat(AlienF3,Hero)
         print(Robot.get_nomPersonnage(),": qui aurait cru que deux d'entre eux pouvaient fusionner... \n")
         sleep(2)  
     print("Vous apercevez la porte de sortie de la",Bibliotheque.get_nomSalle(),". Elle est encombrée par des tas de livres mais il y a un hublot assez grand pour s'y faufiller. \n")

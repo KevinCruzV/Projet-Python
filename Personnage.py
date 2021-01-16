@@ -227,7 +227,7 @@ class MonstresNormaux(Modele_Personnage):
 ###############################      Personnage du Jeux      ######################################
 
 
-Alien_blesse = MonstresNormaux('Alien Blessé', 20, 2,0,8, None)
+Alien_blesse = MonstresNormaux('Alien Blessé', 45,29,0,8, None)
 AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1, None)
 AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2, None)
 AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3, None)
@@ -236,7 +236,7 @@ AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
 
 
 
-Alien = MonstresNormaux('Alien',25,2,0,5, 0)
+
 AlienF0 = MonstresForts("Alien siamois",60,32,18,7,"Double Griffure",38,"oui")
 AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
 AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
@@ -245,7 +245,7 @@ AlienF4 = MonstresForts("Alien adulte",80,45,28,9,"Griffe Acide",57, "oui")
 Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69, "oui")
 Horde = BOSS("Horde d'Aliens", 300,400,500,100,"Multiple Morsures Acide", 520,"oui")
 
-Soldat = PNG('Oleg', 20, 2, 0, 5, 1)
+Soldat = MonstresForts('Oleg', 58, 44, 17, 6, "Queue Acide", 34, "oui")
 ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 
 
