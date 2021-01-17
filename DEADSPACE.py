@@ -8,7 +8,4 @@ def DeadSpace():
     menu()
 
 
-
-
-
 DeadSpace()

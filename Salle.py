@@ -141,8 +141,9 @@ def Salle_0(Hero):
     print("La porte s'ouvre, vous êtes éblouit par la lumière du couloir.\n")
     sleep(3)
     print("*tap* *tap* *tap*, des bruits de pas s'éloignent vers la gauche...\n")
+    ouvir_inventaire()
     VarHero(Hero)
-    
+
     
 
 
@@ -380,6 +381,7 @@ def CapsuleDeSauvetage(hero):
                 print(hero.get_nomPersonnage(),": Bon si je ne peux partir, je vais tirer ça au clair autrement !")
                 sleep(1)
                 print(hero.get_nomPersonnage(),": Sortons d'ici et allons chercher d'autres indices")
+                ouvir_inventaire()
 
 
             elif prendreCapsule == 'n': 
@@ -407,6 +409,7 @@ def CapsuleDeSauvetage(hero):
                     print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
                     sleep(2)
                     combat(AlienF4, hero)
+                    ouvir_inventaire()
 
                 elif prendre == 'n': 
                     sleep(2)   
@@ -416,7 +419,8 @@ def CapsuleDeSauvetage(hero):
                     sleep(2)
                     print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
                     sleep(2)
-                    combat(AlienF4, hero)       
+                    combat(AlienF4, hero)
+                    ouvir_inventaire()
     else :
         sleep(2)
         print("Vous n'avez pas la clé du réfectoire !")
@@ -428,6 +432,7 @@ def CapsuleDeSauvetage(hero):
         print("Un", AlienF4.nomPersonnage, "Vous fonce dessus")
         sleep(2)
         combat(AlienF4, hero)
+        ouvir_inventaire()
         VarHero(hero)
         
     
@@ -473,6 +478,7 @@ def Vestiaire(Hero):
                   "\n que de tels monstres s'introduisent dans le vaisseau. \n")
             sleep(4)
             print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
+            ouvir_inventaire()
             VarHero(Hero)
             
 
@@ -525,6 +531,7 @@ def Vestiaire(Hero):
                                           "\n attaquer a du soucis à se faire ! \n")
                 sleep(4)
                 print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
+                ouvir_inventaire()
                 VarHero(Hero)
                 
 
@@ -586,19 +593,20 @@ def Hangar(Hero):
                 print("Vous sortez du vaisseau puis vous dirigez vers la sortie. \n")
                 sleep(2)
                 print("Vous quittez le", Hangar.get_nomSalle,". \n")
+                ouvir_inventaire()
         
             
     else:
         sleep(2)
-        (Robot.get_nomPersonnage,": Continuons par ici alors. \n")
+        print(Robot.get_nomPersonnage(),": Continuons par ici alors. \n")
         sleep(2)
-        ("L'odeur de souffre s'intensifie et soudain, la lumière clignote. \n")
+        print("L'odeur de souffre s'intensifie et soudain, la lumière clignote. \n")
         sleep(3)
-        (Robot.get_nomPersonnage,": Euh", Hero.get_nomPersonnage,"tu devrais regarder par ici... \n")
+        print(Robot.get_nomPersonnage(),": Euh", Hero.get_nomPersonnage,"tu devrais regarder par ici... \n")
         sleep(3)
-        ("Vous apercevez une silhouette au plafond. C'est un alien, il dort suspendu a la lampe. \n")
+        print("Vous apercevez une silhouette au plafond. C'est un alien, il dort suspendu a la lampe. \n")
         sleep(4)
-        (Robot.get_nomPersonnage,": C'est sûrement lui qui a tué celui dans le vaisseau... \n")
+        print(Robot.get_nomPersonnage(),": C'est sûrement lui qui a tué celui dans le vaisseau... \n")
         sleep(3)
         question4 = int(input("Que voulez vous faire ?  1 = Venger votre coéquipier | 2 = S'en aller \n"))
         if question4 == 1:
@@ -618,6 +626,7 @@ def Hangar(Hero):
                 print("Le monstre est juste devant vous, il vous fixe avec de grands yeux noirs. \n")
                 sleep(3)
                 combat(AlienN2,Hero)
+                ouvir_inventaire()
                 VarHero(Hero)
                                 
             else:
@@ -634,6 +643,7 @@ def Hangar(Hero):
                                               "\nfoncer dans la gueule du loup comme ça c'était pas une bonne idée ! \n")
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
+                ouvir_inventaire()
                 VarHero(Hero)
                 
 
@@ -730,6 +740,7 @@ def Laboratoire(Hero):
             pass
         sleep(4)
         print("Vous quittez le", Laboratoire.get_nomSalle(),". \n")
+        ouvir_inventaire()
         VarHero(Hero)
                 
     else:
@@ -808,7 +819,7 @@ def Laboratoire(Hero):
               "\non restera coincés ici pour toujours ! \n")
         sleep(6)
         print("Vous courrez vers la sortie de la serre et quittez le", Laboratoire.get_nomSalle(),"par la même occasion. \n")
-    
+        ouvir_inventaire()
         VarHero(Hero)
         
     # VarHero(Hero)
@@ -831,6 +842,7 @@ def ChambreFroide(Hero):
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !\n")
     combat(AlienN2, Hero)
+    ouvir_inventaire()
     VarHero(Hero)
     
 
@@ -910,7 +922,8 @@ def Salle_des_Communications(Hero):
             sleep(1)
             print("*Grrrr*\n")
             print(AlienN3.get_nomPersonnage,"vous attaque !\n")
-            combat(AlienN3,Hero)           
+            combat(AlienN3,Hero)
+            ouvir_inventaire()
 
         elif CommunicationInterieur == 'n':
             print("\n")
@@ -976,7 +989,8 @@ def Salle_des_Communications(Hero):
                     VarHero(Hero)
                                          
         elif ouvrir == 'n':
-            print("Vous quittez", Salle_des_Communications.get_nomSalle())                
+            print("Vous quittez", Salle_des_Communications.get_nomSalle())
+            ouvir_inventaire()
             VarHero(Hero)
                     
 
@@ -1142,7 +1156,7 @@ def Armurerie(Hero):
     question4 = int(input("Que voulez-vous faire ? 1 = L'affronter | 2 = S'échapper \n"))
     sleep(2)
     if question4 == 1:
-        print(Robot.get_nomPersonnage,": Sérieusement tu compte te battre ? Très bien c'est comme tu veux... \n")
+        print(Robot.get_nomPersonnage(),": Sérieusement tu compte te battre ? Très bien c'est comme tu veux... \n")
         combat(Alien_blesse,Hero)
         if Hero.get_viePersonnage() <= 0:
             return 0
@@ -1165,6 +1179,7 @@ def Armurerie(Hero):
         pass
     sleep(2)
     print("Vous vous dirigez vers la sortie et quittez l'",Armurerie.get_nomSalle(),". \n")
+    ouvir_inventaire()
     VarHero(Hero)
 
 def ChambreEquipage(hero):
@@ -1302,6 +1317,7 @@ def ChambreEquipage(hero):
                 print("Jarvis : Eh ben tu m'impressionnes je sais pas comment t'as fait pour reussir à tous les tuer\n")
                 sleep(1)
                 print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")
+                ouvir_inventaire()
 
         
         elif prendre == 'n' :
@@ -1330,7 +1346,8 @@ def ChambreEquipage(hero):
                 combat(AlienF3,hero)
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
-                print("Vous quittez les quartiers")    
+                print("Vous quittez les quartiers")
+                ouvir_inventaire()
 
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama")
@@ -1342,7 +1359,8 @@ def ChambreEquipage(hero):
                 combat(AlienF3,hero)
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
-                print("Vous quittez les quartiers")  
+                print("Vous quittez les quartiers")
+                ouvir_inventaire()
 
     elif prendreCle == 'n':
         sleep(1)
@@ -1456,7 +1474,8 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print("Jarvis : Eh ben tu m'impressionnes je sais pas comment t'as fait pour reussir à tous les tuer\n")
                 sleep(1)
-                print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")        
+                print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")
+                ouvir_inventaire()
 
         elif prendre == 'n' :
             print("\n")
@@ -1484,7 +1503,8 @@ def ChambreEquipage(hero):
                 combat(AlienF3,hero)
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
-                print("Vous quittez les quartiers")    
+                print("Vous quittez les quartiers")
+                ouvir_inventaire()
 
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama")
@@ -1496,7 +1516,8 @@ def ChambreEquipage(hero):
                 combat(AlienF3,hero)
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
-                print("Vous quittez les quartiers")   
+                print("Vous quittez les quartiers")
+                ouvir_inventaire()
     elif prendreCle == 'n':
         sleep(1)
         print("Vous laissez les clés")
@@ -1609,7 +1630,8 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print("Jarvis : Eh ben tu m'impressionnes je sais pas comment t'as fait pour reussir à tous les tuer\n")
                 sleep(1)
-                print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")        
+                print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")
+                ouvir_inventaire()
 
         elif prendre == 'n' :
             print("\n")
@@ -1637,7 +1659,8 @@ def ChambreEquipage(hero):
                 combat(AlienF3,hero)
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
-                print("Vous quittez les quartiers")    
+                print("Vous quittez les quartiers")
+                ouvir_inventaire()
 
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama")
@@ -1649,7 +1672,8 @@ def ChambreEquipage(hero):
                 combat(AlienF3,hero)
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
-                print("Vous quittez les quartiers")   
+                print("Vous quittez les quartiers")
+                ouvir_inventaire()
 
 
 
@@ -1721,6 +1745,7 @@ def Infirmerie(Hero):
         print("Vous ne prenez pas les objets. \n")
     sleep(2)
     print("Vous quittez l'",Infirmerie.get_nomSalle(),". \n")
+    ouvir_inventaire()
 
     
     
@@ -1846,7 +1871,8 @@ def Bibliotheque(Hero):
     sleep(2)
     print("Vous brisez la vitre du hublot et passez à travers. \n")
     sleep(2)
-    print("Vous quittez la",Bibliotheque.get_nomSalle(),". \n")
+    print("Vous quittez la", Bibliotheque.get_nomSalle(),". \n")
+    ouvir_inventaire()
 
 
 def Win2():
@@ -1875,3 +1901,6 @@ def Win1():
     print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 #Hero = hero('Kevin',10,10,10,10,0,0,0)
+
+Armurerie(Kevin)
+
