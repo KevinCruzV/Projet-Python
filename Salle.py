@@ -532,7 +532,7 @@ def Vestiaire(Hero):
 def Hangar(Hero):
     Hangar = Modele_Salle("Hangar")
     print("\n")
-    print("Au loin vous appercevez une large porte mettalique avec écrit 'Hangar' dessus)
+    print("Au loin vous appercevez une large porte mettalique avec écrit 'Hangar' dessus")
     sleep(2)
     print("Vous entrez dans le", Hangar.get_nomSalle(), ". Vous sentez une odeur de souffre et de sang. \n")
     sleep(3)
@@ -1872,4 +1872,3 @@ def Win1():
     print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 #Hero = hero('Kevin',10,10,10,10,0,0,0)
-
