@@ -86,7 +86,6 @@ def Salle_0(Hero):
         sleep(1)
         if ouvrir == 1:
             choix_inventaire(Inventaire, Hero)
-            Hero.recap()
         else :
             print("Vous rangez l'arme dans l'inventaire \n")    
     if prendre == 2:
@@ -96,13 +95,12 @@ def Salle_0(Hero):
     prendre2 = int(input("Prendre aussi la combinaison médical 1 = Prendre l'objet | 2 = Laisser l'objet?\n"))
     if prendre2 == 1:
         Inventaire["Armures"].append(Combinaison_medical)
-        print(Robot.nomPersonnage, ": Ok, ça fera l'affaire. \n")
+        print(Robot.nomPersonnage, ": Eh ben t'es stylé comme ça. \n")
         sleep(3)
         ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
         sleep(1)
         if ouvrir == 1:
             choix_inventaire(Inventaire, Hero)
-            Hero.recap()
         else :
             print("Vous rangez l'armure dans l'inventaire \n")    
     if prendre2 == 2:
@@ -396,7 +394,6 @@ def CapsuleDeSauvetage(hero):
                     sleep(1)
                     if ouvrir == 1:
                         choix_inventaire(Inventaire, hero)
-                        hero.recap()
                     else:
                         print("Vous rangez l'objet dans votre inventaire")    
                     sleep(2)   
@@ -516,7 +513,6 @@ def Vestiaire(Hero):
                 if question3 == "y":
                     sleep(2)
                     choix_inventaire(Inventaire, Hero)
-                    Hero.recap()
                 else:
                     sleep(2)
                     print("*Vous rangez l'arme dans l'inventaire*")
@@ -571,7 +567,7 @@ def Hangar(Hero):
             if question3 == "y":
                 sleep(2)
                 choix_inventaire(Inventaire, Hero)
-                Hero.recap()
+
                 print("*Vous rangez l'arme dans l'inventaire* \n")
                 print(Robot.nomPersonnage, ": Suis moi, on s'en va d'ici ! \n")
                 sleep(2)
@@ -1158,7 +1154,7 @@ def Armurerie(Hero):
             ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
             if ouvrir == 1:
                 choix_inventaire(Inventaire, Hero)
-                Hero.recap()
+
         else:
             print("Vous ne prenez pas l'armure")
     else:
@@ -1317,7 +1313,6 @@ def ChambreEquipage(hero):
                 sleep(1)
                 if ouvrir == 1:
                     choix_inventaire(Inventaire, hero)
-                    hero.recap()
                 else :
                     sleep(1)
                     print("Vous rangez l'arme dans l'inventaire \n")
@@ -1471,7 +1466,6 @@ def ChambreEquipage(hero):
                 sleep(1)
                 if ouvrir == 1:
                     choix_inventaire(Inventaire, hero)
-                    hero.recap()
                 else :
                     sleep(1)
                     print("Vous rangez l'arme dans l'inventaire \n")
@@ -1624,7 +1618,6 @@ def ChambreEquipage(hero):
                 sleep(1)
                 if ouvrir == 1:
                     choix_inventaire(Inventaire, hero)
-                    hero.recap()
                 else :
                     sleep(1)
                     print("Vous rangez l'arme dans l'inventaire \n")

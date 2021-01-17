@@ -47,7 +47,6 @@ def choix_inventaire(inventaire, hero):
         hero.a_une_arme(inventaire["Armes"][int(choix_section)])
         print("\n")
         print(hero.recap())
-        print("TO DO : fonction pour supp l'arme quand elle est mise et inversement quand elle est rangé\n")
         choix_inventaire(inventaire, hero)
 
     elif choix == 2 and len(inventaire["Armes"])<= 0:
@@ -63,7 +62,6 @@ def choix_inventaire(inventaire, hero):
         hero.a_une_armure(inventaire["Armures"][int(choix_section)])
         print("\n")
         print(hero.recap())
-        print("TO DO : fonction pour supp l'armure quand elle est mise et inversement quand elle est rangé")
         choix_inventaire(inventaire, hero)
 
     elif choix == 3 and len(inventaire["Armures"])<= 0:
