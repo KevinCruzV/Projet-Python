@@ -17,8 +17,9 @@ Inventaire = {
 
 def choix_inventaire(inventaire, hero):
     #print(Fore.YELLOW, "\n")
-    choix = int(input("Que voulez vous dans l'inventaire ? 1 = Soins | 2 = Armes | 3 = Armures | 4 = Objets importants "
-                      "| 5 = Fermer l'inventaire\n"))
+    choix = int(input("Que voulez vous dans l'inventaire ?\n 1 = Soins |\n 2 = Armes |\n 3 = Armures |"
+                      "\n 4 = Objets importants |"
+                      "\n 5 = Fermer l'inventaire |\n"))
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
 #Lorsque qu'un items de soins est utilisé, il est immédiatemment supprimé de la liste
@@ -42,7 +43,7 @@ def choix_inventaire(inventaire, hero):
 
     if choix == 2 and len(inventaire["Armes"]) > 0:
         for x in inventaire["Armes"]:
-            print(" -", x.nomArme)
+            print(" -",  x.nomArme)
         choix_section = int(input("Que voulez vous selectionner ? (1,2...) :\n")) - 1
         hero.a_une_arme(inventaire["Armes"][int(choix_section)])
         print("\n")
@@ -100,3 +101,13 @@ def searchInventaire(Inventaire, objet):
 
 
 #choix_inventaire(Inventaire, Kevin)
+
+def ouvir_inventaire():
+    open = input(("Voulez vous ouvrir l'inventaire pour effectuer des changements? (y/n)?"))
+    if open == str("y"):
+        choix_inventaire(Inventaire, hero)
+    else:
+        print("Vous continuez votre aventure")
+
+
+

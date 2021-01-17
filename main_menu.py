@@ -115,7 +115,7 @@ def TestUser(TestUserInput=False):
 def menu(TestUserInput=False):
     print("\n")
     print("1: Nouvelle partie : ")
-    print("2: load Partie : ")
+    print("2: Charger au checkpoint : ")
     print("3: A propos du jeu")
     print("4: Exit\n")
 
@@ -181,6 +181,12 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 11)
         SuppSalle(salle, 12)
         SuppSalle(salle, 20)
+<<<<<<< HEAD
+        #    SuppSalle(salle, 11)
+        #    SuppSalle(salle, 12)
+        #    SuppSalle(salle, 20)
+=======
+>>>>>>> 99ecc052e0ca023b2650088680b12e241444e60d
         P = VarHero(hero)
         Sauve(P,Salles,Inventaire)
         print("\n")
