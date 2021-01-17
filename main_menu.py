@@ -13,7 +13,7 @@ import os
 #Fonction qui exécute la boucle principale du jeu 
 
 def main():
-    Hero=hero(str(input("Quel est ton prénom ? \n")),20,10,0,1,0,None,None)
+    Hero=hero(str(input("Quel est ton prénom ? \n")),35,10,0,1,0,None,None)
     Salle_0(Hero)
     Sauve(Hero,Salles,Inventaire)
     print("\n")
@@ -181,9 +181,12 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 11)
         SuppSalle(salle, 12)
         SuppSalle(salle, 20)
+<<<<<<< HEAD
         #    SuppSalle(salle, 11)
         #    SuppSalle(salle, 12)
         #    SuppSalle(salle, 20)
+=======
+>>>>>>> 99ecc052e0ca023b2650088680b12e241444e60d
         P = VarHero(hero)
         Sauve(P,Salles,Inventaire)
         print("\n")
@@ -201,32 +204,32 @@ def choixSalles(salle, hero):
         print("Progression sauvegardé.")
 
     elif nb == 3 or nb == 15 or nb == 22:
-            Hangar(P)
-            SuppSalle(salle, 3)
-            SuppSalle(salle, 15)
-            SuppSalle(salle, 25)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
-            print("\n")
-            print("Progression sauvegardé.")
+        Hangar(P)
+        SuppSalle(salle, 3)
+        SuppSalle(salle, 15)
+        SuppSalle(salle, 25)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
+        print("\n")
+        print("Progression sauvegardé.")
 
     elif nb == 4:
-            Armurerie(P)
-            SuppSalle(salle, 4)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
-            print("\n")
-            print("Progression sauvegardé.")
+        Armurerie(P)
+        SuppSalle(salle, 4)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
+        print("\n")
+        print("Progression sauvegardé.")
 
     elif nb == 5 or nb == 16 or nb == 23:
-            Laboratoire(P)
-            SuppSalle(salle, 5)
-            SuppSalle(salle, 16)
-            SuppSalle(salle, 23)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
-            print("\n")
-            print("Progression sauvegardé.")
+        Laboratoire(P)
+        SuppSalle(salle, 5)
+        SuppSalle(salle, 16)
+        SuppSalle(salle, 23)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
+        print("\n")
+        print("Progression sauvegardé.")
 
     elif nb == 6 or nb == 17 or nb == 25:
         ChambreFroide(P)

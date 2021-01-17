@@ -226,11 +226,11 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Alien_blesse = MonstresNormaux('Alien Blessé', 45,29,0,8, None)
-AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1, None)
-AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2, None)
-AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3, None)
-AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4, None)
-AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
+AlienN1 = MonstresNormaux('Bébé Alien',10,2,0,1, None)
+AlienN2 = MonstresNormaux('Bébé Alien',27,10,2,2, None)
+AlienN3 = MonstresNormaux('Bébé Alien',38,15,4,3, None)
+AlienN4 = MonstresNormaux('Bébé Alien',42,20,8,4, None)
+AlienN5 = MonstresNormaux('Bébé Alien',50,25,10,5, None)
 
 
 
@@ -238,8 +238,8 @@ AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
 AlienF0 = MonstresForts("Alien siamois",60,32,18,7,"Double Griffure",38,"oui")
 AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
 AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
-AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50, "oui")
-AlienF4 = MonstresForts("Alien adulte",80,45,28,9,"Griffe Acide",57, "oui")
+AlienF3 = MonstresForts("Alien adulte",72,38,18,8,"Morsure Sanguine",50, "oui")
+AlienF4 = MonstresForts("Alien adulte",80,40,28,9,"Griffe Acide",57, "oui")
 Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69, "oui")
 Horde = BOSS("Horde d'Aliens", 300,400,500,100,"Multiple Morsures Acide", 520,"oui")
 
