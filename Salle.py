@@ -93,7 +93,7 @@ def Salle_0(Hero):
         sleep(2)
         print(Robot.nomPersonnage, ":... pas de", Scalpel.get_nomArme(), "alors ? Comme tu voudras mais ne viens "
                                                                          "pas te plaindre. \n")
-    prendre2 = int(input("Prendre aussi la combinaison médical ?\n"))
+    prendre2 = int(input("Prendre aussi la combinaison médical 1 = Prendre l'objet | 2 = Laisser l'objet?\n"))
     if prendre2 == 1:
         Inventaire["Armures"].append(Combinaison_medical)
         print(Robot.nomPersonnage, ": Ok, ça fera l'affaire. \n")
@@ -1060,7 +1060,10 @@ def Armurerie(Hero):
             if objet2 == "les câbles électriques":
                 sleep(2)
                 print("C'est un pistolet à impulsion électrique ! "
-                      "\nL'énergie s'accumule dans ses câbles électriques et envoi une décharge de pas moins de 30 000 ampères, correspondant à une tension de 100 millions de volts. C'est l'équivalent de ce que la foudre libère en un éclair ! Vos ennemis auront le coup de foudre garantit ! \n")
+                      "\nL'énergie s'accumule dans ses câbles électriques et envoi une décharge de pas moins de "
+                      "\n30 000 ampères, correspondant à une tension de 100 millions de volts. "
+                      "\nC'est l'équivalent de ce que la foudre libère en un éclair ! "
+                      "\nVos ennemis auront le coup de foudre garantit ! \n")
                 sleep(4)
                 Inventaire["Armes"].append(Pistolet_electrique)
                 print("Le nouvel objet a été ajouté à votre inventaire. \n")
