@@ -7,10 +7,6 @@ from time import *
 
 def combat(Monstre, Hero):
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5fd4f295770892811d5b972bf983880aea145bf5
     while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
         #print(Fore.RED, "\n")
         print(" Appuyez sur 1 pour attaquer")
