@@ -2,6 +2,7 @@ from Personnage import *
 from random import randint
 from inventaire import *
 from time import *
+import os
 #from colorama import *
 
 
@@ -89,9 +90,15 @@ def combat(Monstre, Hero):
 
         if Hero.viePersonnage <= 0:
             print("Vous êtes mort...\n")
+            print("Vous reprendrez au dernier point de passage")
+            print("3")
+            sleep(1)
+            print("2")
+            sleep(1)
+            print("1")
+            sleep(1)
+            os.system(exit())
             break
-
-
 
     print("Fin du combat")
 

@@ -177,7 +177,7 @@ def choixSalles(salle, hero):
         Vestiaire(P)
         SuppSalle(salle, 1)
         #    SuppSalle(salle, 11)
-        #   SuppSalle(salle, 12)
+        #    SuppSalle(salle, 12)
         #    SuppSalle(salle, 20)
         P = VarHero(hero)
         Sauve(P,Salles,Inventaire)
