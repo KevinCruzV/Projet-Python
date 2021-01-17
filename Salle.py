@@ -6,7 +6,13 @@ from inventaire import searchInventaire
 from inventaire import Inventaire
 from Arme_et_Armure import *
 from time import *
+
 #from colorama import *
+
+# Son #
+
+
+
 
 
 
@@ -166,7 +172,7 @@ def Salle_final(hero):
     sleep(1)
     print("Vous fouillez le corps. Il y a une clé.")
     sleep(1)
-    Inventaire["Objets rares"].append(Clé_Demarage_Vaisseau)
+    Inventaire["Objets rares"].append(Cle_Demarage_Vaisseau)
     print("Vous rangez la clé de démarrage du vaisseau dans l'inventaire.")
     sleep(1)
     print("Vous tournez a droite et arrivez devant une grande porte métallique bleue.")
@@ -250,7 +256,7 @@ def Salle_final(hero):
     print("Jarvis : Hmm je me disais que tu réagirai comme ça... Tu est si prévisible.")
     sleep(2)
     print("Jarvis : Dans ce cas là, arrêtes moi. AHAHAHAH !")
-    Inventaire["Objets Rares"].remove(Clé_Demarage_Vaisseau)
+    Inventaire["Objets Rares"].remove(Cle_Demarage_Vaisseau)
     combat(Robot,hero)
     print("Jarvis *A bout de force et avec une jambe manquante* : Non ! Tu ne peux pas tout gâcher. "
           "\nJ'élabore cela depuis le début de cette mission de découverte d'autres planètes !")
@@ -440,6 +446,20 @@ def CapsuleDeSauvetage(hero):
                     sleep(2)
                     combat(AlienF4, hero)
                     ouvir_inventaire()
+        else :
+            sleep(2)
+            print("Vous n'avez pas la clé de la salle des capsules !")
+            sleep(2)
+            print("Vous vous retournez rapidement pensant entendre un bruit, mais rien...")
+            sleep(2)
+            print("Vous faites 2 pas et esquivez de justesse un jet d'acide par réflexe.")
+            sleep(2)
+            print("Un", AlienF4.nomPersonnage, "vous fonce dessus !")
+            sleep(2)
+            combat(AlienF4, hero)
+            ouvir_inventaire()
+            VarHero(hero)
+
     else :
         sleep(2)
         print("Vous n'avez pas la clé de la salle des capsules !")
@@ -1916,4 +1936,4 @@ def Win1():
     print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE).")
 
 Hero = hero('Kevin',100,100,100,100,0,0,0)
-Armurerie(Hero)
+CapsuleDeSauvetage(Hero)

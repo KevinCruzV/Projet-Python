@@ -60,7 +60,7 @@ Combinaison_medical = Modele_Armure("Combinaison médical",4)
 Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")
 Lampe = Objet_de_Quete("lampe de poche")
 Talkie_Walkie = Objet_de_Quete("talkie walkie")
-Clé_Demarage_Vaisseau = Objet_de_Quete("clé de démarage du vaisseau")
+Cle_Demarage_Vaisseau = Objet_de_Quete("clé de démarage du vaisseau")
 MicroPuce = Objet_de_Quete("micro-puce")
 
 
