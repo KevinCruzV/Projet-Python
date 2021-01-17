@@ -253,20 +253,11 @@ AlienN5 = MonstresNormaux('Bébé Alien',50,18,7,5, None)
 
 
 
-<<<<<<< HEAD
 AlienF0 = MonstresForts("Alien siamois",60,22,8,7,"Double Griffure",38,"oui")
 AlienF1 = MonstresForts("Alien adulte",57,20,10,6,"Queue Tranchante",36,"oui")
 AlienF2 = MonstresForts("Alien adulte",65,25,12,7,"Bave Acide",40, "oui")
 AlienF3 = MonstresForts("Alien adulte",72,28,13,8,"Morsure Sanguine",50, "oui")
 AlienF4 = MonstresForts("Alien adulte",80,30,15,9,"Griffe Acide",57, "oui")
-=======
-
-AlienF0 = MonstresForts("Alien siamois",60,32,18,7,"Double Griffure",38,"oui")
-AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
-AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
-AlienF3 = MonstresForts("Alien adulte",72,38,18,8,"Morsure Sanguine",50, "oui")
-AlienF4 = MonstresForts("Alien adulte",80,40,28,9,"Griffe Acide",57, "oui")
->>>>>>> 7ef7ccbddf2fbc5d5bbdd4c53aee5760d31cbb61
 Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69, "oui")
 Horde = BOSS("Horde d'Aliens", 300,400,500,100,"Multiple Morsures Acide", 520,"oui")
 
