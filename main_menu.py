@@ -178,9 +178,15 @@ def choixSalles(salle, hero):
     if nb == 1 or nb == 11 or nb == 12 or nb == 20:
         Vestiaire(P)
         SuppSalle(salle, 1)
+<<<<<<< HEAD
         SuppSalle(salle, 11)
         SuppSalle(salle, 12)
         SuppSalle(salle, 20)
+=======
+        #    SuppSalle(salle, 11)
+        #    SuppSalle(salle, 12)
+        #    SuppSalle(salle, 20)
+>>>>>>> de4d96aa3b9be44ca0f246e65ab1b2291c0de0a8
         P = VarHero(hero)
         Sauve(P,Salles,Inventaire)
         print("\n")
