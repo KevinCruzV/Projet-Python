@@ -16,7 +16,6 @@ def Sauve(Hero, salle, inventaire):
     pickle.dump(data, Sauve)
     Sauve.close()
         
-           
 
 def recupData():
     Load = open("sauve.pickle","rb")

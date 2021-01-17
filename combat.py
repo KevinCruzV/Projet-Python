@@ -112,4 +112,3 @@ def combat(Monstre, Hero):
 
 #Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
 #combat(AlienF3, Kevin)
-
