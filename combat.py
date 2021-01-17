@@ -7,7 +7,8 @@ from time import *
 
 def combat(Monstre, Hero):
 
-    while Hero.viePersonnage <= 0 or Monstre.viePersonnage <= 0:
+
+    while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
         #print(Fore.RED, "\n")
         print(" Appuyez sur 1 pour attaquer")
         print(" Appuyez sur 2 pour ouvrir l'inventaire")
@@ -79,17 +80,21 @@ def combat(Monstre, Hero):
 
                 combat(Monstre,Hero)
                 
-    if Monstre.viePersonnage <= 0:
-        print("Vous avez éliminé:", Monstre.get_nomPersonnage(), "!")
-        Hero.barre_Exp(Monstre.get_ExpADonne())
-        Hero.Augment_level()
+        if Monstre.viePersonnage <= 0:
+            print("Vous avez éliminé:", Monstre.get_nomPersonnage(), "!")
+            Hero.barre_Exp(Monstre.get_ExpADonne())
+            Hero.Augment_level()
+            break
         
 
-        
-    if Hero.viePersonnage <= 0:
-        print("Vous êtes mort...\n")
-        
+        if Hero.viePersonnage <= 0:
+            print("Vous êtes mort...\n")
+            break
 
+
+
+    print("Fin du combat")
 
 #Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
 #combat(AlienF3, Kevin)
+

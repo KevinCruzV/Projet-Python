@@ -8,7 +8,6 @@ import os
 
 #importation  de l'os pour lancer le jeu dans la console
 
-
 #Menu principal qui execute la fonction choisie
 
 #Fonction qui exécute la boucle principale du jeu 
@@ -30,11 +29,6 @@ def main():
                         choixSalles(Salles, Hero)
     GameOver()
             
-
-
-
-
-
 
 #Fonction qui charge la partie
 def Load():
@@ -254,8 +248,6 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 10)
         P = VarHero(hero)
         Sauve(P,Salles,Inventaire)                                       
-
-        
 
 
 def GameOver():
