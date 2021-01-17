@@ -11,17 +11,17 @@ from time import *
 
 
 #####  Fonction pour lancer les salles  #####
-Salles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+Salles = [1,2,3,4,5,6,7,8,9,10]
 
 
 
 #Regarde si la salle existe
-def SearchFor(L,X):
+def SearchFor(L,a):
     for v in L:
-        if v == X:
-            return True
+        if v == a:
+            return False
 
-        return False
+        return True
 
 #Supprime une salle apres qu'elle soit utilisé une fois
 
@@ -43,6 +43,7 @@ def SuppSalle(Liste,num):
 def Salle_0(Hero):
     Salle_0 = Modele_Salle("Salle d'hibernation")
     #print(Fore.GREEN, "\n")
+    print("\n")
     print("Voix : Hey ! HEY ! REVEILLE TOI ! \n")
     sleep(3)
     print("Vous vous réveillez dans une salle blanche... Autour de vous, il y du matériel informatique et une table"
@@ -69,16 +70,17 @@ def Salle_0(Hero):
     sleep(3)
     print(Hero.get_nomPersonnage(),": Ok d'accord") 
     sleep(3)
-    Inventaire["Objets Rares"].append(Talkie_Walkie)
-    print("Vous rangez ",Talkie_Walkie.nomObjet," dans l'inventaire \n")
-    print("Il y a aussi un", Scalpel.nomArme ,"sur la table d'opération... \n")
+    Inventaire["Objets rares"].append(Talkie_Walkie)
+    print("\n")
+    print("Vous rangez ",Talkie_Walkie.nomObjet," dans l'inventaire ")
+    print("Il y a aussi un", Scalpel.nomArme ," et une", Combinaison_medical.nomArmure ,"sur la table d'opération... \n")
     sleep(5)
     prendre = int(input(("Que voulez vous faire ? 1 = Prendre l'objet | 2 = Laisser l'objet \n")))
     sleep(2)
     print("\n")
     if prendre == 1:
         Inventaire["Armes"].append(Scalpel)
-        print(Robot.nomPersonnage, ": Okay, je pense que ça fera l'affaire. \n")
+        print(Robot.nomPersonnage, ": Tu pourras te défendre au cas où. \n")
         sleep(3)
         ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
         sleep(1)
@@ -91,6 +93,22 @@ def Salle_0(Hero):
         sleep(2)
         print(Robot.nomPersonnage, ":... pas de", Scalpel.get_nomArme(), "alors ? Comme tu voudras mais ne viens "
                                                                          "pas te plaindre. \n")
+    prendre2 = int(input("Prendre aussi la combinaison médical ?\n"))
+    if prendre2 == 1:
+        Inventaire["Armures"].append(Combinaison_medical)
+        print(Robot.nomPersonnage, ": Ok, ça fera l'affaire. \n")
+        sleep(3)
+        ouvrir = int(input("Voulez vous ouvrir l'inventaire pour l'équiper ? 1 = oui | 2 = non \n"))
+        sleep(1)
+        if ouvrir == 1:
+            choix_inventaire(Inventaire, Hero)
+            Hero.recap()
+        else :
+            print("Vous rangez l'armure dans l'inventaire \n")    
+    if prendre2 == 2:
+        sleep(2)
+        print(Robot.nomPersonnage, ": Hmm t'aurais peut être dû la prendre pour te protéger")
+    sleep(3)                                                                      
     print("Vous avancez et vous trouvez une porte avec un digicode")
     sleep(3)
     print(Robot.nomPersonnage, ": Si on veut sortir de la, il va nous falloir le code... \n")
@@ -144,7 +162,7 @@ def Salle_final(hero):
     sleep(1)
     print("Vous fouillez le corps. Il y a une clé")
     sleep(1)
-    Inventaire["Objets Rares"].append(Clé_Demarage_Vaisseau)
+    Inventaire["Objets rares"].append(Clé_Demarage_Vaisseau)
     print("Vous rangez la clé de démarage vaisseau dans l'inventaire")
     sleep(1)
     print("Vous tournez a droite et arrivez devant une grande porte metallique bleue")
@@ -416,6 +434,9 @@ def CapsuleDeSauvetage(hero):
 
 def Vestiaire(Hero):
     Vestiaire = Modele_Salle("Vestiaire")
+    sleep(2)
+    print("Vous marchez dans le couloir sans faire de bruit puis vous ouvrez une porte")
+    sleep(2)
     print("Le", Vestiaire.get_nomSalle(),"est sombre... Vous n'y voyez rien. Vous marchez à tâtons dans le noir"
                                          "\n lorsque vous butez sur un objet...\n " )
     sleep(3)
@@ -448,7 +469,7 @@ def Vestiaire(Hero):
         if Hero.get_viePersonnage() <= 0:
             return 0
         else:
-            print("On l'a échappé belle pour cette fois. Qu'est-ce qui a bien pu se passer pour"
+            print("Jarvis : Tu l'as échappé belle pour cette fois. Qu'est-ce qui a bien pu se passer pour"
                   "\n que de tels monstres s'introduisent dans le vaisseau. \n")
             sleep(4)
             print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
@@ -510,6 +531,9 @@ def Vestiaire(Hero):
 
 def Hangar(Hero):
     Hangar = Modele_Salle("Hangar")
+    print("\n")
+    print("Au loin vous appercevez une large porte mettalique avec écrit 'Hangar' dessus)
+    sleep(2)
     print("Vous entrez dans le", Hangar.get_nomSalle(), ". Vous sentez une odeur de souffre et de sang. \n")
     sleep(3)
     print(Robot.nomPersonnage,": Waouh c'est immense ici !. Tiens bizarre... il n'y a aucun vaisseaux"
@@ -791,15 +815,22 @@ def Laboratoire(Hero):
 
 def ChambreFroide(Hero):
     ChambreFroide = Modele_Salle("chambre froide")
-    print("Vous poussez la porte de la", ChambreFroide.get_nomSalle())
+    print("\n")
+    sleep(2)
+    print("Vous marcher dans ce long couloir sans bruit ")
+    sleep(2)
+    print("Sur votre droite il y a une porte")
+    sleep(2)
+    print("Vous poussez la porte de la", ChambreFroide.get_nomSalle(),"\n")
     sleep(2)
     print("Vous remarquez que la plupart des réserves ont été consomées")
+    sleep(2)
     print("mais un bout de viande près de vous semble encore frais")
     sleep(2)
     print("Vous vous approchez mais remarquez en enlevant des dèbris que c'est un bras!")
     sleep(1)
-    print("Quelque chose vous tombe dessus depuis le plafond !")
-    combat(AlienF3, Hero)
+    print("Quelque chose vous tombe dessus depuis le plafond !\n")
+    combat(AlienN2, Hero)
     VarHero(Hero)
     
 
@@ -1155,7 +1186,7 @@ def ChambreEquipage(hero):
     prendreCle = input("Prendre la clé ? ( y = oui | n = non )\n")
     if prendreCle == 'y':
         sleep(1)
-        Inventaire["Objets Rares"].append(Cle_de_la_Salle_des_Capsules_de_sauvetage)
+        Inventaire["Objets rares"].append(Cle_de_la_Salle_des_Capsules_de_sauvetage)
         sleep(1)
         print("Vous rangez les clés")
         sleep(1)
@@ -1621,6 +1652,9 @@ def ChambreEquipage(hero):
 
 def Infirmerie(Hero):
     Infirmerie = Modele_Salle("Infirmerie")
+    print("\n")
+    print("Toujours à la recherche de réponses vous marchez dans le vaisseau, lorsque vous voyez l'infirmerie ")
+    sleep(2)
     print("Vous entrez dans l'", Infirmerie.get_nomSalle(),". \n")
     sleep(2)
     print("C'est une petite salle, au mileu il y a une grosse machine. Une sorte de tube relié à toutes sortes d'ordinateurs. \n")
@@ -1838,3 +1872,4 @@ def Win1():
     print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE)")
 
 #Hero = hero('Kevin',10,10,10,10,0,0,0)
+

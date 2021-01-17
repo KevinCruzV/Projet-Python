@@ -7,13 +7,13 @@ from time import *
 
 def combat(Monstre, Hero):
 
-    while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
+    while Hero.viePersonnage <= 0 or Monstre.viePersonnage <= 0:
         #print(Fore.RED, "\n")
         print(" Appuyez sur 1 pour attaquer")
         print(" Appuyez sur 2 pour ouvrir l'inventaire")
         print(" Appuyez sur 3 pour fuir le combat\n")
 
-        control = (input("Que voulez vous faire?\n"))
+        control = (input("Que voulez vous faire ?\n"))
         #test de l'input "control"
         try:
             control = int(control)
@@ -38,7 +38,7 @@ def combat(Monstre, Hero):
                     sleep(1)
                     print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                     sleep(1)
-                    print("Vous avez maintenant", Hero.viePersonnage, " /", "100pv\n")
+                    print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero,"pv\n")
                 else:
                     print("\n")
                     Hero.attack_player(Monstre)
@@ -46,7 +46,7 @@ def combat(Monstre, Hero):
                     sleep(1)
                     print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                     sleep(1)
-                    print("Vous avez maintenant", Hero.viePersonnage, " /", "100pv\n")
+                    print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero,"pv\n")
             else:
                 print("\n")
                 Hero.attack_player(Monstre)
@@ -54,13 +54,13 @@ def combat(Monstre, Hero):
                 sleep(1)
                 print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                 sleep(1)
-                print("Vous avez maintenant", Hero.viePersonnage, " /", "100pv\n")
+                print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero,"pv\n")
 
         elif control == 2:
             choix_inventaire(Inventaire, Hero)
             
         elif control == 3:
-            fuite = randint(1, 5)
+            fuite = randint(1, 4)
             if fuite == 3:
                 print("\n")
                 sleep(1)
@@ -71,18 +71,24 @@ def combat(Monstre, Hero):
                 sleep(1)                
                 print("Vous ne parvenez pas a prendre la fuite")
                 print("\n")
+                Monstre.attack_monster(Hero)
+                sleep(1)
+                print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
+                sleep(1)
+                print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero ,"pv\n")                
+
                 combat(Monstre,Hero)
                 
-        if Monstre.viePersonnage <= 0:
-            print("Vous avez éliminé:", Monstre.get_nomPersonnage(), "!")
-            Hero.barre_Exp(Monstre.get_ExpADonne())
-            Hero.Augment_level()
-            break
+    if Monstre.viePersonnage <= 0:
+        print("Vous avez éliminé:", Monstre.get_nomPersonnage(), "!")
+        Hero.barre_Exp(Monstre.get_ExpADonne())
+        Hero.Augment_level()
+        
 
         
-        if Hero.viePersonnage <= 0:
-            print("Vous êtes mort...\n")
-            break
+    if Hero.viePersonnage <= 0:
+        print("Vous êtes mort...\n")
+        
 
 
 #Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)

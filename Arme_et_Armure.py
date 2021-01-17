@@ -54,6 +54,7 @@ Combinaison_Spatial_en_Carbone = Modele_Armure("Combinaison Spatial en Carbone",
 Pyjama = Modele_Armure("Pyjama", 0)
 Buste_Polyethane = Modele_Armure("Buste en Polyethane",16) 
 Exosquelette = Modele_Armure("Exosquelette", 22)
+Combinaison_medical = Modele_Armure("Combinaison médical",4)
 
 #Objets de Quetes :
 Cle_de_la_Salle_des_Capsules_de_sauvetage = Objet_de_Quete("Clé de la salle des capsules de sauvetage")

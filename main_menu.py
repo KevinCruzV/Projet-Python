@@ -1,6 +1,7 @@
 from Personnage import *
 from Modele import *
 from Salle import *
+from Salle import SearchFor
 from sauvegarde import *
 from direction1 import direction
 import os
@@ -13,7 +14,7 @@ import os
 #Fonction qui exécute la boucle principale du jeu 
 
 def main():
-    Hero=hero(str(input("Quel est ton prénom ? \n")),10,5,0,1,0,None,None)
+    Hero=hero(str(input("Quel est ton prénom ? \n")),20,10,0,1,0,None,None)
     Salle_0(Hero)
     while Hero.viePersonnage > 0:
             for i in Salles:
@@ -170,92 +171,91 @@ def menu(TestUserInput=False):
                 print("\n")
                 print("Impossible\n")
 
-                
+             
 
 def choixSalles(salle, hero):
-    nb = randint(1, 19)
+    nb = randint(1, 10)
     P = VarHero(hero)
-    for i in salle:
-        if nb == 1 or nb == 11 or nb == 12:
-            Vestiaire(P)
-            SuppSalle(salle, 1)
-            SuppSalle(salle, 2)
-            SuppSalle(salle, 3)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+    while SearchFor(salle,nb):
+        nb = randint(1, 10)   
 
-        if nb == 2 or nb == 13 or nb == 14:
-            Infirmerie(P)
-            SuppSalle(salle, 2)
-            SuppSalle(salle, 13)
-            SuppSalle(salle, 14)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+    if nb == 1 :#or nb == 11 or nb == 12 or nb == 20:
+        Vestiaire(P)
+        SuppSalle(salle, 1)
+        #    SuppSalle(salle, 11)
+        #   SuppSalle(salle, 12)
+        #    SuppSalle(salle, 20)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
 
-        if nb == 3 or nb == 15:
+    elif nb == 2 : #or nb == 13 or nb == 14 or nb == 21:
+        Infirmerie(P)
+        SuppSalle(salle, 2)
+        #    SuppSalle(salle, 13)
+        #    SuppSalle(salle, 14)
+        #    SuppSalle(salle, 21)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
+
+    elif nb == 3 :#or nb == 15 or nb == 22:
             Hangar(P)
             SuppSalle(salle, 3)
-            SuppSalle(salle, 15)
-            print(P)
+        #    SuppSalle(salle, 15)
+        #    SuppSalle(salle, 25)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 4:
+    elif nb == 4:
             Armurerie(P)
-            SuppSalle(salle, nb)
-            print(P)
+            SuppSalle(salle, 4)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 5 or nb == 16:
+    elif nb == 5 :#or nb == 16 or nb == 23:
             Laboratoire(P)
             SuppSalle(salle, 5)
-            SuppSalle(salle, 16)
-            print(P)
+        #    SuppSalle(salle, 16)
+        #    SuppSalle(salle, 23)
             P = VarHero(hero)
             Sauve(P,Salles,Inventaire)
 
-        if nb == 6 or nb == 17:
-            ChambreFroide(P)
-            SuppSalle(salle, 6)
-            SuppSalle(salle, 17)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+    elif nb == 6 :#or nb == 17 or nb == 25:
+        ChambreFroide(P)
+        SuppSalle(salle, 6)
+        #    SuppSalle(salle, 17)
+        #    SuppSalle(salle, 25)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
 
-        if nb == 7 or nb == 18 or nb == 19:
-            Salle_des_Communications(P)
-            SuppSalle(salle, 7)
-            SuppSalle(salle, 18)
-            SuppSalle(salle, 19)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+    elif nb == 7 :#or nb == 18 or nb == 19 or nb == 24:
+        Salle_des_Communications(P)
+        SuppSalle(salle, 7)
+        #    SuppSalle(salle, 18)
+        #    SuppSalle(salle, 19)
+        #    SuppSalle(salle, 24)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
 
-        if nb == 8:
-            ChambreEquipage(P)
-            SuppSalle(salle, nb)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+    elif nb == 8:
+        ChambreEquipage(P)
+        SuppSalle(salle, 8)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
 
-        if nb == 9:
-            Bibliotheque(P)
-            SuppSalle(salle, nb)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)
+    elif nb == 9 :#or nb == 26:
+        Bibliotheque(P)
+        SuppSalle(salle, 9)
+        #    SuppSalle(salle, 26)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)
 
-        if nb == 10:
-            CapsuleDeSauvetage(P)
-            SuppSalle(salle, nb)
-            print(P)
-            P = VarHero(hero)
-            Sauve(P,Salles,Inventaire)                                       
+    elif nb == 10:
+        CapsuleDeSauvetage(P)
+        SuppSalle(salle, 10)
+        P = VarHero(hero)
+        Sauve(P,Salles,Inventaire)                                       
 
-        i += 1
+        
 
 
 def GameOver():

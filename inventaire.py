@@ -5,8 +5,8 @@ from Arme_et_Armure import *
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
 
 Inventaire = {
-    "Soins": [kit_de_soins],
-    "Armes": [Pistolet_Laser],
+    "Soins": [],
+    "Armes": [],
     "Armures": [],
     "Objets rares": [],
     #"Fermer l'inventaire": True
@@ -17,7 +17,7 @@ Inventaire = {
 
 def choix_inventaire(inventaire, hero):
     #print(Fore.YELLOW, "\n")
-    choix = int(input("Que voulez vous dans l'inventaire? 1 = Soins | 2 = Armes | 3 = Armures | 4 = Objets importants "
+    choix = int(input("Que voulez vous dans l'inventaire ? 1 = Soins | 2 = Armes | 3 = Armures | 4 = Objets importants "
                       "| 5 = Fermer l'inventaire\n"))
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
@@ -28,7 +28,7 @@ def choix_inventaire(inventaire, hero):
     if choix == 1 and len(inventaire["Soins"]) > 0:
         for x in inventaire["Soins"]:
             print(" -", x.nomObjet)
-        choix_section = int(input("Que voulez vous selectionner?: \n")) - 1
+        choix_section = int(input("Que voulez vous selectionner ? (1,2...): \n")) - 1
         hero.vie_addition(inventaire["Soins"][(choix_section)].vieEnPlus)
         inventaire["Soins"].pop([0][choix_section - choix_section])
         print("Vous avez maintenant", hero.get_viePersonnage(), "points de vie\n")
@@ -43,11 +43,11 @@ def choix_inventaire(inventaire, hero):
     if choix == 2 and len(inventaire["Armes"]) > 0:
         for x in inventaire["Armes"]:
             print(" -", x.nomArme)
-        choix_section = int(input("Que voulez vous selectionner? :\n")) - 1
+        choix_section = int(input("Que voulez vous selectionner ? (1,2...) :\n")) - 1
         hero.a_une_arme(inventaire["Armes"][int(choix_section)])
         print("\n")
         print(hero.recap())
-        print("TO DO : fonction pour supp l'arme quand elle est mise et inversement quand elle est rangé")
+        print("TO DO : fonction pour supp l'arme quand elle est mise et inversement quand elle est rangé\n")
         choix_inventaire(inventaire, hero)
 
     elif choix == 2 and len(inventaire["Armes"])<= 0:
@@ -59,7 +59,7 @@ def choix_inventaire(inventaire, hero):
     if choix == 3 and len(inventaire["Armures"]) > 0:
         for x in inventaire["Armures"]:
             print(" -", x.nomArmure)
-        choix_section = int(input("Que voulez vous selectionner?:\n")) - 1
+        choix_section = int(input("Que voulez vous selectionner ? (1,2...) :\n")) - 1
         hero.a_une_armure(inventaire["Armures"][int(choix_section)])
         print("\n")
         print(hero.recap())
