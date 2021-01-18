@@ -7,8 +7,4 @@ def DeadSpace():
     sleep(2)
     menu()
 
-
-
-
-
-# DeadSpace()
+DeadSpace()

@@ -3,7 +3,7 @@ from Arme_et_Armure import *
 from Modele import *
 #from colorama import *
 
-#Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
+#Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes
 
 Inventaire = {
     "Soins": [],
@@ -84,7 +84,6 @@ def choix_inventaire(inventaire, hero):
         return print("Vous fermez l'inventaire\n")
         
 
-#Code à placer dans les salles pour rajouter des items dans l'inventaire
 
 def searchInventaire(Inventaire, objet):
     for i in len(Inventaire) :
@@ -93,21 +92,13 @@ def searchInventaire(Inventaire, objet):
                 return True
 
 #def ajout_inventaire(Inventaire):
-
-#choix_inventaire(Inventaire, Kevin)
     for j in len(Inventaire["Objets Rare"]) :
             if j == objet :
                 return True
 
-
-#choix_inventaire(Inventaire, Kevin)
-
-def ouvir_inventaire():
+#def ouvir_inventaire():
     open = input(("Voulez vous ouvrir l'inventaire pour effectuer des changements? (y/n)?"))
     if open == str("y"):
         choix_inventaire(Inventaire, hero)
     else:
         print("Vous continuez votre aventure")
-
-#choix_inventaire(Inventaire, Kevin)
-
