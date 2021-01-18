@@ -76,7 +76,7 @@ def Salle_0(Hero):
     Inventaire["Objets rares"].append(Talkie_Walkie)
     print("\n")
     print("Vous rangez ",Talkie_Walkie.nomObjet," dans l'inventaire ")
-    print("Il y a aussi un", Scalpel.nomArme ," et une", Combinaison_medical.nomArmure ,"sur la table d'opération... \n")
+    print("Il y a aussi un", Scalpel.nomArme," et une", Combinaison_medical.nomArmure ,"sur la table d'opération... \n")
     sleep(5)
     prendre = int(input(("Que voulez vous faire ? 1 = Prendre l'objet | 2 = Laisser l'objet \n")))
     sleep(2)
@@ -93,7 +93,7 @@ def Salle_0(Hero):
             print("Vous rangez l'arme dans l'inventaire \n")    
     if prendre == 2:
         sleep(2)
-        print(Robot.nomPersonnage, ":... pas de", Scalpel.get_nomArme(), "alors ? Comme tu voudras mais ne viens "
+        print(Robot.nomPersonnage, ":... pas de", Scalpel.nomArme, "alors ? Comme tu voudras mais ne viens "
                                                                          "pas te plaindre. \n")
     prendre2 = int(input("Prendre aussi la combinaison médical ? 1 = Prendre l'objet | 2 = Laisser l'objet\n"))
     if prendre2 == 1:
@@ -148,7 +148,7 @@ def Salle_0(Hero):
     print("La porte s'ouvre, vous êtes éblouit par la lumière du couloir.\n")
     sleep(3)
     print("*tap* *tap* *tap*, des bruits de pas s'éloignent vers la gauche...\n")
-    #ouvir_inventaire()
+    ouvir_inventaire()
     VarHero(Hero)
 
     
@@ -406,7 +406,7 @@ def CapsuleDeSauvetage(hero):
                 print(hero.get_nomPersonnage(),": Bon si je ne peux partir, je vais tirer ça au clair autrement !")
                 sleep(1)
                 print(hero.get_nomPersonnage(),": Sortons d'ici et allons chercher d'autres indices")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
 
             elif prendreCapsule == 'n': 
@@ -433,7 +433,7 @@ def CapsuleDeSauvetage(hero):
                     print("Un", AlienF4.nomPersonnage, "vous fonce dessus !")
                     sleep(2)
                     combat(AlienF4, hero)
-                    #ouvir_inventaire()
+                    ouvir_inventaire()
 
                 elif prendre == 'n': 
                     sleep(2)   
@@ -444,7 +444,7 @@ def CapsuleDeSauvetage(hero):
                     print("Un", AlienF4.nomPersonnage, "vous fonce dessus !")
                     sleep(2)
                     combat(AlienF4, hero)
-                    #ouvir_inventaire()
+                    ouvir_inventaire()
         else :
             sleep(2)
             print("Vous n'avez pas la clé de la salle des capsules !")
@@ -456,7 +456,7 @@ def CapsuleDeSauvetage(hero):
             print("Un", AlienF4.nomPersonnage, "vous fonce dessus !")
             sleep(2)
             combat(AlienF4, hero)
-            #ouvir_inventaire()
+            ouvir_inventaire()
             VarHero(hero)
 
     else :
@@ -470,7 +470,7 @@ def CapsuleDeSauvetage(hero):
         print("Un", AlienF4.nomPersonnage, "vous fonce dessus !")
         sleep(2)
         combat(AlienF4, hero)
-        #ouvir_inventaire()
+        ouvir_inventaire()
         VarHero(hero)
         
     
@@ -514,7 +514,7 @@ def Vestiaire(Hero):
                   "\n que de tels monstres s'introduisent dans le vaisseau. \n")
             sleep(4)
             print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
-            #ouvir_inventaire()
+            ouvir_inventaire()
             VarHero(Hero)
             
 
@@ -568,7 +568,7 @@ def Vestiaire(Hero):
                                           "\n attaquer a du soucis à se faire ! \n")
                 sleep(4)
                 print("Vous quittez le",Vestiaire.get_nomSalle(),". \n")
-                #ouvir_inventaire()
+                ouvir_inventaire()
                 VarHero(Hero)
                 
 
@@ -630,7 +630,7 @@ def Hangar(Hero):
                 print("Vous sortez du vaisseau puis vous dirigez vers la sortie. \n")
                 sleep(2)
                 print("Vous quittez le", Hangar.get_nomSalle,". \n")
-                #ouvir_inventaire()
+                ouvir_inventaire()
         
             
     else:
@@ -663,7 +663,7 @@ def Hangar(Hero):
                 print("Le monstre est juste devant vous, il vous fixe avec de grands yeux noirs. \n")
                 sleep(3)
                 combat(AlienN2,Hero)
-                #ouvir_inventaire()
+                ouvir_inventaire()
                 VarHero(Hero)
                                 
             else:
@@ -681,7 +681,7 @@ def Hangar(Hero):
                 "\nfoncer dans la gueule du loup comme ça c'était pas une bonne idée ! \n")
                 sleep(5)
                 print("Vous quittez le", Hangar.get_nomSalle(),". \n")
-                #ouvir_inventaire()
+                ouvir_inventaire()
                 VarHero(Hero)
                 
 
@@ -779,7 +779,7 @@ def Laboratoire(Hero):
             pass
         sleep(4)
         print("Vous quittez le", Laboratoire.get_nomSalle(),". \n")
-        #ouvir_inventaire()
+        ouvir_inventaire()
         VarHero(Hero)
                 
     else:
@@ -860,7 +860,7 @@ def Laboratoire(Hero):
         sleep(6)
         print("Vous courrez vers la sortie de la serre"
               "\n et quittez le", Laboratoire.get_nomSalle(),"par la même occasion. \n")
-        #ouvir_inventaire()
+        ouvir_inventaire()
         VarHero(Hero)
         
     # VarHero(Hero)
@@ -883,7 +883,7 @@ def ChambreFroide(Hero):
     sleep(1)
     print("Quelque chose vous tombe dessus depuis le plafond !\n")
     combat(AlienN2, Hero)
-    #ouvir_inventaire()
+    ouvir_inventaire()
     VarHero(Hero)
     
 
@@ -968,7 +968,7 @@ def Salle_des_Communications(Hero):
             print("*Grrrr*\n")
             print(AlienN3.get_nomPersonnage,"vous attaque !\n")
             combat(AlienN3,Hero)
-            #ouvir_inventaire()
+            ouvir_inventaire()
 
         elif CommunicationInterieur == 'n':
             print("\n")
@@ -1034,7 +1034,7 @@ def Salle_des_Communications(Hero):
                     VarHero(Hero)
         elif ouvrir == 'n':
             print("Vous quittez", Salle_des_Communications.get_nomSalle())
-            #ouvir_inventaire()
+            ouvir_inventaire()
             VarHero(Hero)
                     
 
@@ -1237,7 +1237,7 @@ def Armurerie(Hero):
         pass
     sleep(2)
     print("Vous vous dirigez vers la sortie et quittez l'",Armurerie.get_nomSalle(),". \n")
-    #ouvir_inventaire()
+    ouvir_inventaire()
     VarHero(Hero)
 
 def ChambreEquipage(hero):
@@ -1378,7 +1378,7 @@ def ChambreEquipage(hero):
                 print("Jarvis : Eh ben tu m'impressionnes je sais pas comment t'as fait pour réussir à tous les tuer.\n")
                 sleep(1)
                 print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
         
         elif prendre == 'n' :
@@ -1407,7 +1407,7 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
-                #ouvir_inventaire()
+                ouvir_inventaire()
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama.")
                 sleep(1)
@@ -1419,7 +1419,7 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
-                #ouvir_inventaire()
+                ouvir_inventaire()
     elif prendreCle == 'n':
         sleep(1)
         print("Vous laissez les clés.")
@@ -1536,7 +1536,7 @@ def ChambreEquipage(hero):
                 print("Jarvis : Eh ben tu m'impressionnes je sais pas comment t'as fait pour reussir à tous les tuer\n")
                 sleep(1)
                 print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
         elif prendre == 'n' :
             print("\n")
@@ -1564,7 +1564,7 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama")
@@ -1577,7 +1577,7 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
-                #ouvir_inventaire()
+                ouvir_inventaire()
         elif prendreCle == 'n':
             sleep(1)
             print("Vous laissez les clés")
@@ -1693,7 +1693,7 @@ def ChambreEquipage(hero):
                 print("Jarvis : Eh ben tu m'impressionnes je sais pas comment t'as fait pour reussir à tous les tuer\n")
                 sleep(1)
                 print(" *Vous quittez ", ChambreEquipage.get_nomSalle(), " en courant*")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
         elif prendre == 'n' :
             print("\n")
@@ -1721,7 +1721,7 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama")
@@ -1734,7 +1734,7 @@ def ChambreEquipage(hero):
                 sleep(2)
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
-                #ouvir_inventaire()
+                ouvir_inventaire()
 
 
 
@@ -1808,7 +1808,7 @@ def Infirmerie(Hero):
         print("Vous ne prenez pas les objets. \n")
     sleep(2)
     print("Vous quittez l'",Infirmerie.get_nomSalle(),". \n")
-    #ouvir_inventaire()
+    ouvir_inventaire()
 
     
     
@@ -1944,7 +1944,7 @@ def Bibliotheque(Hero):
     print("Vous brisez la vitre du hublot et passez à travers. \n")
     sleep(2)
     print("Vous quittez la", Bibliotheque.get_nomSalle(),". \n")
-    #ouvir_inventaire()
+    ouvir_inventaire()
 
 
 def Win2():
