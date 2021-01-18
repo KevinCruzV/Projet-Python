@@ -24,7 +24,11 @@ def main():
     #Son_Ambiance.play(10000, 0, 2000)
     Hero=hero(str(input("Quel est ton prénom ? \n")),35,10,0,1,0,None,None)
     Salle_0(Hero)
+
+    # Mise en commentaire de la fonction sauvegarde
     #Sauve(Hero,Salles,Inventaire)
+
+
     print("\n")
     print("Progression sauvegardé.")
     while Hero.viePersonnage > 0:
