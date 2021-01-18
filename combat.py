@@ -6,8 +6,8 @@ import os
 
 #from colorama import *
 
-
 def combat(Monstre, Hero):
+
     while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
         #print(Fore.RED, "\n")
         print(" Appuyez sur 1 pour attaquer")
@@ -112,3 +112,4 @@ def combat(Monstre, Hero):
 
 #Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
 #combat(AlienF3, Kevin)
+
