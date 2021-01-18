@@ -8,7 +8,7 @@ def VarHero(hero):
     return hero
 
 class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
-    #On fait appelle a l'heritage de la classe Modele Personnage/Arme /Armure
+    #On fait appelle a l'héritage de la classe Modele Personnage/Arme /Armure
     def __init__(self, nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage, exp, arme, armure):
         super().__init__(nomPersonnage, viePersonnage, attaquePersonnage, defensePersonnage, levelPersonnage)
         self.armure = None
