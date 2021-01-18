@@ -1,5 +1,6 @@
 from Personnage import *
 from Arme_et_Armure import *
+from Modele import *
 #from colorama import *
 
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
@@ -9,7 +10,6 @@ Inventaire = {
     "Armes": [Sabre_laser],
     "Armures": [],
     "Objets rares": [],
-    #"Fermer l'inventaire": True
 }
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
@@ -42,8 +42,8 @@ def choix_inventaire(inventaire, hero):
     #Choix des armes
 
     if choix == 2 and len(inventaire["Armes"]) > 0:
-        for x in inventaire["Armes"]:
-            print(" -",  x.nomArme)
+        for i in inventaire["Armes"]:
+            print(" -",  i.nomArme)
         choix_section = int(input("Que voulez vous selectionner ? (1,2...) :\n")) - 1
         hero.a_une_arme(inventaire["Armes"][int(choix_section)])
         print("\n")
@@ -109,6 +109,11 @@ def ouvir_inventaire():
     else:
         print("Vous continuez votre aventure")
 
+<<<<<<< HEAD
 
 Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
 choix_inventaire(Inventaire, Hero)
+=======
+#choix_inventaire(Inventaire, Kevin)
+
+>>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
