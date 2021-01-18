@@ -2,7 +2,7 @@ import pickle
 from Arme_et_Armure import * 
 from inventaire import Inventaire
 from Salle import *
-import shutil
+
 
 
 
@@ -13,14 +13,13 @@ def Sauve(Hero, salle, inventaire):
         "Salle" : salle,
     }
 
-    Sauve=open("sauve.pickle", "wb") 
+    Sauve=open(os.path.join("sauve.pickle"), "wb") 
     pickle.dump(data, Sauve)
-    shutil.copyfile("sauve.pickle", "sauve.pickle.bak")
     Sauve.close()
         
 
 def recupData():
-    Load = open("sauve.pickle","rb")
+    Load = open(os.path.join("sauve.pickle"),"rb")
     data = pickle.load(Load)
     return data
 
