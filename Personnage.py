@@ -261,7 +261,7 @@ AlienF4 = MonstresForts("Alien adulte",80,30,15,9,"Griffe Acide",38, "oui")
 Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",60, "oui")
 Horde = BOSS("Horde d'Aliens", 300,400,500,100,"Multiple Morsures Acide", 520,"oui")
 
-Soldat = MonstresForts('Oleg', 58, 44, 17, 6, "Queue Acide", 34, "oui")
+Soldat = MonstresForts('Oleg', 54, 24, 14, 6, "Queue Acide", 25, "oui")
 ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 
 
