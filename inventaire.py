@@ -6,7 +6,7 @@ from Arme_et_Armure import *
 
 Inventaire = {
     "Soins": [],
-    "Armes": [],
+    "Armes": [Sabre_laser],
     "Armures": [],
     "Objets rares": [],
     #"Fermer l'inventaire": True
@@ -110,4 +110,5 @@ def ouvir_inventaire():
         print("Vous continuez votre aventure")
 
 
-
+Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
+choix_inventaire(Inventaire, Hero)
