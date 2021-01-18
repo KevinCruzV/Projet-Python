@@ -7,7 +7,7 @@ from Modele import *
 
 Inventaire = {
     "Soins": [],
-    "Armes": [Sabre_laser],
+    "Armes": [],
     "Armures": [],
     "Objets rares": [],
 }
@@ -109,11 +109,5 @@ def ouvir_inventaire():
     else:
         print("Vous continuez votre aventure")
 
-<<<<<<< HEAD
-
-Hero = hero("Kevin", 100, 5, 0, 1, 0, None, None)
-choix_inventaire(Inventaire, Hero)
-=======
 #choix_inventaire(Inventaire, Kevin)
 
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8

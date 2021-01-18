@@ -410,11 +410,6 @@ def CapsuleDeSauvetage(hero):
                 sleep(1)
                 print(hero.get_nomPersonnage(),": Sortons d'ici et allons chercher d'autres indices")
                 ouvir_inventaire()
-<<<<<<< HEAD
-=======
-                print(hero.get_nomPersonnage(),": Sortons d'ici et allons chercher d'autres indices.")
-
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
 
 
             elif prendreCapsule == 'n': 
@@ -639,10 +634,6 @@ def Hangar(Hero):
                 sleep(2)
                 print("Vous quittez le", Hangar.get_nomSalle,". \n")
                 ouvir_inventaire()
-<<<<<<< HEAD
-=======
-                print("Vous quittez le", Hangar.get_nomSalle(),". \n")
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
         
             
     else:
@@ -652,10 +643,6 @@ def Hangar(Hero):
         print("L'odeur de souffre s'intensifie et soudain, la lumière clignote. \n")
         sleep(3)
         print(Robot.get_nomPersonnage(),": Euh", Hero.get_nomPersonnage,"tu devrais regarder par ici... \n")
-<<<<<<< HEAD
-=======
-        print(Robot.get_nomPersonnage(),": Euh", Hero.get_nomPersonnage(),"tu devrais regarder par ici... \n")
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
         sleep(3)
         print("Vous apercevez une silhouette au plafond. C'est un alien, il dort suspendu a la lampe. \n")
         sleep(4)
@@ -977,11 +964,6 @@ def Salle_des_Communications(Hero):
             print(AlienN3.get_nomPersonnage,"vous attaque !\n")
             combat(AlienN3,Hero)
             ouvir_inventaire()
-<<<<<<< HEAD
-=======
-            print(AlienN3.get_nomPersonnage(),"vous attaque !\n")
-            combat(AlienN3,Hero)
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
 
         elif CommunicationInterieur == 'n':
             print("\n")
@@ -1048,10 +1030,6 @@ def Salle_des_Communications(Hero):
         elif ouvrir == 'n':
             print("Vous quittez", Salle_des_Communications.get_nomSalle())
             ouvir_inventaire()
-<<<<<<< HEAD
-=======
-            print("Vous quittez la", Salle_des_Communications.get_nomSalle(),".")
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
             VarHero(Hero)
                     
 
@@ -1414,11 +1392,6 @@ def ChambreEquipage(hero):
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
                 ouvir_inventaire()
-<<<<<<< HEAD
-
-=======
-                print("Vous quittez",ChambreEquipage.get_nomSalle(),".")
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
             elif prendrePyj == 'n':
                 print("Vous laissez le pyjama.")
                 sleep(1)
@@ -1431,12 +1404,6 @@ def ChambreEquipage(hero):
                 print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autre arrive\n")
                 print("Vous quittez les quartiers")
                 ouvir_inventaire()
-<<<<<<< HEAD
-
-=======
-                print(hero.get_nomPersonnage(),": Bon je me barre avant que d'autres arrivent.\n")
-                print("Vous quittez",ChambreEquipage.get_nomSalle(),".")
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
     elif prendreCle == 'n':
         sleep(1)
         print("Vous laissez les clés.")
@@ -1976,12 +1943,3 @@ def Win1():
     sleep(2)
     print("MERCI D'AVOIR PRIS LE TEMPS DE JOUER. LA SUITE AU PROCHAIN EPISODE (PEUT-ETRE).")
 
-<<<<<<< HEAD
-Hero = hero('Kevin',100,100,100,100,0,0,0)
-CapsuleDeSauvetage(Hero)
-=======
-#Hero = hero('Kevin',10,10,10,10,0,0,0)
-
-
-
->>>>>>> cd482161289c01994f6d5c86b3fbf6627e8e45d8
