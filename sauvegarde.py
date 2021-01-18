@@ -2,6 +2,7 @@ import pickle
 from Arme_et_Armure import * 
 from inventaire import Inventaire
 from Salle import *
+import shutil
 
 
 
@@ -14,6 +15,7 @@ def Sauve(Hero, salle, inventaire):
 
     Sauve=open("sauve.pickle", "wb") 
     pickle.dump(data, Sauve)
+    shutil.copyfile("sauve.pickle", "sauve.pickle.bak")
     Sauve.close()
         
 
