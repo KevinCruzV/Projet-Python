@@ -34,9 +34,7 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
             print("Badge Spatial:\nNom : ", self.get_nomPersonnage(), " | Vie : ", self.get_viePersonnage(), " | Attaque : ", self.get_attaquePersonnage(), " | Defense : ", self.get_defensePersonnage(), " | Niveau : ", self.get_levelPersonnage(), " | Arme : ", self.arme.nomArme, "| Armure : ", self.armure.get_nomArmure(), "\n")
 
 
-
-
-
+        ##### Fonction changement d'arme #####
 
     def a_une_arme(self, arme):
         print("\n")
@@ -53,22 +51,25 @@ class hero(Modele_Personnage, Modele_Arme, Modele_Armure):
     def set_arme(self, arme):
         self.arme = arme
 
+
     def attaque_adition(self, attqArme):
         self.attaquePersonnage += attqArme
 
     def vie_addition(self, VieAddition):
         self.viePersonnage += VieAddition
+
+      #  Fonction de boost  #  
     
     def attaque_boost(self, attaquePersonnage):
-        self.attaquePersonnage = self.attaquePersonnage + 5
+        self.attaquePersonnage = self.attaquePersonnage + 10
         return self.attaquePersonnage
 
     def defense_boost(self, defensePersonnage):
-        self.defensePersonnage = self.defensePersonnage + 5
+        self.defensePersonnage = self.defensePersonnage + 10
         return self.defensePersonnage
     
     def vie_boost(self, viePersonnage):
-        self.viePersonnage = self.viePersonnage + 10
+        self.viePersonnage = self.viePersonnage + 15
         return self.viePersonnage
 
         # Fonction Armure #
@@ -129,10 +130,15 @@ class BOSS(Modele_Personnage):
         self.PointAttackSpe = 50
         self.AttackSpe = AttackSpe
 
+        # Fonction d'attaque #
+
     def attack_monster(self, cible):
         cible.dommage(self.attaquePersonnage)
         sleep(1)
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
+
+
+        #   Fonction attaque special   #
 
     def a_une_attaque_spe(self,spe):
         if spe is not None:
@@ -165,10 +171,16 @@ class MonstresForts(Modele_Personnage):
         #print(" /! Un monstre spécial apparait !\ ")
         #print("Nom :", nomPersonnage, "| Vie :", viePersonnage, "| Attaque :", attaquePersonnage, "| Defense :", defensePersonnage, "| Attaque speciale :", attaque_speciale, " | Niveau : ", levelPersonnage, "\n")
 
+
+        #    Fonction d'attaque     #
+
+
     def attack_monster(self, cible):
         cible.dommage(self.attaquePersonnage)
         sleep(1)
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
+
+        #  Fpnction d'attaque special  #
 
     def get_attaque_speciale(self):
         return self.Nom_attaque_speciale
@@ -204,13 +216,20 @@ class MonstresNormaux(Modele_Personnage):
         self.viePersonnage -= attaque
         print("Le monstre à subit", attaque, "dégats")   
 
+
+        # Fonction  Exp  # 
+
     def get_ExpADonne(self):
         return self.ExpADonner
+
+        # Fonction Attaque #
 
     def attack_monster(self, cible):
         cible.dommage(self.attaquePersonnage)
         sleep(1)
         print(cible.get_nomPersonnage(), "a prit", self.attaquePersonnage, "de dégats.\n")
+
+        # Fonction Attaque Spécial #
 
     def get_a_une_attack_spe(self):
         return self.AttackSpe
@@ -226,19 +245,19 @@ class MonstresNormaux(Modele_Personnage):
 
 
 Alien_blesse = MonstresNormaux('Alien Blessé', 45,29,0,8, None)
-AlienN1 = MonstresNormaux('Bébé Alien',20,2,0,1, None)
-AlienN2 = MonstresNormaux('Bébé Alien',27,15,2,2, None)
-AlienN3 = MonstresNormaux('Bébé Alien',38,20,4,3, None)
-AlienN4 = MonstresNormaux('Bébé Alien',42,25,8,4, None)
-AlienN5 = MonstresNormaux('Bébé Alien',50,28,10,5, None)
+AlienN1 = MonstresNormaux('Bébé Alien',10,2,0,1, None)
+AlienN2 = MonstresNormaux('Bébé Alien',27,10,2,2, None)
+AlienN3 = MonstresNormaux('Bébé Alien',38,12,4,3, None)
+AlienN4 = MonstresNormaux('Bébé Alien',42,15,5,4, None)
+AlienN5 = MonstresNormaux('Bébé Alien',50,18,7,5, None)
 
 
 
-AlienF0 = MonstresForts("Alien siamois",60,32,18,7,"Double Griffure",38,"oui")
-AlienF1 = MonstresForts("Alien adulte",57,30,18,6,"Queue Tranchante",36,"oui")
-AlienF2 = MonstresForts("Alien adulte",65,35,18,7,"Bave Acide",40, "oui")
-AlienF3 = MonstresForts("Alien adulte",72,42,18,8,"Morsure Sanguine",50, "oui")
-AlienF4 = MonstresForts("Alien adulte",80,45,28,9,"Griffe Acide",57, "oui")
+AlienF0 = MonstresForts("Alien siamois",60,22,8,7,"Double Griffure",38,"oui")
+AlienF1 = MonstresForts("Alien adulte",57,20,10,6,"Queue Tranchante",36,"oui")
+AlienF2 = MonstresForts("Alien adulte",65,25,12,7,"Bave Acide",40, "oui")
+AlienF3 = MonstresForts("Alien adulte",72,28,13,8,"Morsure Sanguine",50, "oui")
+AlienF4 = MonstresForts("Alien adulte",80,30,15,9,"Griffe Acide",57, "oui")
 Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69, "oui")
 Horde = BOSS("Horde d'Aliens", 300,400,500,100,"Multiple Morsures Acide", 520,"oui")
 
@@ -247,26 +266,14 @@ ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 
 
 ####################################################################################################  
-#Epee = Modele_Arme("Epée", 20)
-#Pistolet_Laser = Modele_Arme("Pistolet Laser", 35)
-#rmure = Modele_Armure("combi",30)
-'''Kevin.a_une_arme(Epee)
-Kevin.a_une_armure(Armure)
-Kevin.barre_Exp(100)
-Kevin.Augment_level()
-Kevin.recap()
-'''
 
-#Epee = Modele_Arme("Epee", 20)
-#Kevin = hero("Kevin",20,10,20,1,0,None,None)
-#Epee = Modele_Arme("Epee", 20)
-#Armure = Modele_Armure("combi",30)
-#Kevin.a_une_arme(Epee)
-#Kevin.a_une_armure(Armure)
-#Kevin.barre_Exp(100)
-#Kevin.Augment_level()
-#Kevin.recap()
-#Couteau = Modele_Arme("couteau",25)
-#Kevin.a_une_arme(Couteau)
-#Kevin.recap()
+
+############################################ Sons ################################################
+
+
+
+
+####################################################################################################
+Kevin = hero("Kevin",20,10,20,1,0,None,None)
+
 

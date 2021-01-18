@@ -45,6 +45,7 @@ class Modele_Arme :
     def __init__(self, nomArme, dommageArme):
         self.nomArme = nomArme
         self.dommageArme = dommageArme
+        #self.son = son
 
     def get_nomArme(self):
         return self.get_nomArme
@@ -52,11 +53,14 @@ class Modele_Arme :
     def get_dommageArme(self):
         return self.dommageArme
 
+      
+
 class Modele_Armure :
     
     def __init__(self, nomArmure, defenseArmure) :
         self.nomArmure = nomArmure
         self.defenseArmure = defenseArmure
+        
 
     def get_nomArmure(self):
         return self.nomArmure  

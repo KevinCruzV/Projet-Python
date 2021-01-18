@@ -16,7 +16,6 @@ def Sauve(Hero, salle, inventaire):
     pickle.dump(data, Sauve)
     Sauve.close()
         
-           
 
 def recupData():
     Load = open("sauve.pickle","rb")
@@ -24,8 +23,8 @@ def recupData():
     return data
 
 def dataRecap(Data):
+    print("Chargement de la Partie sauvegardé")
     Data["Héro"].recap()
-    print("Inventaire =",Data["Inventaire"])
 
 
 

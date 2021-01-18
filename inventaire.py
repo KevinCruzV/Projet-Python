@@ -1,5 +1,6 @@
 from Personnage import *
 from Arme_et_Armure import *
+from Modele import *
 #from colorama import *
 
 #Inventaire sous forme de dictionnaire avec les valeurs stockées dans des listes'
@@ -9,7 +10,6 @@ Inventaire = {
     "Armes": [],
     "Armures": [],
     "Objets rares": [],
-    #"Fermer l'inventaire": True
 }
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
@@ -17,8 +17,9 @@ Inventaire = {
 
 def choix_inventaire(inventaire, hero):
     #print(Fore.YELLOW, "\n")
-    choix = int(input("Que voulez vous dans l'inventaire ? 1 = Soins | 2 = Armes | 3 = Armures | 4 = Objets importants "
-                      "| 5 = Fermer l'inventaire\n"))
+    choix = int(input("Que voulez vous dans l'inventaire ?\n 1 = Soins |\n 2 = Armes |\n 3 = Armures |"
+                      "\n 4 = Objets importants |"
+                      "\n 5 = Fermer l'inventaire |\n"))
 
 #Fonctions pour ouvrir l'inventaire, se déplacer dedans et utliser les items
 #Lorsque qu'un items de soins est utilisé, il est immédiatemment supprimé de la liste
@@ -41,13 +42,12 @@ def choix_inventaire(inventaire, hero):
     #Choix des armes
 
     if choix == 2 and len(inventaire["Armes"]) > 0:
-        for x in inventaire["Armes"]:
-            print(" -", x.nomArme)
+        for i in inventaire["Armes"]:
+            print(" -",  i.nomArme)
         choix_section = int(input("Que voulez vous selectionner ? (1,2...) :\n")) - 1
         hero.a_une_arme(inventaire["Armes"][int(choix_section)])
         print("\n")
         print(hero.recap())
-        print("TO DO : fonction pour supp l'arme quand elle est mise et inversement quand elle est rangé\n")
         choix_inventaire(inventaire, hero)
 
     elif choix == 2 and len(inventaire["Armes"])<= 0:
@@ -63,7 +63,6 @@ def choix_inventaire(inventaire, hero):
         hero.a_une_armure(inventaire["Armures"][int(choix_section)])
         print("\n")
         print(hero.recap())
-        print("TO DO : fonction pour supp l'armure quand elle est mise et inversement quand elle est rangé")
         choix_inventaire(inventaire, hero)
 
     elif choix == 3 and len(inventaire["Armures"])<= 0:
@@ -102,3 +101,13 @@ def searchInventaire(Inventaire, objet):
 
 
 #choix_inventaire(Inventaire, Kevin)
+
+def ouvir_inventaire():
+    open = input(("Voulez vous ouvrir l'inventaire pour effectuer des changements? (y/n)?"))
+    if open == str("y"):
+        choix_inventaire(Inventaire, hero)
+    else:
+        print("Vous continuez votre aventure")
+
+#choix_inventaire(Inventaire, Kevin)
+
