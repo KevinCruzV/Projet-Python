@@ -44,10 +44,10 @@ def Load():
     Data = recupData()
     if Data != None:
         print("Accés confirmé\nVous revenez au vaisseau\n")
-        pygame.init()
-        Son_Ambiance = pygame.mixer.Sound("Among_Us_Theme.wav")
-        Son_Ambiance.set_volume(0.01)
-        Son_Ambiance.play(10000, 0, 2000)        
+        # pygame.init()
+        # Son_Ambiance = pygame.mixer.Sound("Among_Us_Theme.wav")
+        # Son_Ambiance.set_volume(0.01)
+        # Son_Ambiance.play(10000, 0, 2000)        
         dataRecap(Data)
         Hero = Data["Héro"]
         for i in Data["Salle"]:
