@@ -3,11 +3,11 @@ from random import randint
 from inventaire import *
 from time import *
 import os
+
 #from colorama import *
 
 
 def combat(Monstre, Hero):
-
     while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
         #print(Fore.RED, "\n")
         print(" Appuyez sur 1 pour attaquer")
@@ -49,7 +49,7 @@ def combat(Monstre, Hero):
                     sleep(2)
                     print(Monstre.nomPersonnage, "a maintenant", Monstre.viePersonnage ," /", vieMonstre ,"pv")
                     sleep(2)
-                    print(Monstre.nomPersonnage,"vous attaque")                    
+                    print(Monstre.nomPersonnage,"vous attaque")
                     sleep(2)
                     print("Vous avez maintenant", Hero.viePersonnage, " /", vieHero,"pv\n")
                     sleep(2)
