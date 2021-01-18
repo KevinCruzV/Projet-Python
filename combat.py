@@ -2,7 +2,7 @@ from Personnage import *
 from random import randint
 from inventaire import *
 from time import *
-import os
+#import os
 #os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 #import pygame
 
@@ -124,7 +124,7 @@ def combat(Monstre, Hero):
             sleep(2)
             print("1")
             sleep(2)
-            os.system(exit())
+            #os.system(exit())
             break
 
     print("Fin du combat")

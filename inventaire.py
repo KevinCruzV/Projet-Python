@@ -96,7 +96,7 @@ def searchInventaire(Inventaire, objet):
             if j == objet :
                 return True
 
-#def ouvir_inventaire():
+def ouvir_inventaire():
     open = input(("Voulez vous ouvrir l'inventaire pour effectuer des changements? (y/n)?"))
     if open == str("y"):
         choix_inventaire(Inventaire, hero)

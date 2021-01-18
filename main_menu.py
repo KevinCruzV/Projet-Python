@@ -24,7 +24,7 @@ def main():
     #Son_Ambiance.play(10000, 0, 2000)
     Hero=hero(str(input("Quel est ton prénom ? \n")),35,10,0,1,0,None,None)
     Salle_0(Hero)
-    Sauve(Hero,Salles,Inventaire)
+    #Sauve(Hero,Salles,Inventaire)
     print("\n")
     print("Progression sauvegardé.")
     while Hero.viePersonnage > 0:
@@ -33,7 +33,7 @@ def main():
                     #Tu entre dans la salle final
                     Salle_final(Hero)
                     Credit()
-                    os.system(exit())
+                    
                 else :
                     if direction() :
                         choixSalles(Salles, Hero)
@@ -57,7 +57,7 @@ def Load():
             if i == len(Data["Salle"]):
                 Salle_final(Hero)
                 Credit()
-                os.system(exit())
+                #os.system(exit())
             else : 
                 if direction():   
                     choixSalles(Data["Salle"], Hero)
@@ -166,7 +166,7 @@ def menu(TestUserInput=False):
             if UserInput == 4:
                 print("\n")
                 print("Autodestruction du vaisseau.")
-                os.system(exit())
+                #os.system(exit())
 
             #Erreurs 
 
@@ -195,7 +195,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 12)
         SuppSalle(salle, 20)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")
 
@@ -206,7 +206,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 14)
         SuppSalle(salle, 21)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")
 
@@ -216,7 +216,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 15)
         SuppSalle(salle, 25)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")
 
@@ -224,7 +224,7 @@ def choixSalles(salle, hero):
         Armurerie(P)
         SuppSalle(salle, 4)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")
 
@@ -234,7 +234,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 16)
         SuppSalle(salle, 23)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")
 
@@ -244,7 +244,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 17)
         SuppSalle(salle, 25)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")        
 
@@ -255,7 +255,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 19)
         SuppSalle(salle, 24)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")
 
@@ -263,7 +263,7 @@ def choixSalles(salle, hero):
         ChambreEquipage(P)
         SuppSalle(salle, 8)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")        
 
@@ -272,7 +272,7 @@ def choixSalles(salle, hero):
         SuppSalle(salle, 9)
         SuppSalle(salle, 26)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")        
 
@@ -280,7 +280,7 @@ def choixSalles(salle, hero):
         CapsuleDeSauvetage(P)
         SuppSalle(salle, 10)
         P = VarHero(hero)
-        Sauve(P,Salles,Inventaire)
+        #Sauve(P,Salles,Inventaire)
         print("\n")
         print("Progression sauvegardé.")                                               
 
