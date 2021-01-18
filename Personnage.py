@@ -253,12 +253,12 @@ AlienN5 = MonstresNormaux('Bébé Alien',50,18,7,5, None)
 
 
 
-AlienF0 = MonstresForts("Alien siamois",60,22,8,7,"Double Griffure",38,"oui")
-AlienF1 = MonstresForts("Alien adulte",57,20,10,6,"Queue Tranchante",36,"oui")
-AlienF2 = MonstresForts("Alien adulte",65,25,12,7,"Bave Acide",40, "oui")
-AlienF3 = MonstresForts("Alien adulte",72,28,13,8,"Morsure Sanguine",50, "oui")
-AlienF4 = MonstresForts("Alien adulte",80,30,15,9,"Griffe Acide",57, "oui")
-Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",69, "oui")
+AlienF0 = MonstresForts("Alien siamois",60,22,8,7,"Double Griffure",30,"oui")
+AlienF1 = MonstresForts("Alien adulte",57,20,10,6,"Queue Tranchante",25,"oui")
+AlienF2 = MonstresForts("Alien adulte",65,25,12,7,"Bave Acide",32, "oui")
+AlienF3 = MonstresForts("Alien adulte",72,28,13,8,"Morsure Sanguine",35, "oui")
+AlienF4 = MonstresForts("Alien adulte",80,30,15,9,"Griffe Acide",38, "oui")
+Robot = BOSS("Jarvis", 100, 50, 30, 10, "Uni Rayon",60, "oui")
 Horde = BOSS("Horde d'Aliens", 300,400,500,100,"Multiple Morsures Acide", 520,"oui")
 
 Soldat = MonstresForts('Oleg', 58, 44, 17, 6, "Queue Acide", 34, "oui")
