@@ -267,7 +267,6 @@ ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 
 ####################################################################################################  
 
-<<<<<<< HEAD
 
 ############################################ Sons ################################################
 
@@ -277,18 +276,4 @@ ViceCapitaine = PNG("Alexei", 0,0,0,0,0)
 ####################################################################################################
 Kevin = hero("Kevin",20,10,20,1,0,None,None)
 
-=======
-#Epee = Modele_Arme("Epee", 20)
-#Kevin = hero("Kevin",20,10,20,1,0,None,None)
-#Epee = Modele_Arme("Epee", 20)
-#Armure = Modele_Armure("combi",30)
-#Kevin.a_une_arme(Epee)
-#Kevin.a_une_armure(Armure)
-#Kevin.barre_Exp(100)
-#Kevin.Augment_level()
-#Kevin.recap()
-#Couteau = Modele_Arme("couteau",25)
-#Kevin.a_une_arme(Couteau)
-#Kevin.recap()
->>>>>>> 664070057d802f97eb8789e89f30e65cc8ebf013
 

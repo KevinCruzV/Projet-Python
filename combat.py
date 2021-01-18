@@ -10,13 +10,9 @@ import os
 #from colorama import *
 
 def combat(Monstre, Hero):
-<<<<<<< HEAD
     # pygame.init()
     # Alien_Grognement = pygame.mixer.Sound("grognement-2.wav")
     # Alien_Grognement.set_volume(0.01)
-=======
-
->>>>>>> 664070057d802f97eb8789e89f30e65cc8ebf013
     while Hero.viePersonnage > 0 or Monstre.viePersonnage > 0:
         #print(Fore.RED, "\n")
         print(" Appuyez sur 1 pour attaquer")

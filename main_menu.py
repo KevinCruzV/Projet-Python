@@ -5,11 +5,8 @@ from Salle import SearchFor
 from sauvegarde import *
 from direction1 import direction
 import os
-<<<<<<< HEAD
 # os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 # import pygame
-=======
->>>>>>> 664070057d802f97eb8789e89f30e65cc8ebf013
 
 #importation  de l'os pour lancer le jeu dans la console
 
@@ -18,13 +15,10 @@ import os
 #Fonction qui exécute la boucle principale du jeu 
 
 def main():
-<<<<<<< HEAD
     # pygame.init()
     # Son_Ambiance = pygame.mixer.Sound("Among_Us_Theme.wav")
     # Son_Ambiance.set_volume(0.01)
     # Son_Ambiance.play(10000, 0, 2000)
-=======
->>>>>>> 664070057d802f97eb8789e89f30e65cc8ebf013
     Hero=hero(str(input("Quel est ton prénom ? \n")),35,10,0,1,0,None,None)
     Salle_0(Hero)
     Sauve(Hero,Salles,Inventaire)
@@ -293,8 +287,5 @@ def GameOver():
     sleep(2)
     print("GAME OVER ! vous n'avez pas reussi a quitter le vaiseau.")
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 664070057d802f97eb8789e89f30e65cc8ebf013
