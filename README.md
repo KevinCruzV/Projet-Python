@@ -1,6 +1,8 @@
 # Projet-Python
 Projet de Jeu RPG (format texte)
 
+- Ceci est un jeu textuel en Python qui vous propulse dans un monde futuriste d'aliens et de vaisseau spatial dont vous devez vous enfuire. 
+
 - Le jeu est désormais jouable dans la console mais les sauvegardes ne marchent pas, il y a un problème avec la librairie que nous avons utilisée pour créer ces sauvegardes. Il y a un également un problème avec les sons.
 
 
