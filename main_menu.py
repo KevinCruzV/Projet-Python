@@ -131,10 +131,10 @@ def TestUser(TestUserInput=False):
 #Fonction du menu principal qui permet de lancer la fonction choisie
 def menu(TestUserInput=False):
     print("\n")
-    print("1: Nouvelle partie : ")
-    print("2: Charger au checkpoint : ")
-    print("3: A propos du jeu")
-    print("4: Exit\n")
+    print("     1: Nouvelle partie : ")
+    print("     2: Charger au checkpoint : ")
+    print("     3: A propos du jeu")
+    print("     4: Exit\n")
 
     # Boucle pour tester ce qu'entre comme valeur l'utilisateur et qui ensuite déclenche une fonction si la condition est vérifiée
 
@@ -149,7 +149,7 @@ def menu(TestUserInput=False):
 
             if UserInput == 1:
                 print("\n")
-                print("Partie initialisée\nBon courage ^^\n")
+                print("  Partie initialisée\n  Bon courage ^^\n")
                 main()
 
             #Sauvegarde
